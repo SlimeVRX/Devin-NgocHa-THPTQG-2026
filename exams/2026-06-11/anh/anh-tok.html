@@ -1,0 +1,1342 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>AnhTok 🇬🇧 Tổng ôn Tiếng Anh cho Hà</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,500;1,9..144,500&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+  :root {
+    --display: 'Bricolage Grotesque', system-ui, sans-serif;
+    --body: 'Be Vietnam Pro', system-ui, sans-serif;
+    --italic: 'Fraunces', Georgia, serif;
+    --mono: 'JetBrains Mono', ui-monospace, monospace;
+  }
+  html, body { height:100%; overflow:hidden; font-family:var(--body); background:#0a0a0a; color:#fff; -webkit-font-smoothing:antialiased; }
+
+  .app {
+    position:relative; height:100vh; width:100vw;
+    max-width:480px; margin:0 auto;
+    background:#000; overflow:hidden;
+    box-shadow:0 0 80px rgba(0,0,0,.6);
+  }
+
+  .topbar {
+    position:absolute; top:0; left:0; right:0; z-index:50;
+    padding:14px 18px 10px;
+    background:linear-gradient(to bottom, rgba(0,0,0,.55), transparent);
+    pointer-events:none;
+  }
+  .topbar-tabs {
+    display:flex; justify-content:center; gap:22px;
+    font-family:var(--display); font-weight:700; font-size:16px;
+    color:rgba(255,255,255,.55);
+  }
+  .topbar-tabs .active { color:#fff; position:relative; }
+  .topbar-tabs .active::after {
+    content:''; position:absolute; left:50%; transform:translateX(-50%);
+    bottom:-6px; width:18px; height:3px; background:#fff; border-radius:2px;
+  }
+  .progress {
+    position:absolute; top:48px; left:14px; right:14px;
+    display:flex; gap:3px; z-index:50;
+  }
+  .progress span {
+    flex:1; height:2.5px; background:rgba(255,255,255,.25); border-radius:2px;
+    transition:background .3s;
+  }
+  .progress span.done { background:#fff; }
+  .progress span.current { background:#fff; }
+
+  .feed {
+    height:100%; overflow-y:scroll;
+    scroll-snap-type:y mandatory; scroll-behavior:smooth;
+    -webkit-overflow-scrolling:touch;
+  }
+  .feed::-webkit-scrollbar { display:none; }
+
+  .card {
+    height:100vh; width:100%;
+    scroll-snap-align:start; scroll-snap-stop:always;
+    position:relative; overflow:hidden;
+    display:flex; flex-direction:column;
+    padding:80px 22px 110px;
+  }
+  .card-bg { position:absolute; inset:0; z-index:0; }
+  .card-content { position:relative; z-index:2; flex:1; display:flex; flex-direction:column; justify-content:center; }
+
+  .blob {
+    position:absolute; border-radius:50%; filter:blur(40px);
+    opacity:.65; z-index:1;
+  }
+  .grain {
+    position:absolute; inset:0; z-index:1; pointer-events:none; opacity:.08;
+    background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' /%3E%3C/svg%3E");
+  }
+
+  .hero-icon {
+    font-size:110px; line-height:1;
+    text-align:center; margin-bottom:14px;
+    filter:drop-shadow(0 8px 24px rgba(0,0,0,.4));
+    animation:bobble 3s ease-in-out infinite;
+  }
+  @keyframes bobble {
+    0%,100% { transform:translateY(0) rotate(-2deg); }
+    50% { transform:translateY(-10px) rotate(2deg); }
+  }
+  .kicker {
+    font-family:var(--display); font-weight:700;
+    font-size:12px; letter-spacing:.18em; text-transform:uppercase;
+    opacity:.75; margin-bottom:10px; text-align:center;
+  }
+  .title {
+    font-family:var(--display);
+    font-weight:800; font-size:38px; line-height:1.02;
+    letter-spacing:-.02em;
+    text-align:center;
+    margin-bottom:18px;
+  }
+  .title .em { font-family:var(--italic); font-style:italic; font-weight:500; }
+
+  .body {
+    font-size:15.5px; line-height:1.55;
+    text-align:left;
+    max-width:400px; margin:0 auto; width:100%;
+  }
+  .body p { margin-bottom:10px; }
+  .body ul { list-style:none; padding:0; }
+  .body li {
+    padding:9px 13px; margin-bottom:7px;
+    background:rgba(255,255,255,.13);
+    backdrop-filter:blur(8px);
+    border-radius:13px;
+    border:1px solid rgba(255,255,255,.18);
+  }
+  .body li b { font-weight:700; }
+  .body code {
+    font-family:var(--mono); font-size:13.5px;
+    background:rgba(0,0,0,.35);
+    padding:2px 6px; border-radius:5px;
+    color:#ffec99;
+  }
+  .body .formula {
+    background:rgba(0,0,0,.4);
+    padding:13px 15px; border-radius:13px;
+    font-family:var(--mono); font-weight:500;
+    text-align:center; font-size:14px;
+    border:1px dashed rgba(255,255,255,.4);
+    margin:8px 0;
+    color:#ffec99;
+  }
+  .body .example {
+    background:rgba(255,255,255,.08);
+    padding:10px 13px; border-radius:12px;
+    border-left:3px solid #fff;
+    font-style:italic; font-size:14px;
+    margin:6px 0;
+  }
+  .body .tag-row {
+    display:flex; gap:7px; flex-wrap:wrap; justify-content:center;
+    margin-top:12px;
+  }
+  .body .tag-row span {
+    padding:6px 12px; border-radius:999px;
+    background:rgba(255,255,255,.18);
+    font-size:13px; font-weight:600;
+    border:1px solid rgba(255,255,255,.25);
+  }
+
+  /* PRONUNCIATION TABLE */
+  .ipa-row {
+    display:flex; gap:10px; padding:10px 12px; margin-bottom:6px;
+    background:rgba(255,255,255,.13); border-radius:12px;
+    border:1px solid rgba(255,255,255,.2);
+    align-items:center;
+  }
+  .ipa-sound {
+    font-family:var(--mono); font-size:18px; font-weight:700;
+    background:rgba(0,0,0,.4); padding:6px 12px; border-radius:8px;
+    min-width:70px; text-align:center; color:#ffec99;
+    flex-shrink:0;
+  }
+  .ipa-rule { font-size:13.5px; line-height:1.4; }
+  .ipa-rule b { font-weight:700; }
+
+  /* SYN/ANT card */
+  .syn-pair {
+    display:grid; grid-template-columns:1fr auto 1fr;
+    gap:8px; align-items:center; margin-bottom:8px;
+    padding:10px 12px; background:rgba(255,255,255,.12);
+    border-radius:12px; border:1px solid rgba(255,255,255,.18);
+    font-size:13.5px;
+  }
+  .syn-pair .word { font-weight:700; }
+  .syn-pair .syn { color:#7fffd4; font-weight:600; }
+  .syn-pair .ant { color:#ff9999; font-weight:600; }
+  .syn-pair .arrow { font-family:var(--mono); opacity:.5; font-weight:700; }
+
+  /* RIGHT SIDE ACTIONS */
+  .actions {
+    position:absolute; right:14px; bottom:130px; z-index:10;
+    display:flex; flex-direction:column; gap:22px;
+    align-items:center;
+  }
+  .action { display:flex; flex-direction:column; align-items:center; gap:4px; cursor:pointer; }
+  .action-btn {
+    width:50px; height:50px;
+    background:rgba(0,0,0,.25);
+    backdrop-filter:blur(8px);
+    border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    font-size:24px; line-height:1;
+    transition:transform .2s;
+    border:1px solid rgba(255,255,255,.1);
+  }
+  .action-btn:active { transform:scale(.85); }
+  .action.liked .action-btn { background:rgba(255,40,80,.85); }
+  .action.liked .action-btn svg { fill:#fff; }
+  .action-count { font-size:12px; font-weight:700; text-shadow:0 1px 3px rgba(0,0,0,.6); }
+  .avatar {
+    width:50px; height:50px; border-radius:50%;
+    background:linear-gradient(135deg, #4facfe, #00f2fe);
+    border:2px solid #fff; position:relative;
+    display:flex; align-items:center; justify-content:center;
+    font-size:22px;
+  }
+  .avatar-plus {
+    position:absolute; bottom:-7px; left:50%; transform:translateX(-50%);
+    width:18px; height:18px; border-radius:50%;
+    background:#ff2d55; color:#fff; font-size:14px; font-weight:700;
+    display:flex; align-items:center; justify-content:center;
+  }
+
+  .caption {
+    position:absolute; left:14px; right:80px; bottom:24px; z-index:10;
+  }
+  .caption .author { font-weight:700; font-size:15px; margin-bottom:6px; }
+  .caption .text { font-size:14px; line-height:1.4; opacity:.92; margin-bottom:6px; }
+  .caption .hashtags { font-size:13px; opacity:.85; font-weight:600; }
+  .caption .hashtags span { margin-right:6px; }
+
+  .burst {
+    position:absolute; pointer-events:none;
+    font-size:80px; z-index:30;
+    animation:burst .8s ease-out forwards;
+  }
+  @keyframes burst {
+    0% { transform:scale(.4) rotate(-10deg); opacity:0; }
+    30% { transform:scale(1.3) rotate(8deg); opacity:1; }
+    100% { transform:scale(1.6) rotate(0); opacity:0; }
+  }
+
+  .swipe-hint {
+    position:absolute; bottom:140px; left:50%; transform:translateX(-50%);
+    display:flex; flex-direction:column; align-items:center; gap:8px;
+    z-index:10; pointer-events:none;
+  }
+  .swipe-hint .finger { font-size:32px; animation:swipeUp 1.6s ease-in-out infinite; }
+  @keyframes swipeUp {
+    0%,100% { transform:translateY(10px); opacity:.4; }
+    50% { transform:translateY(-15px); opacity:1; }
+  }
+  .swipe-hint .label {
+    font-family:var(--display); font-weight:700; font-size:14px;
+    letter-spacing:.05em;
+  }
+
+  /* QUIZ */
+  .quiz-badge {
+    display:inline-block; padding:6px 14px; border-radius:999px;
+    background:rgba(255,255,255,.2); border:1px solid rgba(255,255,255,.3);
+    font-family:var(--display); font-weight:700; font-size:12px;
+    letter-spacing:.15em; margin-bottom:14px; align-self:flex-start;
+  }
+  .quiz-q {
+    font-family:var(--display); font-weight:700;
+    font-size:22px; line-height:1.25; margin-bottom:18px;
+    text-align:left;
+  }
+  .quiz-q .em { font-family:var(--italic); font-style:italic; font-weight:500; }
+  .quiz-q .blank { color:#ffec99; font-family:var(--mono); }
+  .quiz-options { display:flex; flex-direction:column; gap:10px; }
+  .quiz-opt {
+    padding:13px 15px; border-radius:13px;
+    background:rgba(255,255,255,.15);
+    border:2px solid rgba(255,255,255,.2);
+    backdrop-filter:blur(8px);
+    font-weight:600; font-size:14.5px;
+    text-align:left;
+    cursor:pointer; transition:all .25s;
+    display:flex; align-items:center; gap:10px;
+  }
+  .quiz-opt .opt-letter {
+    width:28px; height:28px; border-radius:50%;
+    background:rgba(255,255,255,.2);
+    display:flex; align-items:center; justify-content:center;
+    font-family:var(--display); font-weight:700; font-size:13px;
+    flex-shrink:0;
+  }
+  .quiz-opt:active { transform:scale(.97); }
+  .quiz-opt.correct { background:rgba(0,200,100,.45); border-color:#0eff8e; }
+  .quiz-opt.correct .opt-letter { background:#0eff8e; color:#000; }
+  .quiz-opt.wrong { background:rgba(255,60,80,.45); border-color:#ff4060; }
+  .quiz-opt.wrong .opt-letter { background:#ff4060; color:#fff; }
+  .quiz-opt.disabled { pointer-events:none; opacity:.55; }
+  .quiz-feedback {
+    margin-top:12px; padding:12px 14px;
+    background:rgba(0,0,0,.4); border-radius:12px;
+    font-size:13.5px; line-height:1.5;
+    border-left:3px solid #0eff8e;
+    display:none;
+  }
+  .quiz-feedback.show { display:block; animation:fadeIn .4s ease; }
+  .quiz-feedback.wrong { border-left-color:#ff4060; }
+  @keyframes fadeIn { from{opacity:0; transform:translateY(8px);} to{opacity:1;} }
+
+  /* SECTION DIVIDER */
+  .section-card { justify-content:center !important; padding:80px 22px !important; }
+  .section-card .card-content { justify-content:center; text-align:center; }
+  .section-card .big-num {
+    font-family:var(--display); font-weight:800; font-size:140px;
+    line-height:1; opacity:.4; margin-bottom:10px;
+  }
+
+  .confetti {
+    position:absolute; top:-20px; width:10px; height:14px;
+    z-index:5; opacity:.9;
+    animation:fall linear forwards;
+  }
+  @keyframes fall { to { transform:translateY(110vh) rotate(720deg); } }
+
+  /* TABLE */
+  .data-table { display:flex; flex-direction:column; gap:6px; margin-top:6px; }
+  .data-row {
+    display:flex; gap:10px; padding:9px 12px;
+    background:rgba(255,255,255,.13); border-radius:11px;
+    border:1px solid rgba(255,255,255,.18);
+    font-size:13px; line-height:1.4;
+  }
+  .data-row b { min-width:90px; font-weight:700; flex-shrink:0; }
+  .data-row .meaning { flex:1; }
+
+  .scroll-hint {
+    position:absolute; bottom:96px; left:50%; transform:translateX(-50%);
+    font-size:22px; opacity:.45; z-index:9;
+    animation:bobble 2s ease-in-out infinite;
+    pointer-events:none;
+  }
+
+  .marquee {
+    position:absolute; top:50%; left:-10%; right:-10%;
+    transform:translateY(-50%) rotate(-6deg);
+    font-family:var(--display); font-weight:800;
+    font-size:160px; line-height:.9;
+    color:rgba(255,255,255,.08);
+    white-space:nowrap; pointer-events:none; z-index:1;
+    letter-spacing:-.04em;
+  }
+
+  @media (max-width:380px) {
+    .title { font-size:32px; }
+    .hero-icon { font-size:90px; }
+    .body { font-size:14.5px; }
+    .quiz-q { font-size:19px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="app">
+  <div class="topbar">
+    <div class="topbar-tabs">
+      <span>Following</span>
+      <span class="active">For Hà 🇬🇧</span>
+    </div>
+  </div>
+  <div class="progress" id="progress"></div>
+  <div class="feed" id="feed"></div>
+</div>
+
+<script>
+const CARDS = [
+  // ============ INTRO ============
+  {
+    type:'intro',
+    bg:'linear-gradient(135deg,#1e3c72 0%,#2a5298 50%,#7e8ce0 100%)',
+    blobs:[{c:'#ff6b6b',x:'-20%',y:'10%',s:'280px'},{c:'#feca57',x:'70%',y:'70%',s:'220px'}],
+    icon:'🇬🇧',
+    kicker:'Welcome to',
+    title:'<span class="em">AnhTok</span>',
+    body:'Toàn bộ chương trình Tiếng Anh thi TN 2025 dưới dạng "lướt 5 phút". Hà ready chưa? 🎯',
+    author:'@anhtok.official',
+    captionText:'Form 2025 không có chỗ cho học vẹt. Học theo cách Gen Z.',
+    tags:['#tienganh','#form2025','#anhTok','#choHa'],
+    hint:true
+  },
+
+  // ============ SECTION 1: GRAMMAR ============
+  {
+    type:'section',
+    bg:'linear-gradient(135deg,#0f0c29 0%,#302b63 50%,#24243e 100%)',
+    bigNum:'01',
+    kicker:'Phần Một',
+    title:'<span class="em">Grammar</span>',
+    body:'9 mảng ngữ pháp xương sống. Mỗi card một mảng. Đừng skip nha.',
+    author:'@anhtok.official',
+    captionText:'Grammar = foundation. Build it solid.',
+    tags:['#grammar','#part1']
+  },
+
+  // Tenses
+  {
+    type:'concept',
+    bg:'linear-gradient(135deg,#667eea 0%,#764ba2 100%)',
+    icon:'🕰️',
+    kicker:'Grammar #1',
+    title:'Tenses — <span class="em">phối hợp thì</span>',
+    body:`<ul>
+      <li>📍 <b>Quá khứ TD + đơn</b>: When/While + <code>was V-ing</code>, S + V2</li>
+      <li>📍 <b>QK đơn + hoàn thành</b>: <code>had V3</code> = xảy ra trước; <code>V2</code> = sau</li>
+      <li>📍 <b>Hiện tại HT</b>: <code>have/has + V3</code></li>
+    </ul>
+    <div class="formula">since + mốc | for + khoảng | just, already, yet, ever, never</div>`,
+    author:'@anhtok.official',
+    captionText:'Phối hợp 2 thì = 50% câu ngữ pháp đề thi 📊',
+    tags:['#tenses','#perfect']
+  },
+
+  // Passive
+  {
+    type:'concept',
+    bg:'linear-gradient(135deg,#11998e 0%,#38ef7d 100%)',
+    icon:'🔄',
+    kicker:'Grammar #2',
+    title:'Passive <span class="em">Voice</span>',
+    body:`<div class="formula">S + be + V3/ed + (by O)</div>
+    <ul>
+      <li>🔧 <b>Modal passive</b>: <code>modal + be + V3</code> — <i>must be reduced</i></li>
+      <li>📢 <b>Double passive</b>: <code>It is said that S+V</code> = <code>S is said to V</code></li>
+      <li>💇 <b>Sai khiến</b>: <code>have/get sth done</code> — nhờ ai làm</li>
+    </ul>`,
+    author:'@anhtok.official',
+    captionText:'have/get sth done là MUST. Năm nào cũng ra.',
+    tags:['#passive','#causative']
+  },
+
+  // QUIZ 1
+  {
+    type:'quiz',
+    bg:'linear-gradient(135deg,#f72585 0%,#7209b7 100%)',
+    question:'Choose the correct one:<br><i>"I had my car <span class="blank">_____</span> yesterday."</i>',
+    options:[
+      {t:'repaired', correct:true},
+      {t:'to repair', correct:false},
+      {t:'repairing', correct:false},
+      {t:'repair', correct:false}
+    ],
+    explain:'have + sth + V3/ed (bị động). "Tôi nhờ sửa xe" → had my car repaired ✅',
+    author:'@quizMaster',
+    captionText:'Cấu trúc sai khiến — không bao giờ thiếu trong đề 💯',
+    tags:['#quiz','#causative']
+  },
+
+  // Conditionals
+  {
+    type:'concept',
+    bg:'linear-gradient(135deg,#4facfe 0%,#00f2fe 100%)',
+    icon:'🌧️',
+    kicker:'Grammar #3',
+    title:'Conditionals',
+    body:`<div class="data-table">
+      <div class="data-row"><b>Type 1</b><span class="meaning">If V(s) → will V (có thật)</span></div>
+      <div class="data-row"><b>Type 2</b><span class="meaning">If V2 (were) → would V (ngược hiện tại)</span></div>
+      <div class="data-row"><b>Type 3</b><span class="meaning">If had V3 → would have V3 (ngược quá khứ)</span></div>
+      <div class="data-row"><b>Mixed</b><span class="meaning">If had V3 → would V (quá khứ → hiện tại)</span></div>
+    </div>`,
+    author:'@anhtok.official',
+    captionText:'4 loại. Tap save. Học thuộc lòng.',
+    tags:['#conditionals','#mustSave']
+  },
+
+  // Conditional Inversion
+  {
+    type:'concept',
+    bg:'linear-gradient(135deg,#8e2de2 0%,#4a00e0 100%)',
+    icon:'🔀',
+    kicker:'Grammar #3.5 — Câu điểm cao',
+    title:'Đảo ngữ <span class="em">điều kiện</span>',
+    body:`<ul>
+      <li>1️⃣ <code>Should + S + V</code>, ... <i>(Type 1)</i></li>
+      <li>2️⃣ <code>Were + S + (to V)</code>, ... <i>(Type 2)</i></li>
+      <li>3️⃣ <code>Had + S + V3</code>, ... <i>(Type 3)</i></li>
+    </ul>
+    <div class="example">Had I known earlier, I would have helped.</div>`,
+    author:'@anhtok.official',
+    captionText:'Bỏ "If" → đảo trợ động từ lên đầu. Câu 9-10 điểm.',
+    tags:['#inversion','#advanced']
+  },
+
+  // Wish
+  {
+    type:'concept',
+    bg:'linear-gradient(135deg,#fa709a 0%,#fee140 100%)',
+    icon:'⭐',
+    kicker:'Grammar #4',
+    title:'Wish / <span class="em">If only</span>',
+    body:`<ul>
+      <li>🌤️ <b>Hiện tại</b>: <code>wish + S + V2 (were)</code></li>
+      <li>🔮 <b>Tương lai</b>: <code>wish + S + would V</code></li>
+      <li>⏪ <b>Quá khứ</b>: <code>wish + S + had V3</code></li>
+    </ul>
+    <div class="example">I wish I were taller. (hiện tại)<br>I wish I had studied harder. (quá khứ)</div>`,
+    author:'@anhtok.official',
+    captionText:'Câu điều ước = lùi 1 bước thì.',
+    tags:['#wish','#ifOnly']
+  },
+
+  // Relative Clauses
+  {
+    type:'concept',
+    bg:'linear-gradient(135deg,#ff6a88 0%,#ff99ac 100%)',
+    icon:'🔗',
+    kicker:'Grammar #5',
+    title:'Relative Clauses',
+    body:`<div class="data-table">
+      <div class="data-row"><b>who/whom</b><span class="meaning">người (CN/TN)</span></div>
+      <div class="data-row"><b>which</b><span class="meaning">vật (CN/TN)</span></div>
+      <div class="data-row"><b>that</b><span class="meaning">cả 2 — KHÔNG dùng sau dấu phẩy</span></div>
+      <div class="data-row"><b>whose</b><span class="meaning">sở hữu (his/her/its)</span></div>
+      <div class="data-row"><b>where</b><span class="meaning">nơi chốn</span></div>
+      <div class="data-row"><b>when</b><span class="meaning">thời gian</span></div>
+    </div>`,
+    author:'@anhtok.official',
+    captionText:'KHÔNG dùng "that" sau dấu phẩy. Lỗi kinh điển 🚫',
+    tags:['#relative','#clauses']
+  },
+
+  // Reduced Relative
+  {
+    type:'concept',
+    bg:'linear-gradient(135deg,#ee9ca7 0%,#ffdde1 100%)',
+    icon:'✂️',
+    kicker:'Grammar #5.5',
+    title:'Rút gọn <span class="em">MĐ quan hệ</span>',
+    body:`<ul>
+      <li>✅ <b>Chủ động</b> → <code>V-ing</code><br><span style="font-size:13px; opacity:.85">The man <i>sitting</i> next to me...</span></li>
+      <li>✅ <b>Bị động</b> → <code>V3/ed</code><br><span style="font-size:13px; opacity:.85">The book <i>written</i> by him...</span></li>
+      <li>✅ Sau <b>the first/only/last/so sánh nhất</b> → <code>to V</code></li>
+    </ul>`,
+    author:'@anhtok.official',
+    captionText:'Rút gọn = ăn chắc điểm câu phối hợp.',
+    tags:['#reduced','#rutGon']
+  },
+
+  // Reported Speech
+  {
+    type:'concept',
+    bg:'linear-gradient(135deg,#56ccf2 0%,#2f80ed 100%)',
+    icon:'🗣️',
+    kicker:'Grammar #6',
+    title:'Reported Speech',
+    body:`<p><b>🪜 Lùi 1 bước về quá khứ:</b></p>
+    <div class="data-table">
+      <div class="data-row"><b>V (hiện tại)</b><span class="meaning">→ V2/ed</span></div>
+      <div class="data-row"><b>am/is/are V-ing</b><span class="meaning">→ was/were V-ing</span></div>
+      <div class="data-row"><b>have V3</b><span class="meaning">→ had V3</span></div>
+      <div class="data-row"><b>will / can / must</b><span class="meaning">→ would / could / had to</span></div>
+      <div class="data-row"><b>this / now / today</b><span class="meaning">→ that / then / that day</span></div>
+    </div>`,
+    author:'@anhtok.official',
+    captionText:'Câu hỏi Yes/No → thêm if/whether, KHÔNG đảo ngữ.',
+    tags:['#reported','#luiThi']
+  },
+
+  // QUIZ 2
+  {
+    type:'quiz',
+    bg:'linear-gradient(135deg,#ff9966 0%,#ff5e62 100%)',
+    question:'<i>"If I <span class="blank">_____</span> the news yesterday, I would call you now."</i>',
+    options:[
+      {t:'knew', correct:false},
+      {t:'had known', correct:true},
+      {t:'know', correct:false},
+      {t:'would know', correct:false}
+    ],
+    explain:'Mixed conditional: quá khứ (yesterday) → ảnh hưởng hiện tại (now). If + had V3 → would V ✅',
+    author:'@quizMaster',
+    captionText:'Mixed conditional — easy to spot if đọc kỹ thời gian!',
+    tags:['#quiz','#mixed']
+  },
+
+  // Comparisons
+  {
+    type:'concept',
+    bg:'linear-gradient(135deg,#43cea2 0%,#185a9d 100%)',
+    icon:'⚖️',
+    kicker:'Grammar #7',
+    title:'Comparisons',
+    body:`<ul>
+      <li>⚡ <b>So sánh hơn</b>: short-adj+<code>er</code> / <code>more</code> + long-adj + <code>than</code></li>
+      <li>🏆 <b>So sánh nhất</b>: <code>the</code> + short-adj+<code>est</code> / <code>most</code> + long-adj</li>
+      <li>🔁 <b>So sánh kép</b>: <code>The more S+V, the more S+V</code></li>
+      <li>✖️ <b>Bội số</b>: <code>X times as adj as</code></li>
+    </ul>
+    <div class="example">The harder you study, the higher you score. 📈</div>`,
+    author:'@anhtok.official',
+    captionText:'"The more..., the more..." — kinh điển chưa bao giờ sai 🔥',
+    tags:['#comparison','#kep']
+  },
+
+  // Gerund vs Infinitive
+  {
+    type:'concept',
+    bg:'linear-gradient(135deg,#f12711 0%,#f5af19 100%)',
+    icon:'🎬',
+    kicker:'Grammar #8',
+    title:'V-ing vs <span class="em">to V</span>',
+    body:`<p><b>V + V-ing:</b> enjoy, avoid, finish, mind, suggest, deny, keep, practice, look forward to</p>
+    <p><b>V + to V:</b> agree, decide, want, hope, plan, refuse, promise, manage</p>
+    <p><b>⚠️ Khác nghĩa:</b></p>
+    <ul style="font-size:13.5px;">
+      <li><b>stop V-ing</b>: dừng hẳn / <b>stop to V</b>: dừng để làm khác</li>
+      <li><b>remember V-ing</b>: nhớ đã làm / <b>remember to V</b>: nhớ phải làm</li>
+      <li><b>try V-ing</b>: thử xem / <b>try to V</b>: cố gắng</li>
+    </ul>`,
+    author:'@anhtok.official',
+    captionText:'Stop / remember / try — 3 đứa hay bị bắt nạt nhất 😅',
+    tags:['#gerund','#infinitive']
+  },
+
+  // Subjunctive
+  {
+    type:'concept',
+    bg:'linear-gradient(135deg,#cb2d3e 0%,#ef473a 100%)',
+    icon:'👑',
+    kicker:'Grammar #9 — GS12',
+    title:'Subjunctive',
+    body:`<p><b>Dấu hiệu:</b> suggest, insist, demand, require, recommend, propose / It is essential/important/vital that...</p>
+    <div class="formula">S + Verb/Adj + that + S + (should) + V-inf</div>
+    <p><b>⚠️ Quan trọng:</b> dù chủ ngữ là <code>he/she/it</code>, V vẫn <b>NGUYÊN MẪU</b>, KHÔNG thêm s/es!</p>
+    <div class="example">It is essential that he <b>be</b> punctual. <span style="opacity:.5">(không "is")</span></div>`,
+    author:'@anhtok.official',
+    captionText:'Subjunctive = bẫy thường gặp. Đáp án có "be / V-inf" là đúng.',
+    tags:['#subjunctive','#GS12']
+  },
+
+  // ============ SECTION 2: VOCAB ============
+  {
+    type:'section',
+    bg:'linear-gradient(135deg,#134e5e 0%,#71b280 100%)',
+    bigNum:'02',
+    kicker:'Phần Hai',
+    title:'<span class="em">Vocabulary</span>',
+    body:'Từ vựng theo chủ điểm + idiom + phrasal verb + synonym. Lướt nhanh, nhớ lâu.',
+    author:'@anhtok.official',
+    captionText:'Vocab is king in Form 2025 👑',
+    tags:['#vocab','#part2']
+  },
+
+  // Environment
+  {
+    type:'concept',
+    bg:'linear-gradient(135deg,#56ab2f 0%,#a8e063 100%)',
+    icon:'🌱',
+    kicker:'Topic',
+    title:'Environment & <span class="em">Green Living</span>',
+    body:`<div class="data-table" style="font-size:13.5px;">
+      <div class="data-row"><b>carbon footprint</b><span class="meaning">dấu chân carbon</span></div>
+      <div class="data-row"><b>eco-friendly</b><span class="meaning">thân thiện môi trường</span></div>
+      <div class="data-row"><b>biodiversity</b><span class="meaning">đa dạng sinh học</span></div>
+      <div class="data-row"><b>sustainability</b><span class="meaning">sự bền vững</span></div>
+      <div class="data-row"><b>single-use plastic</b><span class="meaning">nhựa dùng 1 lần</span></div>
+      <div class="data-row"><b>reduce emissions</b><span class="meaning">giảm khí thải</span></div>
+      <div class="data-row"><b>conserve resources</b><span class="meaning">bảo tồn tài nguyên</span></div>
+    </div>`,
+    author:'@anhtok.official',
+    captionText:'Topic này là KING của đề đọc hiểu 🌍',
+    tags:['#environment','#topic']
+  },
+
+  // Tech
+  {
+    type:'concept',
+    bg:'linear-gradient(135deg,#0f2027 0%,#203a43 50%,#2c5364 100%)',
+    icon:'💻',
+    kicker:'Topic',
+    title:'Tech & <span class="em">Digital World</span>',
+    body:`<div class="data-table" style="font-size:13.5px;">
+      <div class="data-row"><b>artificial intelligence</b><span class="meaning">trí tuệ nhân tạo (AI)</span></div>
+      <div class="data-row"><b>digital literacy</b><span class="meaning">năng lực số</span></div>
+      <div class="data-row"><b>cyberbullying</b><span class="meaning">bắt nạt mạng</span></div>
+      <div class="data-row"><b>cutting-edge</b><span class="meaning">tiên tiến</span></div>
+      <div class="data-row"><b>data privacy</b><span class="meaning">quyền riêng tư dữ liệu</span></div>
+      <div class="data-row"><b>digital divide</b><span class="meaning">khoảng cách số</span></div>
+      <div class="data-row"><b>automated</b><span class="meaning">tự động hoá</span></div>
+    </div>`,
+    author:'@anhtok.official',
+    captionText:'AI và digital — chủ đề HOT của 2025 🔥',
+    tags:['#tech','#AI']
+  },
+
+  // Society
+  {
+    type:'concept',
+    bg:'linear-gradient(135deg,#dd1818 0%,#333333 100%)',
+    icon:'🎓',
+    kicker:'Topic',
+    title:'Society & <span class="em">Education</span>',
+    body:`<div class="data-table" style="font-size:13.5px;">
+      <div class="data-row"><b>generation gap</b><span class="meaning">khoảng cách thế hệ</span></div>
+      <div class="data-row"><b>gender equality</b><span class="meaning">bình đẳng giới</span></div>
+      <div class="data-row"><b>lifelong learning</b><span class="meaning">học suốt đời</span></div>
+      <div class="data-row"><b>soft skills</b><span class="meaning">kỹ năng mềm</span></div>
+      <div class="data-row"><b>cultural identity</b><span class="meaning">bản sắc văn hóa</span></div>
+      <div class="data-row"><b>raise awareness</b><span class="meaning">nâng cao nhận thức</span></div>
+      <div class="data-row"><b>life expectancy</b><span class="meaning">tuổi thọ</span></div>
+    </div>`,
+    author:'@anhtok.official',
+    captionText:'Topic hay vào câu nghị luận/đọc hiểu dài.',
+    tags:['#society','#education']
+  },
+
+  // Urbanization + Career
+  {
+    type:'concept',
+    bg:'linear-gradient(135deg,#bdc3c7 0%,#2c3e50 100%)',
+    icon:'🏙️',
+    kicker:'Topic',
+    title:'Urbanisation & <span class="em">Career</span>',
+    body:`<div class="data-table" style="font-size:13.5px;">
+      <div class="data-row"><b>urbanisation</b><span class="meaning">đô thị hoá</span></div>
+      <div class="data-row"><b>overcrowding</b><span class="meaning">quá tải dân số</span></div>
+      <div class="data-row"><b>cost of living</b><span class="meaning">chi phí sinh hoạt</span></div>
+      <div class="data-row"><b>job prospects</b><span class="meaning">triển vọng việc làm</span></div>
+      <div class="data-row"><b>gain experience</b><span class="meaning">tích lũy kinh nghiệm</span></div>
+      <div class="data-row"><b>take responsibility</b><span class="meaning">chịu trách nhiệm</span></div>
+      <div class="data-row"><b>give sb a hand</b><span class="meaning">giúp ai đó</span></div>
+    </div>`,
+    author:'@anhtok.official',
+    captionText:'Career choices — topic GS12 chắc chắn có.',
+    tags:['#career','#urban']
+  },
+
+  // Idioms top
+  {
+    type:'concept',
+    bg:'linear-gradient(135deg,#ff6e7f 0%,#bfe9ff 100%)',
+    icon:'🎭',
+    kicker:'Idioms',
+    title:'Top 8 <span class="em">Idioms</span>',
+    body:`<div class="data-table" style="font-size:13.5px;">
+      <div class="data-row"><b>a piece of cake</b><span class="meaning">dễ như ăn kẹo</span></div>
+      <div class="data-row"><b>once in a blue moon</b><span class="meaning">hiếm khi</span></div>
+      <div class="data-row"><b>under the weather</b><span class="meaning">ốm nhẹ</span></div>
+      <div class="data-row"><b>burn the midnight oil</b><span class="meaning">thức khuya học</span></div>
+      <div class="data-row"><b>cost an arm and a leg</b><span class="meaning">cực kỳ đắt</span></div>
+      <div class="data-row"><b>get cold feet</b><span class="meaning">lo lắng, chùn bước</span></div>
+      <div class="data-row"><b>make ends meet</b><span class="meaning">xoay sở đủ sống</span></div>
+      <div class="data-row"><b>hit the books</b><span class="meaning">bắt đầu học</span></div>
+    </div>`,
+    author:'@anhtok.official',
+    captionText:'Idiom = không bao giờ hiểu theo nghĩa đen 🙅',
+    tags:['#idioms','#mustSave']
+  },
+
+  // Phrasal verbs
+  {
+    type:'concept',
+    bg:'linear-gradient(135deg,#ff512f 0%,#dd2476 100%)',
+    icon:'🎯',
+    kicker:'Phrasal Verbs',
+    title:'Top 10 <span class="em">PVs</span>',
+    body:`<div class="data-table" style="font-size:13.5px;">
+      <div class="data-row"><b>bring about</b><span class="meaning">gây ra (= cause)</span></div>
+      <div class="data-row"><b>carry out</b><span class="meaning">tiến hành, thực hiện</span></div>
+      <div class="data-row"><b>come up with</b><span class="meaning">nảy ra (ý tưởng)</span></div>
+      <div class="data-row"><b>cut down on</b><span class="meaning">cắt giảm</span></div>
+      <div class="data-row"><b>get over</b><span class="meaning">vượt qua (= recover)</span></div>
+      <div class="data-row"><b>look up to</b><span class="meaning">ngưỡng mộ</span></div>
+      <div class="data-row"><b>look down on</b><span class="meaning">coi thường</span></div>
+      <div class="data-row"><b>put up with</b><span class="meaning">chịu đựng</span></div>
+      <div class="data-row"><b>run out of</b><span class="meaning">hết sạch</span></div>
+      <div class="data-row"><b>take over</b><span class="meaning">tiếp quản</span></div>
+    </div>`,
+    author:'@anhtok.official',
+    captionText:'PV = học theo cặp đối lập sẽ nhớ lâu (up to / down on).',
+    tags:['#phrasalVerbs']
+  },
+
+  // QUIZ 3 - Idiom
+  {
+    type:'quiz',
+    bg:'linear-gradient(135deg,#c33764 0%,#1d2671 100%)',
+    question:'<i>"This brand-new iPhone costs an <span class="blank">_____</span> and a leg!"</i>',
+    options:[
+      {t:'eye', correct:false},
+      {t:'arm', correct:true},
+      {t:'hour', correct:false},
+      {t:'ear', correct:false}
+    ],
+    explain:'"Cost an arm and a leg" = cực kỳ đắt đỏ 💸',
+    author:'@quizMaster',
+    captionText:'Idioms = học thuộc, không đoán mò 📚',
+    tags:['#quiz','#idiom']
+  },
+
+  // Syn/Ant
+  {
+    type:'concept',
+    bg:'linear-gradient(135deg,#7f7fd5 0%,#86a8e7 50%,#91eae4 100%)',
+    icon:'🔁',
+    kicker:'Skills',
+    title:'Synonym / <span class="em">Antonym</span>',
+    body:`<p><b>📋 3 bước:</b></p>
+    <ul style="font-size:13.5px;">
+      <li>1️⃣ Đoán <b>"vibe"</b> tích cực (+) hay tiêu cực (–)</li>
+      <li>2️⃣ Loại trừ: thường 2 đáp án gần nghĩa</li>
+      <li>3️⃣ Thay thử vào câu, đọc xuôi tai là chốt</li>
+    </ul>
+    <p><b>💡 Bonus:</b> đáp án có tiền tố phủ định (<code>un-, in-, im-, ir-, dis-</code>) thường là <b>OPPOSITE</b>.</p>`,
+    author:'@anhtok.official',
+    captionText:'Đọc kỹ "CLOSEST" hay "OPPOSITE" trước khi chọn!',
+    tags:['#synonym','#antonym']
+  },
+
+  // Syn/Ant pairs
+  {
+    type:'concept',
+    bg:'linear-gradient(135deg,#5a3f37 0%,#2c7744 100%)',
+    icon:'💎',
+    kicker:'8 cặp vàng',
+    title:'Hot <span class="em">Syn/Ant</span> pairs',
+    body:`<div style="display:flex; flex-direction:column; gap:6px;">
+      <div class="syn-pair"><span class="word">prosperous</span><span class="arrow">=</span><span class="syn">wealthy</span></div>
+      <div class="syn-pair"><span class="word">compulsory</span><span class="arrow">=</span><span class="syn">mandatory</span></div>
+      <div class="syn-pair"><span class="word">preserve</span><span class="arrow">=</span><span class="syn">conserve</span></div>
+      <div class="syn-pair"><span class="word">abundance</span><span class="arrow">≠</span><span class="ant">scarcity</span></div>
+      <div class="syn-pair"><span class="word">artificial</span><span class="arrow">≠</span><span class="ant">natural</span></div>
+      <div class="syn-pair"><span class="word">reluctant</span><span class="arrow">≠</span><span class="ant">willing</span></div>
+      <div class="syn-pair"><span class="word">permanent</span><span class="arrow">≠</span><span class="ant">temporary</span></div>
+      <div class="syn-pair"><span class="word">fragile</span><span class="arrow">≠</span><span class="ant">durable</span></div>
+    </div>`,
+    author:'@anhtok.official',
+    captionText:'8 cặp này KHÔNG được phép quên 💯',
+    tags:['#vocab','#mustSave']
+  },
+
+  // ============ SECTION 3: SKILLS ============
+  {
+    type:'section',
+    bg:'linear-gradient(135deg,#3a1c71 0%,#d76d77 50%,#ffaf7b 100%)',
+    bigNum:'03',
+    kicker:'Phần Ba',
+    title:'<span class="em">Skills</span>',
+    body:'Phát âm, trọng âm, từ nối, đọc hiểu, mẹo Form 2025.',
+    author:'@anhtok.official',
+    captionText:'Phần này nhặt điểm dễ nhất 🎁',
+    tags:['#skills','#part3']
+  },
+
+  // -ed pronunciation
+  {
+    type:'concept',
+    bg:'linear-gradient(135deg,#16222a 0%,#3a6073 100%)',
+    icon:'🔊',
+    kicker:'Pronunciation',
+    title:'Đuôi <span class="em">-ed</span>',
+    body:`<div class="ipa-row">
+      <div class="ipa-sound">/t/</div>
+      <div class="ipa-rule">Sau vô thanh <b>/p, k, s, ʃ, tʃ, f, θ/</b><br><span style="opacity:.7">stopped, watched, laughed</span></div>
+    </div>
+    <div class="ipa-row">
+      <div class="ipa-sound">/ɪd/</div>
+      <div class="ipa-rule">Sau <b>/t/ hoặc /d/</b><br><span style="opacity:.7">wanted, needed, decided</span></div>
+    </div>
+    <div class="ipa-row">
+      <div class="ipa-sound">/d/</div>
+      <div class="ipa-rule">Các trường hợp <b>còn lại</b><br><span style="opacity:.7">played, opened, called</span></div>
+    </div>`,
+    author:'@anhtok.official',
+    captionText:'Mẹo: đuôi /t/+/d/ → /ɪd/. Còn lại "vô + t, hữu + d" 🎵',
+    tags:['#pronunciation','#ed']
+  },
+
+  // -s/es pronunciation
+  {
+    type:'concept',
+    bg:'linear-gradient(135deg,#603813 0%,#b29f94 100%)',
+    icon:'🔊',
+    kicker:'Pronunciation',
+    title:'Đuôi <span class="em">-s/-es</span>',
+    body:`<div class="ipa-row">
+      <div class="ipa-sound">/s/</div>
+      <div class="ipa-rule">Sau vô thanh <b>/p, t, k, f, θ/</b><br><span style="opacity:.7">stops, looks, laughs</span></div>
+    </div>
+    <div class="ipa-row">
+      <div class="ipa-sound">/ɪz/</div>
+      <div class="ipa-rule">Sau <b>/s, z, ʃ, ʒ, tʃ, dʒ/</b><br><span style="opacity:.7">watches, places, changes</span></div>
+    </div>
+    <div class="ipa-row">
+      <div class="ipa-sound">/z/</div>
+      <div class="ipa-rule">Các trường hợp <b>còn lại</b><br><span style="opacity:.7">plays, reads, goes</span></div>
+    </div>`,
+    author:'@anhtok.official',
+    captionText:'Cùng quy tắc với -ed nha — vô thanh / hữu thanh',
+    tags:['#pronunciation','#s_es']
+  },
+
+  // Stress rules
+  {
+    type:'concept',
+    bg:'linear-gradient(135deg,#e96443 0%,#904e95 100%)',
+    icon:'📈',
+    kicker:'Stress',
+    title:'Trọng âm — <span class="em">3 mẹo vàng</span>',
+    body:`<ul>
+      <li>🎯 <b>2 âm tiết</b>: Danh/Tính → âm 1 / Động → âm 2</li>
+      <li>📐 <b>3+ âm tiết</b>: thường âm thứ 3 từ phải sang</li>
+    </ul>
+    <p><b>🔧 Hậu tố LÀM rơi trọng âm vào âm ngay trước:</b></p>
+    <div style="font-family:var(--mono); font-size:13px; background:rgba(0,0,0,.35); padding:8px 12px; border-radius:8px; text-align:center; color:#ffec99;">-tion, -sion, -ic, -ity, -ive, -ial, -ian, -ious</div>
+    <p style="margin-top:8px;"><b>🚫 Hậu tố KHÔNG đổi trọng âm:</b></p>
+    <div style="font-family:var(--mono); font-size:13px; background:rgba(0,0,0,.35); padding:8px 12px; border-radius:8px; text-align:center; color:#ffec99;">-ment, -ness, -less, -ful, -able, -al, -ous, -ly</div>`,
+    author:'@anhtok.official',
+    captionText:'Học hậu tố là biết trọng âm rơi đâu. Không cần học từng từ 🎯',
+    tags:['#stress','#mustSave']
+  },
+
+  // Linking words
+  {
+    type:'concept',
+    bg:'linear-gradient(135deg,#003973 0%,#e5e5be 100%)',
+    icon:'🔗',
+    kicker:'Skill #4',
+    title:'Linking Words',
+    body:`<div class="data-table" style="font-size:12.5px;">
+      <div class="data-row"><b>Nguyên nhân</b><span class="meaning">due to, because of, since</span></div>
+      <div class="data-row"><b>Kết quả</b><span class="meaning">therefore, thus, consequently</span></div>
+      <div class="data-row"><b>Đối lập</b><span class="meaning">however, despite, on the other hand</span></div>
+      <div class="data-row"><b>Bổ sung</b><span class="meaning">moreover, furthermore, besides</span></div>
+      <div class="data-row"><b>Ví dụ</b><span class="meaning">for instance, such as, namely</span></div>
+      <div class="data-row"><b>Tổng kết</b><span class="meaning">in conclusion, overall, in short</span></div>
+    </div>`,
+    author:'@anhtok.official',
+    captionText:'Từ nối = chìa khoá phần sắp xếp câu 🔑',
+    tags:['#linkingWords']
+  },
+
+  // Reading skills
+  {
+    type:'concept',
+    bg:'linear-gradient(135deg,#1f4037 0%,#99f2c8 100%)',
+    icon:'📖',
+    kicker:'Skill #5',
+    title:'Reading <span class="em">Skills</span>',
+    body:`<ul>
+      <li>🎯 <b>Main idea</b>: đọc câu <b>đầu + cuối</b> mỗi đoạn</li>
+      <li>🔍 <b>Scanning</b>: tìm từ khoá câu hỏi → quét bài</li>
+      <li>🌊 <b>Skimming</b>: lướt nhanh nắm chủ đề</li>
+      <li>🔁 <b>Reference</b>: tìm danh từ <b>gần nhất</b> hợp nghĩa và số</li>
+      <li>💭 <b>Inference</b>: bài KHÔNG nói trực tiếp nhưng có cơ sở</li>
+    </ul>`,
+    author:'@anhtok.official',
+    captionText:'5 kỹ năng. Mỗi loại câu hỏi cần 1 kỹ năng riêng.',
+    tags:['#reading','#skills']
+  },
+
+  // QUIZ 4 - Linking word
+  {
+    type:'quiz',
+    bg:'linear-gradient(135deg,#360033 0%,#0b8793 100%)',
+    question:'<i>"He studied hard. <span class="blank">_____</span>, he passed the exam easily."</i>',
+    options:[
+      {t:'However', correct:false},
+      {t:'Therefore', correct:true},
+      {t:'Despite', correct:false},
+      {t:'For instance', correct:false}
+    ],
+    explain:'Học chăm → đậu dễ = nhân quả → Therefore ✅. "However" là đối lập, không phù hợp.',
+    author:'@quizMaster',
+    captionText:'Linking word = đọc cả 2 câu để hiểu quan hệ logic.',
+    tags:['#quiz','#linking']
+  },
+
+  // Word form suffixes
+  {
+    type:'concept',
+    bg:'linear-gradient(135deg,#5614b0 0%,#dbd65c 100%)',
+    icon:'✍️',
+    kicker:'Skill #6',
+    title:'Word Form — <span class="em">hậu tố</span>',
+    body:`<div class="data-table" style="font-size:12.5px;">
+      <div class="data-row"><b>N (Danh)</b><span class="meaning">-tion, -sion, -ment, -ness, -ity, -ance, -ship</span></div>
+      <div class="data-row"><b>Adj (Tính)</b><span class="meaning">-ive, -ous, -able, -al, -ic, -ful, -less, -y</span></div>
+      <div class="data-row"><b>V (Động)</b><span class="meaning">-ize, -ify, -en, -ate</span></div>
+      <div class="data-row"><b>Adv (Trạng)</b><span class="meaning">-ly, -ward, -wise</span></div>
+    </div>
+    <p style="margin-top:10px; font-size:13.5px;"><b>📌 Vị trí gợi ý:</b></p>
+    <ul style="font-size:13px;">
+      <li>Sau <code>a/an/the/my</code> → <b>Danh từ</b></li>
+      <li>Sau <code>be</code> hoặc trước Danh từ → <b>Tính từ</b></li>
+      <li>Sau Động từ / trước Tính từ → <b>Trạng từ</b></li>
+    </ul>`,
+    author:'@anhtok.official',
+    captionText:'Word form = nhìn vị trí, không cần dịch.',
+    tags:['#wordForm','#suffix']
+  },
+
+  // ============ ENDING ============
+
+  // Form 2025 tips
+  {
+    type:'concept',
+    bg:'linear-gradient(135deg,#ff0844 0%,#ffb199 100%)',
+    icon:'🎯',
+    kicker:'Form 2025',
+    title:'Mẹo <span class="em">Form 2025</span>',
+    body:`<ul>
+      <li>📚 Lấy nội dung <b>cả 10-11-12</b>, nặng đọc hiểu</li>
+      <li>🔗 <b>Sắp xếp câu</b>: tìm câu chủ đề trước, rồi từ nối</li>
+      <li>📝 <b>Cloze test</b>: trước chỗ trống là <code>a/the/my</code> → Danh từ</li>
+      <li>🚫 <b>NOT mentioned</b>: loại trừ 3 đáp án có trong bài</li>
+      <li>🔄 <b>Paraphrase</b>: tìm câu giữ nguyên ý, đổi từ đồng nghĩa</li>
+    </ul>`,
+    author:'@anhtok.official',
+    captionText:'Form 2025 = ít mẹo vụn, nặng vận dụng. Học kỹ vocab!',
+    tags:['#form2025','#mustWatch']
+  },
+
+  // True/False trick
+  {
+    type:'concept',
+    bg:'linear-gradient(135deg,#2c3e50 0%,#4ca1af 100%)',
+    icon:'⚠️',
+    kicker:'Trick',
+    title:'True/False <span class="em">cheat code</span>',
+    body:`<ul>
+      <li>🚫 Từ <b>tuyệt đối</b> (always, only, never, all, no one) → thường <b>SAI</b></li>
+      <li>✅ Từ <b>mềm</b> (may, might, sometimes, often) → thường <b>ĐÚNG</b></li>
+    </ul>
+    <p style="margin-top:8px; opacity:.9; font-style:italic;">Vì bài đọc hiếm khi cực đoan — luôn có ngoại lệ.</p>
+    <div class="example">❌ "AI <b>always</b> replaces human workers" → False<br>✅ "AI <b>may</b> help reduce workload" → True</div>`,
+    author:'@anhtok.official',
+    captionText:'Tip nhỏ này cứu vài câu khó đoán 🎁',
+    tags:['#trueFalse','#trick']
+  },
+
+  // 5 lỗi mất điểm
+  {
+    type:'concept',
+    bg:'linear-gradient(135deg,#aa076b 0%,#61045f 100%)',
+    icon:'❌',
+    kicker:'Lưu ý',
+    title:'5 lỗi <span class="em">mất điểm oan</span>',
+    body:`<ul>
+      <li>❌ Nhầm <b>since</b> (mốc) với <b>for</b> (khoảng)</li>
+      <li>❌ Dùng <b>that</b> sau dấu phẩy</li>
+      <li>❌ Câu hỏi tường thuật mà <b>đảo trợ động từ</b></li>
+      <li>❌ Subjunctive mà thêm <b>s/es</b> vào V</li>
+      <li>❌ Đọc câu "OPPOSITE" mà chọn <b>đồng nghĩa</b></li>
+    </ul>`,
+    author:'@anhtok.official',
+    captionText:'Đọc kỹ — tiền của Hà đó 💸',
+    tags:['#loiSai','#mustWatch']
+  },
+
+  // Checklist
+  {
+    type:'concept',
+    bg:'linear-gradient(135deg,#11998e 0%,#38ef7d 100%)',
+    icon:'✅',
+    kicker:'Trước khi nộp',
+    title:'Checklist',
+    body:`<ul>
+      <li>☑️ Đọc kỹ đề: <b>CLOSEST</b> hay <b>OPPOSITE</b>?</li>
+      <li>☑️ Tense — đúng <b>dấu hiệu thời gian</b>?</li>
+      <li>☑️ Conditional — chia đúng <b>vế if</b>?</li>
+      <li>☑️ Relative — đúng <b>who/which</b>, không dùng that sau phẩy?</li>
+      <li>☑️ Reading — đáp án có <b>paraphrase</b> đúng ý không?</li>
+      <li>☑️ Tô đáp án rõ ràng, không bỏ sót câu nào?</li>
+    </ul>`,
+    author:'@anhtok.official',
+    captionText:'Tick hết = 8+ trong tay 🎯',
+    tags:['#checklist']
+  },
+
+  // Finale
+  {
+    type:'finale',
+    bg:'linear-gradient(135deg,#ff006e 0%,#ffbe0b 50%,#3a86ff 100%)',
+    icon:'🏆',
+    kicker:'You did it!',
+    title:'Hà <span class="em">đỉnh thật</span>',
+    body:`<p style="text-align:center; font-size:17px; line-height:1.5;">
+    Vừa lướt xong cả chương trình Tiếng Anh thi TN 🎉<br><br>
+    Mỗi tối trước khi ngủ lướt 1 vòng, ngày thi tự tin như đi shopping 🛍️
+    </p>
+    <p style="text-align:center; margin-top:16px; font-family:var(--italic); font-style:italic; font-size:18px;">
+    "Learning English is not a sprint, it's a scroll." 📱💖
+    </p>`,
+    author:'@anhtok.official',
+    captionText:'Vuốt lên để bắt đầu lại 🔁 Hoặc nhắn Hà combo VănTok + AnhTok 💌',
+    tags:['#done','#choHa','#anhTok','#tiếngAnh','#yeuHa']
+  }
+];
+
+/* ============= RENDER ============= */
+const feed = document.getElementById('feed');
+const progressBar = document.getElementById('progress');
+
+const randCount = (min, max) => {
+  const n = Math.floor(Math.random()*(max-min)+min);
+  if (n > 1000) return (n/1000).toFixed(1)+'K';
+  return n.toString();
+};
+
+function makeBlobs(blobs=[]) {
+  if (!blobs.length) {
+    return `<div class="blob" style="background:rgba(255,255,255,.3); width:200px; height:200px; left:-50px; top:-50px"></div>
+            <div class="blob" style="background:rgba(0,0,0,.2); width:300px; height:300px; right:-100px; bottom:-100px"></div>`;
+  }
+  return blobs.map(b => `<div class="blob" style="background:${b.c}; width:${b.s}; height:${b.s}; left:${b.x}; top:${b.y}"></div>`).join('');
+}
+
+function renderCard(c, idx) {
+  const likes = randCount(800, 25000);
+  const saves = randCount(200, 8000);
+  const shares = randCount(50, 2000);
+
+  if (c.type === 'intro' || c.type === 'concept' || c.type === 'finale') {
+    return `
+      <div class="card" data-idx="${idx}">
+        <div class="card-bg" style="background:${c.bg}"></div>
+        ${makeBlobs(c.blobs)}
+        <div class="grain"></div>
+        ${c.type === 'finale' ? makeConfetti() : ''}
+        <div class="card-content">
+          <div class="hero-icon">${c.icon}</div>
+          ${c.kicker ? `<div class="kicker">${c.kicker}</div>` : ''}
+          <h2 class="title">${c.title}</h2>
+          <div class="body">${typeof c.body === 'string' && c.body.startsWith('<') ? c.body : `<p>${c.body}</p>`}</div>
+        </div>
+        ${c.hint ? `<div class="swipe-hint"><div class="finger">👆</div><div class="label">VUỐT LÊN</div></div>` : `<div class="scroll-hint">⌃</div>`}
+        ${renderActions(c, idx, likes, saves, shares)}
+        ${renderCaption(c)}
+      </div>`;
+  }
+
+  if (c.type === 'section') {
+    return `
+      <div class="card section-card" data-idx="${idx}">
+        <div class="card-bg" style="background:${c.bg}"></div>
+        <div class="marquee">${c.title.replace(/<[^>]+>/g,'')} • ${c.title.replace(/<[^>]+>/g,'')} •</div>
+        <div class="grain"></div>
+        <div class="card-content">
+          <div class="big-num">${c.bigNum}</div>
+          <div class="kicker">${c.kicker}</div>
+          <h2 class="title">${c.title}</h2>
+          <div class="body" style="text-align:center;"><p>${c.body}</p></div>
+        </div>
+        <div class="scroll-hint">⌃</div>
+        ${renderActions(c, idx, likes, saves, shares)}
+        ${renderCaption(c)}
+      </div>`;
+  }
+
+  if (c.type === 'quiz') {
+    return `
+      <div class="card" data-idx="${idx}">
+        <div class="card-bg" style="background:${c.bg}"></div>
+        ${makeBlobs()}
+        <div class="grain"></div>
+        <div class="card-content" style="justify-content:flex-start; padding-top:20px;">
+          <div class="quiz-badge">⚡ QUIZ TIME</div>
+          <h3 class="quiz-q">${c.question}</h3>
+          <div class="quiz-options">
+            ${c.options.map((o,i) => `
+              <div class="quiz-opt" data-correct="${o.correct}" data-idx="${idx}">
+                <span class="opt-letter">${String.fromCharCode(65+i)}</span>
+                <span>${o.t}</span>
+              </div>`).join('')}
+          </div>
+          <div class="quiz-feedback" id="fb-${idx}">${c.explain}</div>
+        </div>
+        <div class="scroll-hint">⌃</div>
+        ${renderActions(c, idx, likes, saves, shares)}
+        ${renderCaption(c)}
+      </div>`;
+  }
+}
+
+function renderActions(c, idx, likes, saves, shares) {
+  return `
+    <div class="actions">
+      <div class="avatar">${c.author.charAt(1)?.toUpperCase()||'A'}<div class="avatar-plus">+</div></div>
+      <div class="action" data-action="like" data-idx="${idx}">
+        <div class="action-btn">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="white" stroke="white" stroke-width="2">
+            <path d="M12 21s-7-4.35-9.5-9.5C.5 7 4 4 7 4c2 0 3.5 1 5 3 1.5-2 3-3 5-3 3 0 6.5 3 4.5 7.5C19 16.65 12 21 12 21z" fill="rgba(255,255,255,0)"/>
+          </svg>
+        </div>
+        <div class="action-count">${likes}</div>
+      </div>
+      <div class="action" data-action="save" data-idx="${idx}">
+        <div class="action-btn">🔖</div>
+        <div class="action-count">${saves}</div>
+      </div>
+      <div class="action" data-action="comment" data-idx="${idx}">
+        <div class="action-btn">💬</div>
+        <div class="action-count">${randCount(20,800)}</div>
+      </div>
+      <div class="action" data-action="share" data-idx="${idx}">
+        <div class="action-btn">↗️</div>
+        <div class="action-count">${shares}</div>
+      </div>
+    </div>
+  `;
+}
+
+function renderCaption(c) {
+  return `
+    <div class="caption">
+      <div class="author">${c.author}</div>
+      <div class="text">${c.captionText}</div>
+      <div class="hashtags">${(c.tags||[]).map(t => `<span>${t}</span>`).join('')}</div>
+    </div>
+  `;
+}
+
+function makeConfetti() {
+  const colors = ['#ff006e','#ffbe0b','#8338ec','#3a86ff','#06ffa5','#fb5607'];
+  let html = '';
+  for (let i = 0; i < 30; i++) {
+    const left = Math.random()*100;
+    const delay = Math.random()*2;
+    const dur = 2 + Math.random()*2;
+    const color = colors[Math.floor(Math.random()*colors.length)];
+    const rot = Math.random()*360;
+    html += `<div class="confetti" style="left:${left}%; background:${color}; animation-duration:${dur}s; animation-delay:${delay}s; transform:rotate(${rot}deg)"></div>`;
+  }
+  return html;
+}
+
+feed.innerHTML = CARDS.map(renderCard).join('');
+progressBar.innerHTML = CARDS.map((_,i) => `<span data-i="${i}"></span>`).join('');
+const progressDots = progressBar.querySelectorAll('span');
+
+feed.addEventListener('click', (e) => {
+  const action = e.target.closest('.action');
+  if (action) {
+    const type = action.dataset.action;
+    if (type === 'like') {
+      action.classList.toggle('liked');
+      const svg = action.querySelector('svg path');
+      if (action.classList.contains('liked')) {
+        svg.setAttribute('fill','#fff');
+        const countEl = action.querySelector('.action-count');
+        const oldC = countEl.textContent;
+        countEl.textContent = typeof oldC === 'string' && oldC.includes('K')
+          ? (parseFloat(oldC) + 0.1).toFixed(1)+'K'
+          : (parseInt(oldC.replace(/[^\d]/g,''))+1).toLocaleString();
+        const burst = document.createElement('div');
+        burst.className = 'burst';
+        burst.textContent = '💖';
+        const rect = action.getBoundingClientRect();
+        burst.style.left = (rect.left - 30) + 'px';
+        burst.style.top = (rect.top - 30) + 'px';
+        document.body.appendChild(burst);
+        setTimeout(() => burst.remove(), 800);
+      } else {
+        svg.setAttribute('fill','rgba(255,255,255,0)');
+      }
+    } else if (type === 'save') {
+      action.classList.toggle('liked');
+      const btn = action.querySelector('.action-btn');
+      btn.textContent = action.classList.contains('liked') ? '✅' : '🔖';
+    } else if (type === 'share') {
+      showToast('Đã copy link gửi cho Hà 💌');
+    } else if (type === 'comment') {
+      showToast('Comments đang chill...');
+    }
+    return;
+  }
+
+  const opt = e.target.closest('.quiz-opt');
+  if (opt && !opt.classList.contains('disabled')) {
+    const correct = opt.dataset.correct === 'true';
+    const idx = opt.dataset.idx;
+    const parent = opt.parentElement;
+    parent.querySelectorAll('.quiz-opt').forEach(o => {
+      o.classList.add('disabled');
+      if (o.dataset.correct === 'true') o.classList.add('correct');
+    });
+    if (!correct) opt.classList.add('wrong');
+    const feedback = document.getElementById('fb-'+idx);
+    feedback.classList.add('show');
+    if (!correct) feedback.classList.add('wrong');
+    if (correct) {
+      const burst = document.createElement('div');
+      burst.className = 'burst';
+      burst.textContent = '🎉';
+      burst.style.left = '50%';
+      burst.style.top = '40%';
+      burst.style.transform = 'translateX(-50%)';
+      document.body.appendChild(burst);
+      setTimeout(() => burst.remove(), 800);
+    }
+  }
+});
+
+function showToast(msg) {
+  const t = document.createElement('div');
+  t.textContent = msg;
+  t.style.cssText = `
+    position:fixed; bottom:120px; left:50%; transform:translateX(-50%);
+    background:rgba(0,0,0,.85); color:#fff; padding:10px 18px;
+    border-radius:999px; font-size:13px; font-weight:600;
+    z-index:100; backdrop-filter:blur(8px);
+    animation:fadeIn .25s ease;
+  `;
+  document.body.appendChild(t);
+  setTimeout(() => { t.style.opacity = '0'; t.style.transition = 'opacity .3s'; }, 1600);
+  setTimeout(() => t.remove(), 2000);
+}
+
+let lastTap = 0;
+feed.addEventListener('click', (e) => {
+  if (e.target.closest('.action') || e.target.closest('.quiz-opt')) return;
+  const now = Date.now();
+  if (now - lastTap < 300) {
+    const card = e.target.closest('.card');
+    if (!card) return;
+    const likeAction = card.querySelector('[data-action="like"]');
+    if (likeAction && !likeAction.classList.contains('liked')) {
+      likeAction.click();
+    }
+    const burst = document.createElement('div');
+    burst.className = 'burst';
+    burst.textContent = '❤️';
+    burst.style.left = (e.clientX - 40) + 'px';
+    burst.style.top = (e.clientY - 40) + 'px';
+    burst.style.fontSize = '100px';
+    document.body.appendChild(burst);
+    setTimeout(() => burst.remove(), 800);
+  }
+  lastTap = now;
+});
+
+feed.addEventListener('scroll', () => {
+  const idx = Math.round(feed.scrollTop / window.innerHeight);
+  progressDots.forEach((d, i) => {
+    d.classList.toggle('done', i < idx);
+    d.classList.toggle('current', i === idx);
+  });
+});
+
+progressDots[0]?.classList.add('current');
+</script>
+</body>
+</html>
