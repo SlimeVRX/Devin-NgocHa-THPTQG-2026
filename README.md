@@ -2,7 +2,7 @@
 
 Trang web ôn thi tốt nghiệp THPTQG 2026 cho **Ngọc Hà** — đếm ngược tới ngày thi **11/06/2026**, làm đề trực tuyến giống thi thật, chấm điểm và xuất file kết quả.
 
-🌐 **Live:** https://tinnguyen1997.github.io/NgocHa-THPTQG-2026/
+🌐 **Live:** https://SlimeVRX.github.io/Devin-NgocHa-THPTQG-2026/
 
 ## Tính năng
 
