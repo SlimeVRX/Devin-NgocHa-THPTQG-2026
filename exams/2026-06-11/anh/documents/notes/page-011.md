@@ -1,0 +1,21 @@
+# Trang 011
+- Chủ đề: Từ vựng Reading (I–U)
+- Phân loại: Vocabulary
+- Nội dung:
+  - increase >< decrease (v): tăng >< giảm
+  - inform (v): thông báo
+  - lower (v) = reduce, drop: làm giảm
+  - maximize >< minimize (v): tối đa hóa >< giảm thiểu
+  - observe (v) = watch, monitor: quan sát
+  - optimize (v): tối ưu hóa
+  - postpone (v) = delay: trì hoãn
+  - process (n): quá trình
+  - promote (v): thúc đẩy, quảng bá
+  - propose (v) = suggest: đề xuất
+  - regard (v) = consider, view: xem là, coi là
+  - require (v) = demand: yêu cầu
+  - restrict (v) = hinder: hạn chế, cản trở
+  - replace (v): thay thế — AI may replace some jobs.
+  - shift (n,v) = change, transform: thay đổi
+  - strategy (n) = plan: chiến lược
+  - utilize (v): sử dụng

@@ -1,0 +1,15 @@
+# Trang 012
+- Chủ đề: Nhìn gốc — đoán từ (word roots) phần 1
+- Phân loại: Vocabulary / Word Formation
+- Nội dung: phil-ANTHROP-y → gốc "nhân" → lòng nhân ái. Bảng gốc từ:
+  - AUTO = self (tự thân): automatic, autograph
+  - ANTHROP = human (nhân): anthropology, philanthropy
+  - AQUA = water (nước): aquarium, aquatic
+  - CARDI = heart (tim): cardiologist, cardiac
+  - CARN = flesh/meat (thịt): carnivore, incarnate
+  - CRED = believe (tin): incredible, credit
+  - COGN = know (nhận thức): cognition, incognito
+  - DEM = people (người, dân số): democracy, epidemic
+  - DICT = say/speak (nói): predict, dictable
+  - FUNC = perform/work: function, defunct
+  - GRAM = draw/write (vẽ, viết): diagram, grammar
