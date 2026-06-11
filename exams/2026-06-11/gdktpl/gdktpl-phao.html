@@ -1,0 +1,1580 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>GDKTPL-Tok 📈⚖️ Tổng ôn GDKTPL cho Hà</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,500;1,9..144,500&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+  :root {
+    --display: 'Bricolage Grotesque', system-ui, sans-serif;
+    --body: 'Be Vietnam Pro', system-ui, sans-serif;
+    --italic: 'Fraunces', Georgia, serif;
+    --mono: 'JetBrains Mono', ui-monospace, monospace;
+  }
+  html, body { height:100%; overflow:hidden; font-family:var(--body); background:#0a0a0a; color:#fff; -webkit-font-smoothing:antialiased; }
+
+  .app {
+    position:relative; height:100vh; width:100vw;
+    max-width:480px; margin:0 auto;
+    background:#000; overflow:hidden;
+    box-shadow:0 0 80px rgba(0,0,0,.6);
+  }
+
+  .topbar {
+    position:absolute; top:0; left:0; right:0; z-index:50;
+    padding:14px 18px 10px;
+    background:linear-gradient(to bottom, rgba(0,0,0,.55), transparent);
+    pointer-events:none;
+  }
+  .topbar-tabs {
+    display:flex; justify-content:center; gap:22px;
+    font-family:var(--display); font-weight:700; font-size:16px;
+    color:rgba(255,255,255,.55);
+  }
+  .topbar-tabs .active { color:#fff; position:relative; }
+  .topbar-tabs .active::after {
+    content:''; position:absolute; left:50%; transform:translateX(-50%);
+    bottom:-6px; width:18px; height:3px; background:#fff; border-radius:2px;
+  }
+  .progress {
+    position:absolute; top:48px; left:14px; right:14px;
+    display:flex; gap:3px; z-index:50;
+  }
+  .progress span {
+    flex:1; height:2.5px; background:rgba(255,255,255,.25); border-radius:2px;
+    transition:background .3s;
+  }
+  .progress span.done, .progress span.current { background:#fff; }
+
+  .feed {
+    height:100%; overflow-y:scroll;
+    scroll-snap-type:y mandatory; scroll-behavior:smooth;
+    -webkit-overflow-scrolling:touch;
+  }
+  .feed::-webkit-scrollbar { display:none; }
+
+  .card {
+    height:100vh; width:100%;
+    scroll-snap-align:start; scroll-snap-stop:always;
+    position:relative; overflow:hidden;
+    display:flex; flex-direction:column;
+    padding:80px 22px 110px;
+  }
+  .card-bg { position:absolute; inset:0; z-index:0; }
+  .card-content { position:relative; z-index:2; flex:1; display:flex; flex-direction:column; justify-content:center; }
+
+  .blob {
+    position:absolute; border-radius:50%; filter:blur(40px);
+    opacity:.65; z-index:1;
+  }
+  .grain {
+    position:absolute; inset:0; z-index:1; pointer-events:none; opacity:.08;
+    background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' /%3E%3C/svg%3E");
+  }
+
+  /* Decorative SVG layer for econ vibe */
+  .deco-graph {
+    position:absolute; right:-20px; top:80px; z-index:1;
+    width:200px; height:130px; opacity:.18;
+    pointer-events:none;
+  }
+
+  .hero-icon {
+    font-size:108px; line-height:1;
+    text-align:center; margin-bottom:14px;
+    filter:drop-shadow(0 8px 24px rgba(0,0,0,.4));
+    animation:bobble 3s ease-in-out infinite;
+  }
+  @keyframes bobble {
+    0%,100% { transform:translateY(0) rotate(-2deg); }
+    50% { transform:translateY(-10px) rotate(2deg); }
+  }
+  .kicker {
+    font-family:var(--display); font-weight:700;
+    font-size:12px; letter-spacing:.18em; text-transform:uppercase;
+    opacity:.75; margin-bottom:10px; text-align:center;
+  }
+  .title {
+    font-family:var(--display);
+    font-weight:800; font-size:36px; line-height:1.04;
+    letter-spacing:-.02em;
+    text-align:center;
+    margin-bottom:18px;
+  }
+  .title .em { font-family:var(--italic); font-style:italic; font-weight:500; }
+
+  .body {
+    font-size:15px; line-height:1.55;
+    text-align:left;
+    max-width:400px; margin:0 auto; width:100%;
+  }
+  .body p { margin-bottom:10px; }
+  .body ul { list-style:none; padding:0; }
+  .body li {
+    padding:9px 13px; margin-bottom:7px;
+    background:rgba(255,255,255,.13);
+    backdrop-filter:blur(8px);
+    border-radius:13px;
+    border:1px solid rgba(255,255,255,.18);
+  }
+  .body li b { font-weight:700; }
+  .body code {
+    font-family:var(--mono); font-size:13.5px;
+    background:rgba(0,0,0,.4);
+    padding:2px 6px; border-radius:5px;
+    color:#ffec99;
+  }
+  .body .formula {
+    background:rgba(0,0,0,.4);
+    padding:13px 15px; border-radius:13px;
+    font-family:var(--display); font-weight:600;
+    text-align:center; font-size:14.5px;
+    border:1px dashed rgba(255,255,255,.4);
+    margin:8px 0;
+    color:#fff;
+  }
+  .body .example {
+    background:rgba(255,255,255,.08);
+    padding:10px 13px; border-radius:12px;
+    border-left:3px solid #fff;
+    font-style:italic; font-size:13.5px;
+    margin:6px 0;
+  }
+  .body .warn {
+    background:rgba(255,200,0,.15);
+    padding:10px 13px; border-radius:12px;
+    border-left:3px solid #ffec99;
+    font-size:13.5px; margin:8px 0;
+  }
+  .body .tag-row {
+    display:flex; gap:7px; flex-wrap:wrap; justify-content:center;
+    margin-top:12px;
+  }
+  .body .tag-row span {
+    padding:6px 12px; border-radius:999px;
+    background:rgba(255,255,255,.18);
+    font-size:12.5px; font-weight:600;
+    border:1px solid rgba(255,255,255,.25);
+  }
+
+  /* Compare cards (vs) */
+  .vs-grid {
+    display:grid; grid-template-columns:1fr auto 1fr;
+    gap:8px; align-items:stretch;
+  }
+  .vs-col {
+    padding:12px 11px; background:rgba(255,255,255,.13);
+    border-radius:13px; border:1px solid rgba(255,255,255,.2);
+    font-size:13px; line-height:1.4;
+  }
+  .vs-col h4 {
+    font-family:var(--display); font-weight:800; font-size:14.5px;
+    margin-bottom:6px;
+  }
+  .vs-divider {
+    display:flex; align-items:center; justify-content:center;
+    font-family:var(--display); font-weight:800; font-size:18px;
+    color:rgba(255,255,255,.85);
+  }
+
+  /* Data rows */
+  .data-table { display:flex; flex-direction:column; gap:6px; margin-top:6px; }
+  .data-row {
+    display:flex; gap:10px; padding:9px 12px;
+    background:rgba(255,255,255,.13); border-radius:11px;
+    border:1px solid rgba(255,255,255,.18);
+    font-size:13px; line-height:1.4; align-items:flex-start;
+  }
+  .data-row b { min-width:75px; font-weight:700; flex-shrink:0; color:#ffec99; font-family:var(--mono); }
+  .data-row .meaning { flex:1; }
+
+  /* RIGHT SIDE ACTIONS */
+  .actions {
+    position:absolute; right:14px; bottom:130px; z-index:10;
+    display:flex; flex-direction:column; gap:22px;
+    align-items:center;
+  }
+  .action { display:flex; flex-direction:column; align-items:center; gap:4px; cursor:pointer; }
+  .action-btn {
+    width:50px; height:50px;
+    background:rgba(0,0,0,.25);
+    backdrop-filter:blur(8px);
+    border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    font-size:24px; line-height:1;
+    transition:transform .2s;
+    border:1px solid rgba(255,255,255,.1);
+  }
+  .action-btn:active { transform:scale(.85); }
+  .action.liked .action-btn { background:rgba(255,40,80,.85); }
+  .action.liked .action-btn svg { fill:#fff; }
+  .action-count { font-size:12px; font-weight:700; text-shadow:0 1px 3px rgba(0,0,0,.6); }
+  .avatar {
+    width:50px; height:50px; border-radius:50%;
+    background:linear-gradient(135deg, #38ef7d, #11998e);
+    border:2px solid #fff; position:relative;
+    display:flex; align-items:center; justify-content:center;
+    font-size:22px;
+  }
+  .avatar-plus {
+    position:absolute; bottom:-7px; left:50%; transform:translateX(-50%);
+    width:18px; height:18px; border-radius:50%;
+    background:#ff2d55; color:#fff; font-size:14px; font-weight:700;
+    display:flex; align-items:center; justify-content:center;
+  }
+
+  .caption {
+    position:absolute; left:14px; right:80px; bottom:24px; z-index:10;
+  }
+  .caption .author { font-weight:700; font-size:15px; margin-bottom:6px; }
+  .caption .text { font-size:14px; line-height:1.4; opacity:.92; margin-bottom:6px; }
+  .caption .hashtags { font-size:13px; opacity:.85; font-weight:600; }
+  .caption .hashtags span { margin-right:6px; }
+
+  .burst {
+    position:absolute; pointer-events:none;
+    font-size:80px; z-index:30;
+    animation:burst .8s ease-out forwards;
+  }
+  @keyframes burst {
+    0% { transform:scale(.4) rotate(-10deg); opacity:0; }
+    30% { transform:scale(1.3) rotate(8deg); opacity:1; }
+    100% { transform:scale(1.6) rotate(0); opacity:0; }
+  }
+
+  .swipe-hint {
+    position:absolute; bottom:140px; left:50%; transform:translateX(-50%);
+    display:flex; flex-direction:column; align-items:center; gap:8px;
+    z-index:10; pointer-events:none;
+  }
+  .swipe-hint .finger { font-size:32px; animation:swipeUp 1.6s ease-in-out infinite; }
+  @keyframes swipeUp {
+    0%,100% { transform:translateY(10px); opacity:.4; }
+    50% { transform:translateY(-15px); opacity:1; }
+  }
+  .swipe-hint .label {
+    font-family:var(--display); font-weight:700; font-size:14px;
+    letter-spacing:.05em;
+  }
+
+  /* QUIZ */
+  .quiz-badge {
+    display:inline-block; padding:6px 14px; border-radius:999px;
+    background:rgba(255,255,255,.2); border:1px solid rgba(255,255,255,.3);
+    font-family:var(--display); font-weight:700; font-size:12px;
+    letter-spacing:.15em; margin-bottom:14px; align-self:flex-start;
+  }
+  .quiz-q {
+    font-family:var(--display); font-weight:700;
+    font-size:19px; line-height:1.3; margin-bottom:16px;
+    text-align:left;
+  }
+  .quiz-q .em { font-family:var(--italic); font-style:italic; font-weight:500; }
+  .quiz-q b { color:#ffec99; }
+  .quiz-options { display:flex; flex-direction:column; gap:9px; }
+  .quiz-opt {
+    padding:12px 14px; border-radius:13px;
+    background:rgba(255,255,255,.15);
+    border:2px solid rgba(255,255,255,.2);
+    backdrop-filter:blur(8px);
+    font-weight:600; font-size:13.5px;
+    text-align:left; line-height:1.35;
+    cursor:pointer; transition:all .25s;
+    display:flex; align-items:center; gap:10px;
+  }
+  .quiz-opt .opt-letter {
+    width:26px; height:26px; border-radius:50%;
+    background:rgba(255,255,255,.2);
+    display:flex; align-items:center; justify-content:center;
+    font-family:var(--display); font-weight:700; font-size:12px;
+    flex-shrink:0;
+  }
+  .quiz-opt:active { transform:scale(.97); }
+  .quiz-opt.correct { background:rgba(0,200,100,.45); border-color:#0eff8e; }
+  .quiz-opt.correct .opt-letter { background:#0eff8e; color:#000; }
+  .quiz-opt.wrong { background:rgba(255,60,80,.45); border-color:#ff4060; }
+  .quiz-opt.wrong .opt-letter { background:#ff4060; color:#fff; }
+  .quiz-opt.disabled { pointer-events:none; opacity:.55; }
+  .quiz-feedback {
+    margin-top:12px; padding:11px 14px;
+    background:rgba(0,0,0,.4); border-radius:12px;
+    font-size:13px; line-height:1.5;
+    border-left:3px solid #0eff8e;
+    display:none;
+  }
+  .quiz-feedback.show { display:block; animation:fadeIn .4s ease; }
+  .quiz-feedback.wrong { border-left-color:#ff4060; }
+  @keyframes fadeIn { from{opacity:0; transform:translateY(8px);} to{opacity:1;} }
+
+  /* SECTION DIVIDER */
+  .section-card { justify-content:center !important; padding:80px 22px !important; }
+  .section-card .card-content { justify-content:center; text-align:center; }
+  .section-card .big-num {
+    font-family:var(--display); font-weight:800; font-size:140px;
+    line-height:1; opacity:.4; margin-bottom:10px;
+  }
+
+  .confetti {
+    position:absolute; top:-20px; width:10px; height:14px;
+    z-index:5; opacity:.9;
+    animation:fall linear forwards;
+  }
+  @keyframes fall { to { transform:translateY(110vh) rotate(720deg); } }
+
+  .scroll-hint {
+    position:absolute; bottom:96px; left:50%; transform:translateX(-50%);
+    font-size:22px; opacity:.45; z-index:9;
+    animation:bobble 2s ease-in-out infinite;
+    pointer-events:none;
+  }
+
+  .marquee {
+    position:absolute; top:50%; left:-10%; right:-10%;
+    transform:translateY(-50%) rotate(-6deg);
+    font-family:var(--display); font-weight:800;
+    font-size:140px; line-height:.9;
+    color:rgba(255,255,255,.08);
+    white-space:nowrap; pointer-events:none; z-index:1;
+    letter-spacing:-.04em;
+  }
+
+  /* Number badge for "indicator" cards */
+  .indicator-card {
+    display:flex; flex-direction:column; gap:8px; margin-top:6px;
+  }
+  .indicator-row {
+    display:flex; gap:12px; align-items:center;
+    background:rgba(255,255,255,.13); padding:11px 13px;
+    border-radius:13px; border:1px solid rgba(255,255,255,.2);
+  }
+  .indicator-icon {
+    width:42px; height:42px; border-radius:10px;
+    background:rgba(0,0,0,.35);
+    display:flex; align-items:center; justify-content:center;
+    font-size:22px; flex-shrink:0;
+  }
+  .indicator-text { flex:1; font-size:13px; line-height:1.4; }
+  .indicator-text b { font-family:var(--mono); color:#ffec99; }
+
+  @media (max-width:380px) {
+    .title { font-size:30px; }
+    .hero-icon { font-size:88px; }
+    .body { font-size:14px; }
+    .quiz-q { font-size:17px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="app">
+  <div class="topbar">
+    <div class="topbar-tabs">
+      <span>Theo dõi</span>
+      <span class="active">GDKTPL 4 Hà 📈⚖️</span>
+    </div>
+  </div>
+  <div class="progress" id="progress"></div>
+  <div class="feed" id="feed"></div>
+</div>
+
+<script>
+// SVG graph decoration
+const SVG_GRAPH = `
+<svg class="deco-graph" viewBox="0 0 200 130" xmlns="http://www.w3.org/2000/svg">
+  <polyline points="10,110 40,90 70,95 100,60 130,70 160,30 190,20"
+    fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="10" cy="110" r="4" fill="white"/>
+  <circle cx="100" cy="60" r="4" fill="white"/>
+  <circle cx="190" cy="20" r="4" fill="white"/>
+</svg>`;
+
+const SVG_BARS = `
+<svg class="deco-graph" viewBox="0 0 200 130" xmlns="http://www.w3.org/2000/svg">
+  <rect x="20" y="80" width="22" height="50" fill="white" rx="3"/>
+  <rect x="55" y="60" width="22" height="70" fill="white" rx="3"/>
+  <rect x="90" y="40" width="22" height="90" fill="white" rx="3"/>
+  <rect x="125" y="20" width="22" height="110" fill="white" rx="3"/>
+  <rect x="160" y="10" width="22" height="120" fill="white" rx="3"/>
+</svg>`;
+
+const SVG_GLOBE = `
+<svg class="deco-graph" viewBox="0 0 200 130" style="opacity:.15" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="100" cy="65" r="55" fill="none" stroke="white" stroke-width="2.5"/>
+  <ellipse cx="100" cy="65" rx="55" ry="20" fill="none" stroke="white" stroke-width="2"/>
+  <ellipse cx="100" cy="65" rx="25" ry="55" fill="none" stroke="white" stroke-width="2"/>
+  <line x1="45" y1="65" x2="155" y2="65" stroke="white" stroke-width="2"/>
+</svg>`;
+
+const SVG_SCALE = `
+<svg class="deco-graph" viewBox="0 0 200 130" xmlns="http://www.w3.org/2000/svg">
+  <line x1="100" y1="20" x2="100" y2="115" stroke="white" stroke-width="3"/>
+  <line x1="30" y1="40" x2="170" y2="40" stroke="white" stroke-width="3"/>
+  <rect x="20" y="40" width="30" height="30" fill="white" rx="3"/>
+  <rect x="150" y="40" width="30" height="30" fill="white" rx="3"/>
+</svg>`;
+
+const CARDS = [
+  // ============ INTRO ============
+  {
+    type:'intro',
+    bg:'linear-gradient(135deg,#134e5e 0%,#0f9b6e 50%,#71e574 100%)',
+    blobs:[{c:'#ffd700',x:'-20%',y:'10%',s:'280px'},{c:'#11998e',x:'70%',y:'70%',s:'220px'}],
+    icon:'🛟',
+    kicker:'Phao cứu sinh',
+    title:'Phao <span class="em">GDKTPL</span><br>THPTQG 2026',
+    body:'42 trang sách tổng ôn → cô đọng thành 1 cú lướt 15-20 phút. Cả Kinh tế 📈 lẫn Pháp luật ⚖️. Lướt tới đâu nhớ tới đó 🎯',
+    author:'@gdktpl.cho.ha',
+    captionText:'Tổng hợp từ 42 trang "Đột Phá Tư Duy" — đầy đủ 60% Kinh tế + 40% Pháp luật.',
+    tags:['#phao','#GDKTPL','#TN2026','#choHa'],
+    hint:true
+  },
+
+  // Cấu trúc đề
+  {
+    type:'concept',
+    bg:'linear-gradient(135deg,#232526 0%,#414345 100%)',
+    deco:SVG_BARS,
+    icon:'📝',
+    kicker:'Biết địch biết ta',
+    title:'Cấu trúc <span class="em">đề thi</span>',
+    body:`<div class="data-table">
+      <div class="data-row"><b>50 phút</b><span class="meaning">Tổng thời gian làm bài</span></div>
+      <div class="data-row"><b>Phần I</b><span class="meaning"><b>24 câu</b> trắc nghiệm A/B/C/D × 0,25đ = <b>6 điểm</b></span></div>
+      <div class="data-row"><b>Phần II</b><span class="meaning"><b>4 câu</b> Đúng/Sai, mỗi câu 4 ý = <b>4 điểm</b></span></div>
+    </div>
+    <div class="warn">⚠️ Điểm câu Đ/S: đúng 1 ý → 0,1đ · 2 ý → 0,25đ · 3 ý → 0,5đ · 4 ý → 1đ. Đừng bỏ trống ý nào!</div>`,
+    author:'@gdktpl.cho.ha',
+    captionText:'Kinh tế chiếm ~60%, Pháp luật ~40%. Trải từ lớp 10 → 12.',
+    tags:['#cauTrucDe','#TN2026']
+  },
+
+  // ============ SECTION 1: TĂNG TRƯỞNG & PHÁT TRIỂN ============
+  {
+    type:'section',
+    bg:'linear-gradient(135deg,#093028 0%,#237a57 100%)',
+    bigNum:'01',
+    kicker:'Kinh tế · Chủ đề 1',
+    title:'Tăng trưởng & <span class="em">Phát triển</span>',
+    body:'Đã có nguyên 1 Tok riêng cho bài này rồi — ở đây chỉ bồi thêm mấy ý hay quên 📌',
+    author:'@gdktpl.cho.ha',
+    captionText:'GDP = nội (lãnh thổ), GNI = dân (công dân, trong + ngoài nước).',
+    tags:['#tangTruong','#phatTrien']
+  },
+  {
+    type:'concept',
+    bg:'linear-gradient(135deg,#11998e 0%,#38ef7d 100%)',
+    deco:SVG_GRAPH,
+    icon:'🧮',
+    kicker:'Hay quên nhất',
+    title:'Chỉ tiêu <span class="em">tiến bộ xã hội</span>',
+    body:`<div class="indicator-card">
+      <div class="indicator-row"><div class="indicator-icon">📈</div><div class="indicator-text"><b>HDI</b> — chỉ số phát triển con người: phải <b>TĂNG</b></div></div>
+      <div class="indicator-row"><div class="indicator-icon">📉</div><div class="indicator-text"><b>Gini</b> — bất bình đẳng thu nhập: phải <b>GIẢM</b></div></div>
+      <div class="indicator-row"><div class="indicator-icon">🍚</div><div class="indicator-text">Chỉ số <b>đói nghèo</b>: phải <b>GIẢM</b></div></div>
+      <div class="indicator-row"><div class="indicator-icon">🏭</div><div class="indicator-text">Cơ cấu ngành: <b>giảm</b> nông nghiệp, <b>tăng</b> CN &amp; dịch vụ</div></div>
+    </div>`,
+    author:'@gdktpl.cho.ha',
+    captionText:'Mẹo: HDI tăng — còn lại (Gini, đói nghèo) đều giảm ↓',
+    tags:['#HDI','#Gini','#coCau']
+  },
+  {
+    type:'quiz',
+    bg:'linear-gradient(135deg,#f72585 0%,#7209b7 100%)',
+    question:'Chuyển dịch cơ cấu ngành kinh tế theo hướng <b>hiện đại, hợp lí</b> là:',
+    options:[
+      {t:'Tăng tỉ trọng nông nghiệp, giảm công nghiệp', correct:false},
+      {t:'Giảm tỉ trọng nông nghiệp, tăng công nghiệp & dịch vụ', correct:true},
+      {t:'Giữ nguyên tỉ trọng cả 3 ngành', correct:false},
+      {t:'Chỉ tăng tỉ trọng dịch vụ, bỏ công nghiệp', correct:false}
+    ],
+    explain:'Hướng hiện đại = NÔNG nghiệp giảm ↓, CÔNG NGHIỆP + DỊCH VỤ tăng ↑. Đáp án nào "tăng nông nghiệp" là loại ngay.',
+    author:'@quizMaster',
+    captionText:'Câu này năm nào cũng có biến thể 🎯',
+    tags:['#quiz','#coCauKT']
+  },
+
+  // ============ SECTION 2: HỘI NHẬP KTQT ============
+  {
+    type:'section',
+    bg:'linear-gradient(135deg,#0f2027 0%,#203a43 50%,#2c5364 100%)',
+    bigNum:'02',
+    kicker:'Kinh tế · Chủ đề 2',
+    title:'Hội nhập <span class="em">KT quốc tế</span>',
+    body:'Gắn kết nền kinh tế nước mình với thế giới — cùng có lợi, tuân thủ quy định chung 🌍',
+    author:'@gdktpl.cho.ha',
+    captionText:'3 cấp độ + các mốc WTO/CPTPP/EVFTA hay ra đề.',
+    tags:['#hoiNhap','#part2']
+  },
+  {
+    type:'concept',
+    bg:'linear-gradient(135deg,#1a2980 0%,#26d0ce 100%)',
+    deco:SVG_GLOBE,
+    icon:'🌏',
+    kicker:'3 cấp độ',
+    title:'Hội nhập <span class="em">mấy tầng?</span>',
+    body:`<div class="indicator-card">
+      <div class="indicator-row"><div class="indicator-icon">🤝</div><div class="indicator-text"><b>Song phương</b> — giữa 2 quốc gia (VD: FTA VN–Hàn Quốc)</div></div>
+      <div class="indicator-row"><div class="indicator-icon">🏘️</div><div class="indicator-text"><b>Khu vực</b> — ASEAN/AEC, APEC, EVFTA</div></div>
+      <div class="indicator-row"><div class="indicator-icon">🌐</div><div class="indicator-text"><b>Toàn cầu</b> — WTO, Liên hợp quốc</div></div>
+    </div>
+    <div class="formula">Hoạt động KT đối ngoại: Thương mại quốc tế + Đầu tư quốc tế (FDI) + Dịch vụ thu ngoại tệ</div>`,
+    author:'@gdktpl.cho.ha',
+    captionText:'Đề cho 1 hiệp định → hỏi cấp độ nào. Nhớ ví dụ từng tầng!',
+    tags:['#3capDo','#FTA']
+  },
+  {
+    type:'concept',
+    bg:'linear-gradient(135deg,#136a8a 0%,#267871 100%)',
+    icon:'🗓️',
+    kicker:'Timeline VN',
+    title:'Mốc <span class="em">hội nhập</span> phải nhớ',
+    body:`<div class="data-table">
+      <div class="data-row"><b>1995</b><span class="meaning">Gia nhập <b>ASEAN</b>, bình thường hoá quan hệ với Mỹ</span></div>
+      <div class="data-row"><b>1998</b><span class="meaning">Gia nhập <b>APEC</b></span></div>
+      <div class="data-row"><b>2007</b><span class="meaning">Gia nhập <b>WTO</b> — thành viên thứ 150</span></div>
+      <div class="data-row"><b>2018</b><span class="meaning"><b>CPTPP</b> — đối tác toàn diện xuyên TBD</span></div>
+      <div class="data-row"><b>2020</b><span class="meaning"><b>EVFTA</b> — FTA Việt Nam – EU</span></div>
+    </div>`,
+    author:'@gdktpl.cho.ha',
+    captionText:'WTO 2007 — con số được hỏi nhiều nhất lịch sử đề thi 😅',
+    tags:['#WTO','#timeline']
+  },
+  {
+    type:'quiz',
+    bg:'linear-gradient(135deg,#42275a 0%,#734b6d 100%)',
+    question:'Việt Nam trở thành thành viên chính thức của <b>WTO</b> vào năm nào?',
+    options:[
+      {t:'1995', correct:false},
+      {t:'1998', correct:false},
+      {t:'2007', correct:true},
+      {t:'2018', correct:false}
+    ],
+    explain:'2007 — VN là thành viên thứ 150 của WTO. 1995 là ASEAN, 1998 là APEC, 2018 là CPTPP.',
+    author:'@quizMaster',
+    captionText:'4 mốc dễ lẫn — học theo cặp "tổ chức + năm" 🎯',
+    tags:['#quiz','#WTO']
+  },
+
+  // ============ SECTION 3: BẢO HIỂM & AN SINH XH ============
+  {
+    type:'section',
+    bg:'linear-gradient(135deg,#2c3e50 0%,#4ca1af 100%)',
+    bigNum:'03',
+    kicker:'Kinh tế · Chủ đề 3',
+    title:'Bảo hiểm & <span class="em">An sinh XH</span>',
+    body:'4 loại bảo hiểm + 4 trụ cột an sinh. Toàn danh sách 4 — dễ học, dễ ăn điểm 🛡️',
+    author:'@gdktpl.cho.ha',
+    captionText:'Phần này đề Đúng/Sai rất thích hỏi.',
+    tags:['#baoHiem','#anSinh']
+  },
+  {
+    type:'concept',
+    bg:'linear-gradient(135deg,#16222a 0%,#3a6073 100%)',
+    icon:'🛡️',
+    kicker:'4 loại',
+    title:'Bảo hiểm <span class="em">có mấy loại?</span>',
+    body:`<div class="indicator-card">
+      <div class="indicator-row"><div class="indicator-icon">👷</div><div class="indicator-text"><b>BHXH</b> — bù đắp thu nhập khi ốm đau, thai sản, hưu trí. Có <b>bắt buộc</b> + <b>tự nguyện</b></div></div>
+      <div class="indicator-row"><div class="indicator-icon">🏥</div><div class="indicator-text"><b>BHYT</b> — chăm sóc sức khoẻ, <b>không vì lợi nhuận</b>, Nhà nước tổ chức</div></div>
+      <div class="indicator-row"><div class="indicator-icon">💼</div><div class="indicator-text"><b>BH thất nghiệp</b> — bù thu nhập khi mất việc, hỗ trợ học nghề</div></div>
+      <div class="indicator-row"><div class="indicator-icon">🏢</div><div class="indicator-text"><b>BH thương mại</b> — theo hợp đồng, có thể vì lợi nhuận</div></div>
+    </div>`,
+    author:'@gdktpl.cho.ha',
+    captionText:'Bẫy: BHYT & BHXH bắt buộc là của Nhà nước; BH thương mại mới theo hợp đồng thoả thuận.',
+    tags:['#4loaiBH','#BHXH']
+  },
+  {
+    type:'concept',
+    bg:'linear-gradient(135deg,#355c7d 0%,#6c5b7b 50%,#c06c84 100%)',
+    icon:'🏛️',
+    kicker:'4 trụ cột',
+    title:'An sinh <span class="em">xã hội</span>',
+    body:`<div class="indicator-card">
+      <div class="indicator-row"><div class="indicator-icon">💼</div><div class="indicator-text"><b>Việc làm – thu nhập – giảm nghèo</b></div></div>
+      <div class="indicator-row"><div class="indicator-icon">🛡️</div><div class="indicator-text"><b>Bảo hiểm xã hội</b></div></div>
+      <div class="indicator-row"><div class="indicator-icon">🤲</div><div class="indicator-text"><b>Trợ giúp xã hội</b> — thường xuyên (người già, khuyết tật) + đột xuất (thiên tai, dịch bệnh)</div></div>
+      <div class="indicator-row"><div class="indicator-icon">🏫</div><div class="indicator-text"><b>Dịch vụ xã hội cơ bản</b> — giáo dục, y tế, nhà ở, nước sạch, thông tin</div></div>
+    </div>`,
+    author:'@gdktpl.cho.ha',
+    captionText:'Vai trò: GIẢM nghèo · NÂNG CAO năng lực tự bảo vệ · ĐẢM BẢO công bằng.',
+    tags:['#anSinhXH','#4truCot']
+  },
+  {
+    type:'quiz',
+    bg:'linear-gradient(135deg,#603813 0%,#b29f94 100%)',
+    question:'Loại bảo hiểm nào do Nhà nước tổ chức, <b>KHÔNG vì mục đích lợi nhuận</b>?',
+    options:[
+      {t:'Bảo hiểm thương mại', correct:false},
+      {t:'Bảo hiểm y tế', correct:true},
+      {t:'Bảo hiểm nhân thọ', correct:false},
+      {t:'Bảo hiểm hàng hoá', correct:false}
+    ],
+    explain:'BHYT = bắt buộc, Nhà nước tổ chức, KHÔNG vì lợi nhuận. BH thương mại (nhân thọ, hàng hoá...) là kinh doanh có lợi nhuận.',
+    author:'@quizMaster',
+    captionText:'Câu "KHÔNG" → để ý kỹ từng chữ 🎯',
+    tags:['#quiz','#BHYT']
+  },
+
+  // ============ SECTION 4: LẬP KẾ HOẠCH KD + CSR ============
+  {
+    type:'section',
+    bg:'linear-gradient(135deg,#41295a 0%,#2f0743 100%)',
+    bigNum:'04',
+    kicker:'Kinh tế · Chủ đề 4-5',
+    title:'Kinh doanh & <span class="em">Trách nhiệm XH</span>',
+    body:'Lập kế hoạch kinh doanh 5 bước + 4 hình thức trách nhiệm xã hội của doanh nghiệp 💼',
+    author:'@gdktpl.cho.ha',
+    captionText:'Câu tình huống doanh nghiệp lấy từ đây.',
+    tags:['#kinhDoanh','#CSR']
+  },
+  {
+    type:'concept',
+    bg:'linear-gradient(135deg,#6a3093 0%,#a044ff 100%)',
+    deco:SVG_BARS,
+    icon:'🗺️',
+    kicker:'5 bước',
+    title:'Lập <span class="em">kế hoạch</span> kinh doanh',
+    body:`<div class="data-table">
+      <div class="data-row"><b>1️⃣</b><span class="meaning"><b>Ý tưởng</b> — mới, sáng tạo, khả thi, có lợi nhuận</span></div>
+      <div class="data-row"><b>2️⃣</b><span class="meaning"><b>Mục tiêu</b> — theo tiêu chí <b>SMART</b></span></div>
+      <div class="data-row"><b>3️⃣</b><span class="meaning"><b>Phân tích điều kiện</b> — sản phẩm, khách hàng, thị trường, tài chính, nhân sự</span></div>
+      <div class="data-row"><b>4️⃣</b><span class="meaning"><b>Chiến lược</b> — sản xuất, bán hàng, tài chính, nhân sự</span></div>
+      <div class="data-row"><b>5️⃣</b><span class="meaning"><b>Đánh giá cơ hội, rủi ro</b> + biện pháp xử lí</span></div>
+    </div>
+    <div class="formula">SMART = Specific · Measurable · Achievable · Realistic · Time-bound</div>`,
+    author:'@gdktpl.cho.ha',
+    captionText:'Thứ tự 5 bước hay bị đề xáo trộn — nhớ: Ý tưởng → Mục tiêu → Phân tích → Chiến lược → Rủi ro.',
+    tags:['#keHoachKD','#SMART']
+  },
+  {
+    type:'concept',
+    bg:'linear-gradient(135deg,#114357 0%,#f29492 100%)',
+    icon:'🤝',
+    kicker:'4 hình thức',
+    title:'Trách nhiệm XH <span class="em">của DN</span>',
+    body:`<div class="indicator-card">
+      <div class="indicator-row"><div class="indicator-icon">💰</div><div class="indicator-text"><b>Kinh tế</b> — lợi nhuận, việc làm, sản phẩm chất lượng</div></div>
+      <div class="indicator-row"><div class="indicator-icon">⚖️</div><div class="indicator-text"><b>Pháp lí</b> — tuân thủ pháp luật (<b>BẮT BUỘC</b>)</div></div>
+      <div class="indicator-row"><div class="indicator-icon">💗</div><div class="indicator-text"><b>Đạo đức</b> — làm điều đúng, công bằng, không gây hại</div></div>
+      <div class="indicator-row"><div class="indicator-icon">🎁</div><div class="indicator-text"><b>Nhân văn</b> — thiện nguyện, đóng góp cộng đồng (<b>TỰ NGUYỆN</b>)</div></div>
+    </div>
+    <div class="warn">⚠️ DN từ thiện, ủng hộ thiên tai = trách nhiệm NHÂN VĂN (không phải đạo đức!)</div>`,
+    author:'@gdktpl.cho.ha',
+    captionText:'Tình huống cho DN làm gì đó → hỏi thuộc hình thức nào. Học kỹ 4 cái này!',
+    tags:['#CSR','#4hinhThuc']
+  },
+  {
+    type:'quiz',
+    bg:'linear-gradient(135deg,#1f4037 0%,#99f2c8 100%)',
+    question:'Công ty D đóng bảo hiểm đầy đủ, ủng hộ đồng bào lũ lụt, góp quỹ vì người nghèo. Việc <b>ủng hộ và góp quỹ</b> thể hiện trách nhiệm xã hội ở hình thức nào?',
+    options:[
+      {t:'Trách nhiệm kinh tế', correct:false},
+      {t:'Trách nhiệm pháp lí', correct:false},
+      {t:'Trách nhiệm đạo đức', correct:false},
+      {t:'Trách nhiệm nhân văn', correct:true}
+    ],
+    explain:'Hoạt động thiện nguyện, đóng góp cộng đồng = NHÂN VĂN (tự nguyện). Đóng bảo hiểm mới là pháp lí.',
+    author:'@quizMaster',
+    captionText:'Đề thật từng ra y chang dạng này 🎯',
+    tags:['#quiz','#nhanVan']
+  },
+
+  // ============ SECTION 5: THU CHI GIA ĐÌNH ============
+  {
+    type:'section',
+    bg:'linear-gradient(135deg,#870000 0%,#190a05 100%)',
+    bigNum:'05',
+    kicker:'Kinh tế · Chủ đề 6',
+    title:'Quản lí <span class="em">thu chi</span> gia đình',
+    body:'Chủ đề mới của lớp 12 — dễ nhưng dễ chủ quan 💸',
+    author:'@gdktpl.cho.ha',
+    captionText:'Nhớ 2 cặp: thu chủ động/thụ động · chi thiết yếu/không thiết yếu.',
+    tags:['#thuChi','#giaDinh']
+  },
+  {
+    type:'concept',
+    bg:'linear-gradient(135deg,#e65c00 0%,#f9d423 100%)',
+    icon:'💸',
+    kicker:'2 cặp khái niệm',
+    title:'Thu & Chi <span class="em">phân loại</span>',
+    body:`<div class="vs-grid">
+      <div class="vs-col">
+        <h4 style="color:#7fffd4;">Thu chủ động</h4>
+        <p>Cần dùng <b>sức lao động</b> (lương, kinh doanh)</p>
+      </div>
+      <div class="vs-divider">VS</div>
+      <div class="vs-col">
+        <h4 style="color:#ffec99;">Thu thụ động</h4>
+        <p><b>Không</b> cần sức lao động (lãi, cho thuê)</p>
+      </div>
+    </div>
+    <div class="vs-grid" style="margin-top:8px;">
+      <div class="vs-col">
+        <h4 style="color:#7fffd4;">Chi thiết yếu</h4>
+        <p>Ăn, điện, nước... → <b>ưu tiên</b></p>
+      </div>
+      <div class="vs-divider">VS</div>
+      <div class="vs-col">
+        <h4 style="color:#ffec99;">Không thiết yếu</h4>
+        <p>Giải trí, mua sắm → <b>cắt giảm</b></p>
+      </div>
+    </div>
+    <div class="formula">5 bước: Mục tiêu → Nguồn thu → Phân loại chi → Phân chia tỉ lệ → Thực hiện, điều chỉnh</div>`,
+    author:'@gdktpl.cho.ha',
+    captionText:'Thu thụ động giúp tài chính "lớn mạnh & ổn định hơn" — keyword đề hay dùng.',
+    tags:['#thuNhap','#chiTieu']
+  },
+
+  // ============ SECTION 6: KT 10-11 BỔ TRỢ ============
+  {
+    type:'section',
+    bg:'linear-gradient(135deg,#000428 0%,#004e92 100%)',
+    bigNum:'06',
+    kicker:'Kinh tế · Bổ trợ lớp 10-11',
+    title:'Lạm phát, Thuế & <span class="em">Thị trường</span>',
+    body:'Kiến thức lớp 10-11 vẫn chiếm điểm trong đề. Đừng bỏ qua! 📊',
+    author:'@gdktpl.cho.ha',
+    captionText:'Lạm phát 3 mức + thuế 2 loại + 4 chủ thể kinh tế.',
+    tags:['#lop10','#lop11']
+  },
+  {
+    type:'concept',
+    bg:'linear-gradient(135deg,#cb2d3e 0%,#ef473a 100%)',
+    deco:SVG_GRAPH,
+    icon:'🔥',
+    kicker:'3 mức độ',
+    title:'Lạm phát <span class="em">bao nhiêu %?</span>',
+    body:`<div class="data-table">
+      <div class="data-row"><b>&lt;10%</b><span class="meaning"><b>Vừa phải</b> — bình thường, nền KT vẫn ổn</span></div>
+      <div class="data-row"><b>10–1000%</b><span class="meaning"><b>Phi mã</b> — gây bất ổn nghiêm trọng</span></div>
+      <div class="data-row"><b>&gt;1000%</b><span class="meaning"><b>Siêu lạm phát</b> — khủng hoảng</span></div>
+    </div>
+    <div class="warn">💡 Thất nghiệp chia theo: <b>nguồn gốc</b> (tự nhiên/chu kì) & <b>tính chất</b> (tự nguyện/không tự nguyện)</div>`,
+    author:'@gdktpl.cho.ha',
+    captionText:'Đề cho con số % → xếp loại. Nhớ 2 mốc: 10% và 1000%.',
+    tags:['#lamPhat','#thatNghiep']
+  },
+  {
+    type:'concept',
+    bg:'linear-gradient(135deg,#403b4a 0%,#e7e9bb 100%)',
+    deco:SVG_SCALE,
+    icon:'🧾',
+    kicker:'Đừng nhầm!',
+    title:'Thuế <span class="em">trực thu vs gián thu</span>',
+    body:`<div class="vs-grid">
+      <div class="vs-col">
+        <h4 style="color:#7fffd4;">Trực thu</h4>
+        <p>Thu <b>trực tiếp</b> vào thu nhập, tài sản</p>
+        <p style="margin-top:4px;">VD: thuế TNCN, thuế TNDN</p>
+      </div>
+      <div class="vs-divider">VS</div>
+      <div class="vs-col">
+        <h4 style="color:#ffec99;">Gián thu</h4>
+        <p>Thu <b>qua giá</b> hàng hoá, dịch vụ</p>
+        <p style="margin-top:4px;">VD: VAT, thuế tiêu thụ đặc biệt</p>
+      </div>
+    </div>
+    <div class="warn">💡 Gián thu: người TIÊU DÙNG chịu thuế, người BÁN nộp thuế hộ.</div>`,
+    author:'@gdktpl.cho.ha',
+    captionText:'VAT là gián thu — mua trà sữa là Hà đang đóng thuế đó 🧋',
+    tags:['#thue','#VAT']
+  },
+  {
+    type:'concept',
+    bg:'linear-gradient(135deg,#00467f 0%,#a5cc82 100%)',
+    icon:'🏪',
+    kicker:'Nhớ nhanh',
+    title:'Thị trường & <span class="em">chủ thể KT</span>',
+    body:`<ul>
+      <li>👥 4 chủ thể: <b>sản xuất · trung gian · tiêu dùng · nhà nước</b></li>
+      <li>⚙️ 3 chức năng thị trường: <b>thừa nhận · thông tin · kích thích điều tiết</b></li>
+      <li>📈 Giá cả do <b>cung – cầu</b> quyết định; cạnh tranh là tất yếu</li>
+    </ul>
+    <div class="warn">⚠️ Cơ chế thị trường: ưu = động lực, điều tiết · nhược = khủng hoảng, ô nhiễm, phân hoá giàu nghèo</div>`,
+    author:'@gdktpl.cho.ha',
+    captionText:'Tiêu dùng là "mục đích, động lực của sản xuất" — câu kinh điển!',
+    tags:['#thiTruong','#cungCau']
+  },
+  {
+    type:'concept',
+    bg:'linear-gradient(135deg,#283c86 0%,#45a247 100%)',
+    icon:'🏢',
+    kicker:'Luật Doanh nghiệp',
+    title:'4 loại hình <span class="em">doanh nghiệp</span>',
+    body:`<div class="data-table">
+      <div class="data-row"><b>TNHH</b><span class="meaning"><b>2–50</b> thành viên (hoặc 1 TV) — chịu trách nhiệm hữu hạn</span></div>
+      <div class="data-row"><b>Cổ phần</b><span class="meaning">≥ <b>3</b> cổ đông — phát hành được cổ phiếu</span></div>
+      <div class="data-row"><b>Hợp danh</b><span class="meaning">≥ <b>2</b> TV hợp danh — trách nhiệm <b>vô hạn</b></span></div>
+      <div class="data-row"><b>Tư nhân</b><span class="meaning"><b>1</b> cá nhân làm chủ — trách nhiệm <b>vô hạn</b></span></div>
+    </div>`,
+    author:'@gdktpl.cho.ha',
+    captionText:'Nhớ dãy số: 2-50 / ≥3 / ≥2 / 1. Cổ phần mới phát hành được cổ phiếu!',
+    tags:['#doanhNghiep','#luatDN']
+  },
+  {
+    type:'quiz',
+    bg:'linear-gradient(135deg,#dd1818 0%,#333333 100%)',
+    question:'Tỉ lệ lạm phát của một nước là <b>15%/năm</b>. Đây là mức lạm phát nào?',
+    options:[
+      {t:'Lạm phát vừa phải', correct:false},
+      {t:'Lạm phát phi mã', correct:true},
+      {t:'Siêu lạm phát', correct:false},
+      {t:'Lạm phát tự nhiên', correct:false}
+    ],
+    explain:'15% nằm trong khoảng 10–1000% = PHI MÃ. Vừa phải là <10%, siêu lạm phát là >1000%.',
+    author:'@quizMaster',
+    captionText:'Cho số → so 2 mốc 10% và 1000% 🎯',
+    tags:['#quiz','#lamPhat']
+  },
+  {
+    type:'quiz',
+    bg:'linear-gradient(135deg,#4b6cb7 0%,#182848 100%)',
+    question:'Loại thuế nào sau đây là thuế <b>gián thu</b>?',
+    options:[
+      {t:'Thuế thu nhập cá nhân', correct:false},
+      {t:'Thuế thu nhập doanh nghiệp', correct:false},
+      {t:'Thuế giá trị gia tăng (VAT)', correct:true},
+      {t:'Thuế sử dụng đất phi nông nghiệp', correct:false}
+    ],
+    explain:'VAT cộng vào GIÁ hàng hoá → người tiêu dùng chịu = gián thu. Các loại đánh vào thu nhập/tài sản = trực thu.',
+    author:'@quizMaster',
+    captionText:'Trực thu = vào túi tiền trực tiếp. Gián thu = núp trong giá 🎯',
+    tags:['#quiz','#thue']
+  },
+
+  // ============ SECTION 7: PHÁP LUẬT & HIẾN PHÁP ============
+  {
+    type:'section',
+    bg:'linear-gradient(135deg,#1e130c 0%,#9a8478 100%)',
+    bigNum:'07',
+    kicker:'Pháp luật · Lớp 10',
+    title:'Pháp luật & <span class="em">Hiến pháp</span>',
+    body:'Chuyển sang phần Pháp luật ⚖️ — chiếm 40% đề. Bắt đầu từ gốc: PL là gì, ai ban hành.',
+    author:'@gdktpl.cho.ha',
+    captionText:'Hiến pháp 2013 — hiệu lực pháp lí CAO NHẤT.',
+    tags:['#phapLuat','#hienPhap']
+  },
+  {
+    type:'concept',
+    bg:'linear-gradient(135deg,#3a1c71 0%,#d76d77 50%,#ffaf7b 100%)',
+    deco:SVG_SCALE,
+    icon:'⚖️',
+    kicker:'3 đặc điểm',
+    title:'Pháp luật <span class="em">là gì?</span>',
+    body:`<div class="formula">Hệ thống quy tắc xử sự bắt buộc chung, do NHÀ NƯỚC ban hành & bảo đảm thực hiện</div>
+    <ul>
+      <li>1️⃣ Tính <b>quy phạm phổ biến</b> — áp dụng mọi nơi, mọi người, lặp lại</li>
+      <li>2️⃣ Tính <b>quyền lực, bắt buộc chung</b> — ai cũng phải theo, cưỡng chế nếu vi phạm</li>
+      <li>3️⃣ Tính <b>xác định chặt chẽ về hình thức</b> — văn bản rõ ràng</li>
+    </ul>
+    <div class="warn">💡 Hệ thống PL: Quy phạm PL (1 điều khoản) → Chế định (nhóm) → Ngành luật (lĩnh vực)</div>`,
+    author:'@gdktpl.cho.ha',
+    captionText:'3 đặc điểm = 3 "tính" — thuộc lòng cụm từ chính xác!',
+    tags:['#dacDiemPL','#3tinh']
+  },
+  {
+    type:'concept',
+    bg:'linear-gradient(135deg,#0f0c29 0%,#302b63 50%,#24243e 100%)',
+    icon:'🧭',
+    kicker:'KEY CARD!',
+    title:'4 hình thức <span class="em">thực hiện PL</span>',
+    body:`<div class="data-table">
+      <div class="data-row"><b>Tuân thủ</b><span class="meaning"><b>KHÔNG làm</b> điều pháp luật cấm (không buôn ma tuý)</span></div>
+      <div class="data-row"><b>Thi hành</b><span class="meaning"><b>LÀM</b> điều bắt buộc — nghĩa vụ (nộp thuế, nghĩa vụ QS)</span></div>
+      <div class="data-row"><b>Sử dụng</b><span class="meaning"><b>LÀM</b> điều được phép — quyền (đi học, kinh doanh)</span></div>
+      <div class="data-row"><b>Áp dụng</b><span class="meaning"><b>Cơ quan thẩm quyền</b> ra quyết định (CSGT phạt)</span></div>
+    </div>`,
+    author:'@gdktpl.cho.ha',
+    captionText:'Mẹo: Tuân thủ = né cấm · Thi hành = làm nghĩa vụ · Sử dụng = xài quyền · Áp dụng = nhà nước làm.',
+    tags:['#thucHienPL','#mustSave']
+  },
+  {
+    type:'concept',
+    bg:'linear-gradient(135deg,#aa076b 0%,#61045f 100%)',
+    icon:'🏛️',
+    kicker:'Bộ máy nhà nước',
+    title:'Ai làm <span class="em">việc gì?</span>',
+    body:`<div class="data-table">
+      <div class="data-row"><b>Quốc hội</b><span class="meaning">Lập hiến, lập pháp, giám sát tối cao — <b>ban hành Hiến pháp</b></span></div>
+      <div class="data-row"><b>Chính phủ</b><span class="meaning">Hành chính nhà nước <b>cao nhất</b>, chấp hành QH</span></div>
+      <div class="data-row"><b>TAND</b><span class="meaning">Cơ quan <b>xét xử</b></span></div>
+      <div class="data-row"><b>VKSND</b><span class="meaning"><b>Công tố</b>, kiểm sát hoạt động tư pháp</span></div>
+    </div>
+    <div class="warn">⚠️ Hiến pháp 2013 — hiệu lực pháp lí CAO NHẤT, mọi văn bản khác không được trái.</div>`,
+    author:'@gdktpl.cho.ha',
+    captionText:'Toà = xét xử, Viện = công tố — đừng đổi chỗ cho nhau!',
+    tags:['#boMayNN','#hienPhap2013']
+  },
+  {
+    type:'quiz',
+    bg:'linear-gradient(135deg,#41295a 0%,#2f0743 100%)',
+    question:'Anh A <b>dừng xe khi đèn đỏ</b>. Anh A đang thực hiện pháp luật theo hình thức nào?',
+    options:[
+      {t:'Sử dụng pháp luật', correct:false},
+      {t:'Thi hành pháp luật', correct:true},
+      {t:'Tuân thủ pháp luật', correct:false},
+      {t:'Áp dụng pháp luật', correct:false}
+    ],
+    explain:'Dừng đèn đỏ là LÀM điều pháp luật BẮT BUỘC (nghĩa vụ chủ động) = THI HÀNH. Tuân thủ là KHÔNG làm điều cấm (VD: không vượt đèn đỏ... nghe giống nhưng thi hành nhấn vào hành động phải làm).',
+    author:'@quizMaster',
+    captionText:'Cặp "tuân thủ vs thi hành" là bẫy quốc dân 🎯',
+    tags:['#quiz','#thucHienPL']
+  },
+
+  // ============ SECTION 8: QUYỀN DÂN CHỦ & TỰ DO ============
+  {
+    type:'section',
+    bg:'linear-gradient(135deg,#360033 0%,#0b8793 100%)',
+    bigNum:'08',
+    kicker:'Pháp luật · Lớp 12',
+    title:'Quyền dân chủ & <span class="em">tự do</span>',
+    body:'Bầu cử, khiếu nại – tố cáo, bất khả xâm phạm thân thể... Phần ra nhiều câu tình huống nhất 🗳️',
+    author:'@gdktpl.cho.ha',
+    captionText:'Nhớ các con số: 18 tuổi bầu cử, 21 tuổi ứng cử.',
+    tags:['#danChu','#tuDo']
+  },
+  {
+    type:'concept',
+    bg:'linear-gradient(135deg,#0c1445 0%,#004e92 100%)',
+    icon:'🗳️',
+    kicker:'Con số vàng',
+    title:'Bầu cử & <span class="em">ứng cử</span>',
+    body:`<div class="vs-grid">
+      <div class="vs-col">
+        <h4 style="color:#7fffd4;">Bầu cử</h4>
+        <p>Đủ <b>18 tuổi</b> trở lên</p>
+        <p style="margin-top:4px;">Phổ thông, bình đẳng, trực tiếp, bỏ phiếu kín</p>
+      </div>
+      <div class="vs-divider">VS</div>
+      <div class="vs-col">
+        <h4 style="color:#ffec99;">Ứng cử</h4>
+        <p>Đủ <b>21 tuổi</b> trở lên</p>
+        <p style="margin-top:4px;">Vào QH, HĐND</p>
+      </div>
+    </div>
+    <div class="warn">💡 Nguyên tắc bầu cử: mỗi người 1 phiếu, TỰ MÌNH đi bầu — nhờ người khác bỏ phiếu hộ là VI PHẠM.</div>`,
+    author:'@gdktpl.cho.ha',
+    captionText:'18 bầu — 21 ứng. Cứ tình huống "nhờ bầu hộ" là sai!',
+    tags:['#bauCu','#18va21']
+  },
+  {
+    type:'concept',
+    bg:'linear-gradient(135deg,#1d976c 0%,#93f9b9 100%)',
+    icon:'📣',
+    kicker:'Đừng nhầm!',
+    title:'Khiếu nại <span class="em">vs</span> Tố cáo',
+    body:`<div class="vs-grid">
+      <div class="vs-col">
+        <h4 style="color:#7fffd4;">Khiếu nại</h4>
+        <p>Bảo vệ quyền, lợi ích <b>của CHÍNH MÌNH</b> bị xâm phạm</p>
+        <p style="margin-top:4px;">VD: bị phạt sai → khiếu nại</p>
+      </div>
+      <div class="vs-divider">VS</div>
+      <div class="vs-col">
+        <h4 style="color:#ffec99;">Tố cáo</h4>
+        <p>Báo <b>MỌI hành vi vi phạm</b> của bất kì ai</p>
+        <p style="margin-top:4px;">VD: thấy hàng xóm trộm điện → tố cáo</p>
+      </div>
+    </div>
+    <div class="warn">💡 Mẹo: Khiếu nại = chuyện CỦA MÌNH. Tố cáo = chuyện CỦA XÃ HỘI.</div>`,
+    author:'@gdktpl.cho.ha',
+    captionText:'Cặp đôi huyền thoại trong đề tình huống 🎯',
+    tags:['#khieuNai','#toCao']
+  },
+  {
+    type:'concept',
+    bg:'linear-gradient(135deg,#642b73 0%,#c6426e 100%)',
+    icon:'🚔',
+    kicker:'3 trường hợp',
+    title:'Khi nào được <span class="em">bắt người?</span>',
+    body:`<div class="indicator-card">
+      <div class="indicator-row"><div class="indicator-icon">📜</div><div class="indicator-text">Có <b>quyết định của Toà án</b> / phê chuẩn của <b>VKS</b></div></div>
+      <div class="indicator-row"><div class="indicator-icon">⚡</div><div class="indicator-text">Trường hợp <b>khẩn cấp</b> (chuẩn bị phạm tội nghiêm trọng)</div></div>
+      <div class="indicator-row"><div class="indicator-icon">🏃</div><div class="indicator-text"><b>Quả tang</b> hoặc đang bị <b>truy nã</b> — ai cũng có quyền bắt!</div></div>
+    </div>
+    <div class="warn">⚠️ Ngoài 3 TH này, tự ý bắt/giam giữ người = vi phạm quyền bất khả xâm phạm thân thể. Khám chỗ ở cũng phải đúng trình tự pháp luật.</div>`,
+    author:'@gdktpl.cho.ha',
+    captionText:'Quả tang/truy nã: AI CŨNG bắt được rồi giải đến cơ quan chức năng.',
+    tags:['#batNguoi','#thanThe']
+  },
+  {
+    type:'quiz',
+    bg:'linear-gradient(135deg,#ff416c 0%,#ff4b2b 100%)',
+    question:'Chị B phát hiện cán bộ xã <b>nhận hối lộ</b>. Chị B nên dùng quyền nào?',
+    options:[
+      {t:'Quyền khiếu nại', correct:false},
+      {t:'Quyền tố cáo', correct:true},
+      {t:'Quyền tự do ngôn luận', correct:false},
+      {t:'Quyền bãi nhiệm', correct:false}
+    ],
+    explain:'Hành vi vi phạm pháp luật của NGƯỜI KHÁC (không xâm phạm trực tiếp lợi ích chị B) → TỐ CÁO. Khiếu nại chỉ dùng khi lợi ích CỦA MÌNH bị xâm phạm.',
+    author:'@quizMaster',
+    captionText:'Hỏi "của mình hay của người?" trước khi chọn 🎯',
+    tags:['#quiz','#toCao']
+  },
+
+  // ============ SECTION 9: QUYỀN KINH TẾ ============
+  {
+    type:'section',
+    bg:'linear-gradient(135deg,#232526 0%,#414345 100%)',
+    bigNum:'09',
+    kicker:'Pháp luật · Lớp 11',
+    title:'Quyền & nghĩa vụ <span class="em">về kinh tế</span>',
+    body:'Kinh doanh – Thuế – Tài sản. 3 mảng quyền kinh tế của công dân 💼',
+    author:'@gdktpl.cho.ha',
+    captionText:'Tự do kinh doanh ngành nghề PL không cấm.',
+    tags:['#quyenKT']
+  },
+  {
+    type:'concept',
+    bg:'linear-gradient(135deg,#02aab0 0%,#00cdac 100%)',
+    icon:'🏪',
+    kicker:'Kinh doanh & Thuế',
+    title:'Quyền tự do <span class="em">kinh doanh</span>',
+    body:`<ul>
+      <li>✅ Tự do KD ngành nghề <b>PL không cấm</b>; tự chọn quy mô, địa bàn, lao động</li>
+      <li>📋 Nghĩa vụ: KD <b>đúng giấy phép</b>, bảo vệ NLĐ & người tiêu dùng, môi trường</li>
+      <li>🧾 <b>Kê khai trung thực + nộp thuế đúng hạn</b></li>
+    </ul>
+    <div class="warn">⚠️ TRỐN THUẾ = vi phạm, có thể bị phạt tiền hoặc PHẠT TÙ. Cấm KD: ma tuý, mại dâm, pháo nổ, động vật hoang dã...</div>`,
+    author:'@gdktpl.cho.ha',
+    captionText:'Quyền của người nộp thuế: được giữ bí mật, hưởng ưu đãi, tố cáo vi phạm.',
+    tags:['#kinhDoanh','#thue']
+  },
+  {
+    type:'concept',
+    bg:'linear-gradient(135deg,#5614b0 0%,#dbd65c 100%)',
+    icon:'🏠',
+    kicker:'3 quyền',
+    title:'Quyền <span class="em">sở hữu tài sản</span>',
+    body:`<div class="data-table">
+      <div class="data-row"><b>Chiếm hữu</b><span class="meaning"><b>Nắm giữ</b>, quản lí, chi phối tài sản</span></div>
+      <div class="data-row"><b>Sử dụng</b><span class="meaning"><b>Khai thác</b> công dụng, hưởng hoa lợi, lợi tức</span></div>
+      <div class="data-row"><b>Định đoạt</b><span class="meaning"><b>Quyết số phận</b>: bán, tặng, từ bỏ, tiêu huỷ</span></div>
+    </div>
+    <div class="warn">💡 Nghĩa vụ: nhặt được của rơi → TRẢ LẠI; vay nợ → trả đúng hạn; mượn đồ làm hỏng → BỒI THƯỜNG.</div>`,
+    author:'@gdktpl.cho.ha',
+    captionText:'Bán nhà = định đoạt. Cho thuê nhà = sử dụng (hưởng lợi tức). Đề thích lắt léo chỗ này!',
+    tags:['#taiSan','#3quyen']
+  },
+  {
+    type:'quiz',
+    bg:'linear-gradient(135deg,#36d1dc 0%,#5b86e5 100%)',
+    question:'Ông A <b>bán</b> mảnh đất thuộc sở hữu của mình cho ông B. Ông A đang thực hiện quyền nào?',
+    options:[
+      {t:'Quyền chiếm hữu', correct:false},
+      {t:'Quyền sử dụng', correct:false},
+      {t:'Quyền định đoạt', correct:true},
+      {t:'Quyền khai thác', correct:false}
+    ],
+    explain:'BÁN = quyết định "số phận pháp lí" của tài sản = ĐỊNH ĐOẠT. Chiếm hữu = nắm giữ; sử dụng = khai thác công dụng.',
+    author:'@quizMaster',
+    captionText:'Bán/tặng/vứt = định đoạt 🎯',
+    tags:['#quiz','#taiSan']
+  },
+
+  // ============ SECTION 10: VĂN HOÁ - XÃ HỘI ============
+  {
+    type:'section',
+    bg:'linear-gradient(135deg,#7b4397 0%,#dc2430 100%)',
+    bigNum:'10',
+    kicker:'Pháp luật · Lớp 11',
+    title:'Hôn nhân, Học tập & <span class="em">Văn hoá XH</span>',
+    body:'Kết hôn bao nhiêu tuổi? Ai được học vượt lớp? Di sản văn hoá ai bảo vệ? 💍📚',
+    author:'@gdktpl.cho.ha',
+    captionText:'Nam 20 — Nữ 18. Số liệu quan trọng nhất chương!',
+    tags:['#honNhan','#hocTap']
+  },
+  {
+    type:'concept',
+    bg:'linear-gradient(135deg,#ec008c 0%,#fc6767 100%)',
+    icon:'💍',
+    kicker:'Hôn nhân & gia đình',
+    title:'Kết hôn <span class="em">đúng luật</span>',
+    body:`<div class="formula">Nam đủ 20 tuổi · Nữ đủ 18 tuổi · TỰ NGUYỆN</div>
+    <ul>
+      <li>🚫 Cấm: <b>tảo hôn</b>, cưỡng ép, lừa dối, kết hôn giả</li>
+      <li>🚫 Cấm: người <b>đang có vợ/chồng</b>; cùng dòng máu trực hệ, họ trong phạm vi <b>3 đời</b></li>
+      <li>⚖️ Vợ chồng <b>bình đẳng</b>: nhân thân + tài sản chung; vẫn có quyền tài sản <b>riêng</b></li>
+    </ul>`,
+    author:'@gdktpl.cho.ha',
+    captionText:'"Đủ" 18/20 tuổi = tính theo ngày sinh nhật, không phải năm!',
+    tags:['#ketHon','#namnu2018']
+  },
+  {
+    type:'concept',
+    bg:'linear-gradient(135deg,#00b09b 0%,#96c93d 100%)',
+    icon:'📚',
+    kicker:'Học tập & VH-XH',
+    title:'Quyền <span class="em">học tập</span> & hơn thế',
+    body:`<ul>
+      <li>🎓 Bình đẳng cơ hội, học <b>không hạn chế</b>, học <b>suốt đời</b>, được <b>vượt lớp</b></li>
+      <li>🏥 Sức khoẻ: bình đẳng khám chữa, <b>bảo mật</b> thông tin bệnh</li>
+      <li>🏺 Di sản văn hoá: được hưởng thụ; đào được cổ vật → <b>GIAO NỘP</b> nhà nước</li>
+      <li>🌳 Môi trường: sống trong lành; gây hại → <b>bồi thường + khắc phục</b></li>
+    </ul>`,
+    author:'@gdktpl.cho.ha',
+    captionText:'Đào được cổ vật mà giữ/bán = VI PHẠM. Phải giao nộp!',
+    tags:['#hocTap','#diSan','#moiTruong']
+  },
+  {
+    type:'quiz',
+    bg:'linear-gradient(135deg,#c33764 0%,#1d2671 100%)',
+    question:'Theo Luật Hôn nhân & Gia đình, độ tuổi kết hôn hợp pháp là:',
+    options:[
+      {t:'Nam và nữ đều đủ 18 tuổi', correct:false},
+      {t:'Nam đủ 20 tuổi, nữ đủ 18 tuổi', correct:true},
+      {t:'Nam đủ 21 tuổi, nữ đủ 19 tuổi', correct:false},
+      {t:'Nam đủ 18 tuổi, nữ đủ 20 tuổi', correct:false}
+    ],
+    explain:'Nam ĐỦ 20, nữ ĐỦ 18 — và phải tự nguyện, không thuộc trường hợp cấm.',
+    author:'@quizMaster',
+    captionText:'Số dễ — nhưng đề hay đảo nam/nữ để bẫy 🎯',
+    tags:['#quiz','#ketHon']
+  },
+
+  // ============ SECTION 11: PHÁP LUẬT QUỐC TẾ ============
+  {
+    type:'section',
+    bg:'linear-gradient(135deg,#141e30 0%,#243b55 100%)',
+    bigNum:'11',
+    kicker:'Pháp luật · Lớp 11',
+    title:'Pháp luật <span class="em">quốc tế</span>',
+    body:'7 nguyên tắc + các vùng biển + WTO. Chương "quốc tế" — nghe to nhưng toàn ý đếm được 🌐',
+    author:'@gdktpl.cho.ha',
+    captionText:'Vùng biển: 12 → 24 → 200 → 350 hải lí. Học dãy số này!',
+    tags:['#PLQT','#bienDao']
+  },
+  {
+    type:'concept',
+    bg:'linear-gradient(135deg,#000046 0%,#1cb5e0 100%)',
+    deco:SVG_GLOBE,
+    icon:'🌐',
+    kicker:'7 nguyên tắc',
+    title:'Nguyên tắc <span class="em">PL quốc tế</span>',
+    body:`<ul style="font-size:13.5px;">
+      <li>1️⃣ <b>Bình đẳng</b> về chủ quyền giữa các quốc gia</li>
+      <li>2️⃣ <b>Không dùng vũ lực</b> hay đe doạ dùng vũ lực</li>
+      <li>3️⃣ <b>Hoà bình</b> giải quyết tranh chấp</li>
+      <li>4️⃣ <b>Không can thiệp</b> công việc nội bộ</li>
+      <li>5️⃣ <b>Hợp tác</b> giữa các quốc gia</li>
+      <li>6️⃣ <b>Dân tộc tự quyết</b></li>
+      <li>7️⃣ <b>Tận tâm, thiện chí</b> thực hiện cam kết</li>
+    </ul>`,
+    author:'@gdktpl.cho.ha',
+    captionText:'PL quốc tế hình thành trên cơ sở THOẢ THUẬN, tự nguyện & bình đẳng.',
+    tags:['#7nguyenTac']
+  },
+  {
+    type:'concept',
+    bg:'linear-gradient(135deg,#1a2980 0%,#26d0ce 100%)',
+    icon:'🌊',
+    kicker:'Dãy số vàng',
+    title:'Các <span class="em">vùng biển</span>',
+    body:`<div class="data-table">
+      <div class="data-row"><b>Nội thuỷ</b><span class="meaning">Trong đường cơ sở — chủ quyền <b>tuyệt đối</b>, vào phải xin phép</span></div>
+      <div class="data-row"><b>12 hải lí</b><span class="meaning"><b>Lãnh hải</b> — chủ quyền đầy đủ; tàu nước ngoài được "đi qua không gây hại"</span></div>
+      <div class="data-row"><b>24 hải lí</b><span class="meaning"><b>Tiếp giáp</b> — kiểm soát hải quan, thuế, y tế, xuất nhập cảnh</span></div>
+      <div class="data-row"><b>200 hải lí</b><span class="meaning"><b>Đặc quyền KT</b> — quyền chủ quyền về tài nguyên</span></div>
+      <div class="data-row"><b>350 hải lí</b><span class="meaning"><b>Thềm lục địa</b> (tối đa) — khai thác dầu khí, khoáng sản</span></div>
+    </div>`,
+    author:'@gdktpl.cho.ha',
+    captionText:'12-24-200-350 — đọc như số điện thoại là nhớ 🌊 (Công ước Luật Biển 1982)',
+    tags:['#vungBien','#12_24_200_350']
+  },
+  {
+    type:'concept',
+    bg:'linear-gradient(135deg,#4568dc 0%,#b06ab3 100%)',
+    icon:'🗺️',
+    kicker:'Dân cư & lãnh thổ',
+    title:'Công pháp <span class="em">quốc tế</span>',
+    body:`<ul>
+      <li>👥 Dân cư: <b>công dân</b> (đa số, nhiều quyền nhất) · <b>người nước ngoài</b> (3 chế độ đãi ngộ) · <b>người không quốc tịch</b> (hạn chế nhất)</li>
+      <li>🗺️ Lãnh thổ 4 vùng: <b>đất · nước · trời · lòng đất</b></li>
+      <li>🌍 WTO (1995, Geneva): không phân biệt đối xử, minh bạch, tự do hoá TM, ưu đãi nước đang PT, cạnh tranh công bằng</li>
+    </ul>`,
+    author:'@gdktpl.cho.ha',
+    captionText:'Hợp đồng TMQT: đối tượng phải là ĐỘNG SẢN (di chuyển được qua biên giới).',
+    tags:['#danCu','#WTO']
+  },
+  {
+    type:'quiz',
+    bg:'linear-gradient(135deg,#0575e6 0%,#021b79 100%)',
+    question:'Vùng biển có chiều rộng <b>không vượt quá 12 hải lí</b> tính từ đường cơ sở là:',
+    options:[
+      {t:'Nội thuỷ', correct:false},
+      {t:'Lãnh hải', correct:true},
+      {t:'Vùng tiếp giáp lãnh hải', correct:false},
+      {t:'Vùng đặc quyền kinh tế', correct:false}
+    ],
+    explain:'12 hải lí = LÃNH HẢI. Nội thuỷ nằm TRONG đường cơ sở (không tính bằng hải lí). Tiếp giáp = 24, đặc quyền KT = 200.',
+    author:'@quizMaster',
+    captionText:'Cho số hải lí → tra dãy 12-24-200-350 🎯',
+    tags:['#quiz','#lanhHai']
+  },
+  {
+    type:'quiz',
+    bg:'linear-gradient(135deg,#134e5e 0%,#71b280 100%)',
+    question:'Nguyên tắc nào sau đây <b>KHÔNG</b> phải nguyên tắc cơ bản của pháp luật quốc tế?',
+    options:[
+      {t:'Bình đẳng về chủ quyền giữa các quốc gia', correct:false},
+      {t:'Giải quyết tranh chấp bằng biện pháp hoà bình', correct:false},
+      {t:'Can thiệp vào công việc nội bộ khi cần thiết', correct:true},
+      {t:'Tận tâm, thiện chí thực hiện cam kết quốc tế', correct:false}
+    ],
+    explain:'Nguyên tắc đúng là KHÔNG can thiệp công việc nội bộ. Câu "KHÔNG" → tìm ý ngược/tiêu cực so với lí thuyết.',
+    author:'@quizMaster',
+    captionText:'Mẹo câu "KHÔNG": tìm phương án trái với nguyên tắc đã học 🎯',
+    tags:['#quiz','#7nguyenTac']
+  },
+
+  // ============ SECTION 12: MẸO LÀM BÀI ============
+  {
+    type:'section',
+    bg:'linear-gradient(135deg,#fc4a1a 0%,#f7b733 100%)',
+    bigNum:'12',
+    kicker:'Bonus',
+    title:'Mẹo <span class="em">làm bài</span>',
+    body:'Kỹ thuật loại trừ + nhận diện bẫy — thêm 1-2 điểm chỉ nhờ tỉnh táo 🧠',
+    author:'@gdktpl.cho.ha',
+    captionText:'Đọc câu hỏi + đáp án TRƯỚC, đọc ngữ liệu SAU.',
+    tags:['#meo','#kyThuat']
+  },
+  {
+    type:'concept',
+    bg:'linear-gradient(135deg,#f12711 0%,#f5af19 100%)',
+    icon:'🕵️',
+    kicker:'Nhận diện đáp án SAI',
+    title:'Bắt bài <span class="em">người ra đề</span>',
+    body:`<ul>
+      <li>🚩 Từ <b>tuyệt đối</b>: "luôn luôn", "không bao giờ", "ai cũng", "mọi", "duy nhất" → thường SAI</li>
+      <li>🚩 Ý <b>tiêu cực</b>, trái đạo đức, trái pháp luật → SAI (trừ câu hỏi "KHÔNG")</li>
+      <li>🚩 <b>Xáo trộn khái niệm</b> — lấy định nghĩa A gắn cho B</li>
+      <li>✅ Phát biểu đúng: khách quan, chuẩn mực, đúng lí thuyết</li>
+    </ul>
+    <div class="warn">⚠️ Câu hỏi "KHÔNG đúng / SAI" → đảo chiều: chọn ý tiêu cực/trái lí thuyết!</div>`,
+    author:'@gdktpl.cho.ha',
+    captionText:'"Đánh thuế" ≠ "cấm xuất khẩu" — đề Đ/S hay chơi chữ kiểu này.',
+    tags:['#bayDe','#tuyetDoi']
+  },
+  {
+    type:'concept',
+    bg:'linear-gradient(135deg,#5f2c82 0%,#49a09d 100%)',
+    icon:'🧠',
+    kicker:'Quy trình 5 bước',
+    title:'Giải câu <span class="em">tình huống</span>',
+    body:`<div class="data-table">
+      <div class="data-row"><b>1️⃣</b><span class="meaning">Đọc <b>câu hỏi + đáp án</b> TRƯỚC tiên</span></div>
+      <div class="data-row"><b>2️⃣</b><span class="meaning">Xác định <b>đối tượng</b> & phạm vi nội dung</span></div>
+      <div class="data-row"><b>3️⃣</b><span class="meaning">Đọc ngữ liệu, <b>gạch chân</b> hành động/số liệu</span></div>
+      <div class="data-row"><b>4️⃣</b><span class="meaning">Nhiều nhân vật → <b>vẽ sơ đồ</b> quan hệ</span></div>
+      <div class="data-row"><b>5️⃣</b><span class="meaning">Phân tích ai <b>vi phạm</b> / không vi phạm → kết luận</span></div>
+    </div>`,
+    author:'@gdktpl.cho.ha',
+    captionText:'Tư duy ngược khi phân vân: "Nếu không... thì sao?"',
+    tags:['#tinhHuong','#soDo']
+  },
+
+  // CHECKLIST
+  {
+    type:'concept',
+    bg:'linear-gradient(135deg,#11998e 0%,#38ef7d 100%)',
+    icon:'✅',
+    kicker:'Trước khi vào phòng thi',
+    title:'Checklist <span class="em">GDKTPL</span>',
+    body:`<ul style="font-size:13.5px;">
+      <li>☑️ GDP (nội) vs GNI (dân)? HDI tăng — Gini giảm?</li>
+      <li>☑️ WTO 2007 · CPTPP 2018 · EVFTA 2020?</li>
+      <li>☑️ 4 loại bảo hiểm + 4 trụ cột an sinh?</li>
+      <li>☑️ 4 trách nhiệm DN — từ thiện = NHÂN VĂN?</li>
+      <li>☑️ Lạm phát: 10% và 1000%?</li>
+      <li>☑️ 4 hình thức thực hiện PL?</li>
+      <li>☑️ Bầu 18 — ứng 21? Khiếu nại (mình) vs tố cáo (người)?</li>
+      <li>☑️ Kết hôn: nam 20 — nữ 18?</li>
+      <li>☑️ Vùng biển: 12-24-200-350?</li>
+      <li>☑️ Câu "KHÔNG" → chọn ý ngược lí thuyết?</li>
+    </ul>`,
+    author:'@gdktpl.cho.ha',
+    captionText:'Tick đủ 10 ô = tự tin bước vào phòng thi 🎯',
+    tags:['#checklist','#truocGioG']
+  },
+
+  // FINALE
+  {
+    type:'finale',
+    bg:'linear-gradient(135deg,#ff006e 0%,#ffbe0b 50%,#3a86ff 100%)',
+    icon:'🏆',
+    kicker:'Hết phao rồi!',
+    title:'Hà <span class="em">cân hết</span>',
+    body:`<p style="text-align:center; font-size:16px; line-height:1.55;">
+    42 trang sách — giờ nằm gọn trong đầu Hà rồi 🎉<br><br>
+    Kinh tế 📈 + Pháp luật ⚖️ — lướt 1 vòng trước khi thi là đủ "mỳ ăn liền".
+    </p>
+    <p style="text-align:center; margin-top:16px; font-family:var(--italic); font-style:italic; font-size:17px;">
+    "Thi TN 2026? Chuyện nhỏ — vì Hà có nguyên team Tok ôn cùng." 📱💖
+    </p>`,
+    author:'@gdktpl.cho.ha',
+    captionText:'Vuốt lên học lại 🔁 Hít thở sâu, ngủ đủ giấc, mai lụm điểm 💌',
+    tags:['#done','#GDKTPL','#TN2026','#choHa','#yeuHa']
+  }
+];
+
+/* ============= RENDER ============= */
+const feed = document.getElementById('feed');
+const progressBar = document.getElementById('progress');
+
+const randCount = (min, max) => {
+  const n = Math.floor(Math.random()*(max-min)+min);
+  if (n > 1000) return (n/1000).toFixed(1)+'K';
+  return n.toString();
+};
+
+function makeBlobs(blobs=[]) {
+  if (!blobs.length) {
+    return `<div class="blob" style="background:rgba(255,255,255,.3); width:200px; height:200px; left:-50px; top:-50px"></div>
+            <div class="blob" style="background:rgba(0,0,0,.2); width:300px; height:300px; right:-100px; bottom:-100px"></div>`;
+  }
+  return blobs.map(b => `<div class="blob" style="background:${b.c}; width:${b.s}; height:${b.s}; left:${b.x}; top:${b.y}"></div>`).join('');
+}
+
+function renderCard(c, idx) {
+  const likes = randCount(800, 25000);
+  const saves = randCount(200, 8000);
+  const shares = randCount(50, 2000);
+
+  if (c.type === 'intro' || c.type === 'concept' || c.type === 'finale') {
+    return `
+      <div class="card" data-idx="${idx}">
+        <div class="card-bg" style="background:${c.bg}"></div>
+        ${makeBlobs(c.blobs)}
+        ${c.deco || ''}
+        <div class="grain"></div>
+        ${c.type === 'finale' ? makeConfetti() : ''}
+        <div class="card-content">
+          <div class="hero-icon">${c.icon}</div>
+          ${c.kicker ? `<div class="kicker">${c.kicker}</div>` : ''}
+          <h2 class="title">${c.title}</h2>
+          <div class="body">${typeof c.body === 'string' && c.body.startsWith('<') ? c.body : `<p>${c.body}</p>`}</div>
+        </div>
+        ${c.hint ? `<div class="swipe-hint"><div class="finger">👆</div><div class="label">VUỐT LÊN</div></div>` : `<div class="scroll-hint">⌃</div>`}
+        ${renderActions(c, idx, likes, saves, shares)}
+        ${renderCaption(c)}
+      </div>`;
+  }
+
+  if (c.type === 'section') {
+    return `
+      <div class="card section-card" data-idx="${idx}">
+        <div class="card-bg" style="background:${c.bg}"></div>
+        <div class="marquee">${c.title.replace(/<[^>]+>/g,' ')} • ${c.title.replace(/<[^>]+>/g,' ')} •</div>
+        <div class="grain"></div>
+        <div class="card-content">
+          <div class="big-num">${c.bigNum}</div>
+          <div class="kicker">${c.kicker}</div>
+          <h2 class="title">${c.title}</h2>
+          <div class="body" style="text-align:center;"><p>${c.body}</p></div>
+        </div>
+        <div class="scroll-hint">⌃</div>
+        ${renderActions(c, idx, likes, saves, shares)}
+        ${renderCaption(c)}
+      </div>`;
+  }
+
+  if (c.type === 'quiz') {
+    return `
+      <div class="card" data-idx="${idx}">
+        <div class="card-bg" style="background:${c.bg}"></div>
+        ${makeBlobs()}
+        <div class="grain"></div>
+        <div class="card-content" style="justify-content:flex-start; padding-top:20px;">
+          <div class="quiz-badge">⚡ QUIZ TIME</div>
+          <h3 class="quiz-q">${c.question}</h3>
+          <div class="quiz-options">
+            ${c.options.map((o,i) => `
+              <div class="quiz-opt" data-correct="${o.correct}" data-idx="${idx}">
+                <span class="opt-letter">${String.fromCharCode(65+i)}</span>
+                <span>${o.t}</span>
+              </div>`).join('')}
+          </div>
+          <div class="quiz-feedback" id="fb-${idx}">${c.explain}</div>
+        </div>
+        <div class="scroll-hint">⌃</div>
+        ${renderActions(c, idx, likes, saves, shares)}
+        ${renderCaption(c)}
+      </div>`;
+  }
+}
+
+function renderActions(c, idx, likes, saves, shares) {
+  return `
+    <div class="actions">
+      <div class="avatar">📈<div class="avatar-plus">+</div></div>
+      <div class="action" data-action="like" data-idx="${idx}">
+        <div class="action-btn">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="white" stroke="white" stroke-width="2">
+            <path d="M12 21s-7-4.35-9.5-9.5C.5 7 4 4 7 4c2 0 3.5 1 5 3 1.5-2 3-3 5-3 3 0 6.5 3 4.5 7.5C19 16.65 12 21 12 21z" fill="rgba(255,255,255,0)"/>
+          </svg>
+        </div>
+        <div class="action-count">${likes}</div>
+      </div>
+      <div class="action" data-action="save" data-idx="${idx}">
+        <div class="action-btn">🔖</div>
+        <div class="action-count">${saves}</div>
+      </div>
+      <div class="action" data-action="comment" data-idx="${idx}">
+        <div class="action-btn">💬</div>
+        <div class="action-count">${randCount(20,800)}</div>
+      </div>
+      <div class="action" data-action="share" data-idx="${idx}">
+        <div class="action-btn">↗️</div>
+        <div class="action-count">${shares}</div>
+      </div>
+    </div>
+  `;
+}
+
+function renderCaption(c) {
+  return `
+    <div class="caption">
+      <div class="author">${c.author}</div>
+      <div class="text">${c.captionText}</div>
+      <div class="hashtags">${(c.tags||[]).map(t => `<span>${t}</span>`).join('')}</div>
+    </div>
+  `;
+}
+
+function makeConfetti() {
+  const colors = ['#ff006e','#ffbe0b','#8338ec','#3a86ff','#06ffa5','#fb5607'];
+  let html = '';
+  for (let i = 0; i < 30; i++) {
+    const left = Math.random()*100;
+    const delay = Math.random()*2;
+    const dur = 2 + Math.random()*2;
+    const color = colors[Math.floor(Math.random()*colors.length)];
+    const rot = Math.random()*360;
+    html += `<div class="confetti" style="left:${left}%; background:${color}; animation-duration:${dur}s; animation-delay:${delay}s; transform:rotate(${rot}deg)"></div>`;
+  }
+  return html;
+}
+
+feed.innerHTML = CARDS.map(renderCard).join('');
+progressBar.innerHTML = CARDS.map((_,i) => `<span data-i="${i}"></span>`).join('');
+const progressDots = progressBar.querySelectorAll('span');
+
+feed.addEventListener('click', (e) => {
+  const action = e.target.closest('.action');
+  if (action) {
+    const type = action.dataset.action;
+    if (type === 'like') {
+      action.classList.toggle('liked');
+      const svg = action.querySelector('svg path');
+      if (action.classList.contains('liked')) {
+        svg.setAttribute('fill','#fff');
+        const countEl = action.querySelector('.action-count');
+        const oldC = countEl.textContent;
+        countEl.textContent = typeof oldC === 'string' && oldC.includes('K')
+          ? (parseFloat(oldC) + 0.1).toFixed(1)+'K'
+          : (parseInt(oldC.replace(/[^\d]/g,''))+1).toLocaleString();
+        const burst = document.createElement('div');
+        burst.className = 'burst';
+        burst.textContent = '💖';
+        const rect = action.getBoundingClientRect();
+        burst.style.left = (rect.left - 30) + 'px';
+        burst.style.top = (rect.top - 30) + 'px';
+        document.body.appendChild(burst);
+        setTimeout(() => burst.remove(), 800);
+      } else {
+        svg.setAttribute('fill','rgba(255,255,255,0)');
+      }
+    } else if (type === 'save') {
+      action.classList.toggle('liked');
+      const btn = action.querySelector('.action-btn');
+      btn.textContent = action.classList.contains('liked') ? '✅' : '🔖';
+    } else if (type === 'share') {
+      showToast('Đã copy link gửi cho Hà 💌');
+    } else if (type === 'comment') {
+      showToast('Comments đang chill...');
+    }
+    return;
+  }
+
+  const opt = e.target.closest('.quiz-opt');
+  if (opt && !opt.classList.contains('disabled')) {
+    const correct = opt.dataset.correct === 'true';
+    const idx = opt.dataset.idx;
+    const parent = opt.parentElement;
+    parent.querySelectorAll('.quiz-opt').forEach(o => {
+      o.classList.add('disabled');
+      if (o.dataset.correct === 'true') o.classList.add('correct');
+    });
+    if (!correct) opt.classList.add('wrong');
+    const feedback = document.getElementById('fb-'+idx);
+    feedback.classList.add('show');
+    if (!correct) feedback.classList.add('wrong');
+    if (correct) {
+      const burst = document.createElement('div');
+      burst.className = 'burst';
+      burst.textContent = '🎉';
+      burst.style.left = '50%';
+      burst.style.top = '40%';
+      burst.style.transform = 'translateX(-50%)';
+      document.body.appendChild(burst);
+      setTimeout(() => burst.remove(), 800);
+    }
+  }
+});
+
+function showToast(msg) {
+  const t = document.createElement('div');
+  t.textContent = msg;
+  t.style.cssText = `
+    position:fixed; bottom:120px; left:50%; transform:translateX(-50%);
+    background:rgba(0,0,0,.85); color:#fff; padding:10px 18px;
+    border-radius:999px; font-size:13px; font-weight:600;
+    z-index:100; backdrop-filter:blur(8px);
+    animation:fadeIn .25s ease;
+  `;
+  document.body.appendChild(t);
+  setTimeout(() => { t.style.opacity = '0'; t.style.transition = 'opacity .3s'; }, 1600);
+  setTimeout(() => t.remove(), 2000);
+}
+
+let lastTap = 0;
+feed.addEventListener('click', (e) => {
+  if (e.target.closest('.action') || e.target.closest('.quiz-opt')) return;
+  const now = Date.now();
+  if (now - lastTap < 300) {
+    const card = e.target.closest('.card');
+    if (!card) return;
+    const likeAction = card.querySelector('[data-action="like"]');
+    if (likeAction && !likeAction.classList.contains('liked')) {
+      likeAction.click();
+    }
+    const burst = document.createElement('div');
+    burst.className = 'burst';
+    burst.textContent = '❤️';
+    burst.style.left = (e.clientX - 40) + 'px';
+    burst.style.top = (e.clientY - 40) + 'px';
+    burst.style.fontSize = '100px';
+    document.body.appendChild(burst);
+    setTimeout(() => burst.remove(), 800);
+  }
+  lastTap = now;
+});
+
+feed.addEventListener('scroll', () => {
+  const idx = Math.round(feed.scrollTop / window.innerHeight);
+  progressDots.forEach((d, i) => {
+    d.classList.toggle('done', i < idx);
+    d.classList.toggle('current', i === idx);
+  });
+});
+
+progressDots[0]?.classList.add('current');
+</script>
+</body>
+</html>
