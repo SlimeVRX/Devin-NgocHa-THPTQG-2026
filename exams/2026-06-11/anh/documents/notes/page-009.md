@@ -1,0 +1,17 @@
+# Trang 009
+- Chủ đề: Từ vựng Reading (A–C)
+- Phân loại: Vocabulary
+- Nội dung (từ = synonym | nghĩa | ví dụ):
+  - access (n,v): tiếp cận, quyền truy cập — Students can access the online library.
+  - address (v) = deal with, tackle: giải quyết — The report addresses climate change.
+  - advantage (n) = benefit, merit: lợi ích — Online learning has many advantages.
+  - advertise (v): quảng cáo
+  - allow (v) = permit, enable: cho phép
+  - applaud (v) = acclaim, praise: tán dương
+  - appreciate (v): đánh giá cao
+  - approach (n,v) = method, way: cách tiếp cận
+  - approve (v) = accept: chấp nhận, phê duyệt
+  - attract (v) >< distract: thu hút >< làm sao nhãng
+  - awareness (n): sự nhận thức — The campaign raised awareness.
+  - collaborate (v) = cooperate: hợp tác
+  - commitment (n): sự cam kết

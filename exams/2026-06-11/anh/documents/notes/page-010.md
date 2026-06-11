@@ -1,0 +1,21 @@
+# Trang 010
+- Chủ đề: Từ vựng Reading (C–I)
+- Phân loại: Vocabulary
+- Nội dung:
+  - contribute (v): đóng góp
+  - create (v) = make, generate: tạo ra
+  - deny (v) = refuse, reject: phủ nhận, từ chối
+  - disadvantage (n) = drawback: bất lợi
+  - discourage (v) = deter, prevent: làm nản lòng
+  - encourage (v) = support, motivate: khuyến khích
+  - effect (n) = impact: hiệu quả, tác động
+  - engage (v) = involve, attract: tham gia, thu hút
+  - enhance (v) = improve, boost: cải thiện
+  - ensure (v) = guarantee: đảm bảo
+  - establish (v) = found: thành lập
+  - estimate (v): ước tính
+  - experience (n,v): kinh nghiệm, trải nghiệm
+  - foster (v): thúc đẩy, nuôi dưỡng — Schools foster teamwork.
+  - highlight (v) = emphasize, stress: nhấn mạnh
+  - ignore (v) = neglect, overlook: bỏ qua
+  - implement (v): thực hiện, triển khai
