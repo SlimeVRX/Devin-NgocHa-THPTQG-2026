@@ -8,16 +8,16 @@
 
 1. [Lời khuyên dành cho Ngọc Hà](#lời-khuyên-dành-cho-ngọc-hà)
 2. [Tổng quan tình hình](#tổng-quan-tình-hình)
-3. [Các tổ hợp xét tuyển phù hợp](#các-tổ-hợp-xét-tuyển-phù-hợp)
+3. [Học bạ thực tế — Hoàng Ngọc Hà](#học-bạ-thực-tế--hoàng-ngọc-hà)
 4. [Phương án từng trường](#phương-án-từng-trường)
-   - [⭐ ĐH Intracom (INU) — Nguyện vọng 1 đề xuất](#1-đại-học-intracom-inu--nguyện-vọng-1-đề-xuất)
+   - [ĐH Intracom (INU)](#1-đại-học-intracom-inu)
    - [ĐH Tài nguyên & Môi trường Hà Nội (DMT)](#2-đại-học-tài-nguyên-và-môi-trường-hà-nội-dmt)
    - [ĐH Vinh (TDV)](#3-đại-học-vinh-tdv)
    - [ĐH Nghệ An (NAU)](#4-đại-học-nghệ-an-nau)
    - [ĐH Mỏ - Địa chất (HUMG)](#5-đại-học-mỏ---địa-chất-humg)
    - [ĐH Khoa học Tự nhiên - ĐHQGHN (QHT)](#6-đại-học-khoa-học-tự-nhiên---đhqghn-qht)
 5. [Bảng so sánh nhanh](#bảng-so-sánh-nhanh)
-6. [Chiến lược xét tuyển gợi ý](#chiến-lược-xét-tuyển-gợi-ý)
+6. [Phân tích & Đề xuất khách quan](#phân-tích--đề-xuất-khách-quan)
 
 ---
 
@@ -76,39 +76,66 @@ Ba mẹ nhỏ yêu nhỏ, nhưng họ cũng có giới hạn trong cách thể h
 | Mục | Chi tiết |
 |---|---|
 | **Các môn thi** | Toán, Ngữ Văn, Tiếng Anh, Giáo dục KT&PL |
-| **Điểm dự kiến (tốt nhất)** | Toán ~5, Văn ~7.5, Anh ~7, GDKTPL chưa rõ |
-| **Tổ hợp D01 dự kiến** | 5 + 7.5 + 7 = **19.5** (chưa ưu tiên) |
+| **Điểm thi dự kiến (TN THPT)** | Toán ~5, Văn ~7.5, Anh ~7, GDKTPL chưa rõ |
+| **D01 thi dự kiến** | 5 + 7.5 + 7 = **~19.5** (chưa ưu tiên) |
+| **Học bạ lớp 12** | Toán 7.6, Văn 8.6, Anh 9.3, GDKTPL 8.8 |
+| **D01 học bạ lớp 12** | 7.6 + 8.6 + 9.3 = **25.5** |
+| **D66 học bạ lớp 12** | 8.6 + 8.8 + 9.3 = **26.7** (tổ hợp mạnh nhất!) |
+| **Xếp loại lớp 12** | **Giỏi** (TB ~8.4) |
 | **Sở thích** | Bảo vệ môi trường, Ngôn ngữ, Ngoại giao |
 | **Thế mạnh** | Tiếng Anh tốt, Ngữ Văn khá |
 | **Mục tiêu mơ ước** | Kinh tế Đối ngoại — ĐH Ngoại giao (rất cao, 26-27 điểm) |
 
 ### Nhận xét nhanh
 
-- **D01 (Toán + Văn + Anh) ~19.5 điểm** là tổ hợp mạnh nhất, phù hợp nhiều ngành nhất
-- Với mức điểm này, nhiều trường **top 2-3** ở Nghệ An và Hà Nội hoàn toàn trong tầm với
-- Ngành Kinh tế Đối ngoại ĐH Ngoại giao (26-27 điểm) — **không khả thi** với điểm hiện tại
-- Nên tập trung vào: **Ngôn ngữ Anh**, **Môi trường**, **Quản lý tài nguyên** — đây là những ngành phù hợp cả sở thích lẫn điểm số
+- **Điểm thi TN THPT dự kiến:** D01 ~19.5 — phù hợp nhiều trường top 2-3
+- **Học bạ lớp 12 rất mạnh:** D01 = 25.5, D66 (Văn+GDKTPL+Anh) = **26.7** — rất cạnh tranh!
+- **Xếp loại lớp 12 Giỏi** (TB ~8.4) → đủ điều kiện nhiều học bổng
+- **Tiếng Anh xuất sắc:** 9.3 (lớp 12), TB 3 năm ~8.9 → thế mạnh lớn nhất
+- **GDKTPL tiến bộ vượt bậc:** 6.1 (lớp 10) → 8.8 (lớp 12) → mở ra nhiều tổ hợp mới
+- Ngành Kinh tế Đối ngoại ĐH Ngoại giao (26-27 điểm) — **khó khả thi** với điểm thi, nhưng **học bạ D66 = 26.7** cho thấy năng lực thực sự không hề thấp
+- Nên tập trung vào: **Ngôn ngữ Anh**, **Môi trường**, **Kinh tế**, **Luật** — phù hợp cả sở thích lẫn năng lực
 
 ---
 
-## Các tổ hợp xét tuyển phù hợp
+## Học bạ thực tế — Hoàng Ngọc Hà
 
-Ngọc Hà thi 4 môn: **Toán + Văn + Anh + GDKTPL**, nên có thể xét tuyển bằng nhiều tổ hợp:
+### Điểm chi tiết 3 năm THPT (Trường THPT Lê Viết Thuật, Nghệ An)
 
-| Tổ hợp | Môn | Điểm dự kiến | Ghi chú |
-|---|---|---|---|
-| **D01** | Toán, Ngữ Văn, Tiếng Anh | ~19.5 | ⭐ Tổ hợp chủ lực, xét được nhiều ngành nhất |
-| **X01** | Toán, Ngữ Văn, GDKTPL | ~19 (nếu GDKTPL ~6.5) | Dùng cho ngành không yêu cầu Anh |
-| **X25** | Toán, Tiếng Anh, GDKTPL | ~18.5 (nếu GDKTPL ~6.5) | Một số trường có dùng |
-| **X78** | Ngữ Văn, Tiếng Anh, GDKTPL | ~21 (nếu GDKTPL ~6.5) | Một số ngành XH tại ĐH Vinh |
+| Môn | Lớp 10 | Lớp 11 | Lớp 12 | TB 3 năm | Xu hướng |
+|---|---|---|---|---|---|
+| **Toán** | 6.6 | 7.2 | 7.6 | 7.13 | Tăng đều |
+| **Ngữ Văn** | 8.0 | 7.9 | 8.6 | 8.17 | Tăng mạnh |
+| **Tiếng Anh** | 8.7 | 8.6 | **9.3** | **8.87** | Xuất sắc, tăng mạnh |
+| **GDKTPL** | 6.1 | 8.5 | **8.8** | 7.80 | Vượt bậc (+2.7 so với lớp 10) |
+| Hóa học | 6.1 | 6.8 | 7.7 | 6.87 | Tăng |
+| Lịch sử | 6.2 | 7.1 | 8.1 | 7.13 | Tăng mạnh |
+| Địa lí | 5.9 | 7.5 | 8.6 | 7.33 | Tăng rất mạnh |
+| Công nghệ | 7.3 | 8.3 | 7.9 | 7.83 | Ổn định |
+| GDQP&AN | 8.0 | 8.8 | 9.1 | 8.63 | Tăng |
 
-> **Lưu ý:** Điểm GDKTPL chưa rõ, cần chờ kết quả thực tế để tính chính xác.
+**Xếp loại:** Lớp 10 Khá → Lớp 11 Khá → **Lớp 12 Giỏi** (TB ~8.4)
+
+### Tổ hợp xét tuyển — Điểm thi dự kiến vs. Học bạ
+
+| Tổ hợp | Môn | Thi TN dự kiến | HB Lớp 12 | HB TB 3 năm |
+|---|---|---|---|---|
+| **D01** | Toán + Văn + Anh | ~19.5 | **25.5** | 24.2 |
+| **D66** | Văn + GDKTPL + Anh | chưa rõ | **26.7** | 24.8 |
+| **D84** | Toán + GDKTPL + Anh | chưa rõ | **25.7** | 23.8 |
+| **C14** | Toán + Văn + GDKTPL | chưa rõ | **25.0** | 23.1 |
+
+> **Nhận xét quan trọng:**  
+> - **D66 HB lớp 12 = 26.7** là tổ hợp mạnh nhất — cao hơn D01 tới 1.2 điểm  
+> - Điểm thi dự kiến (~19.5 D01) thấp hơn nhiều so với học bạ (25.5 D01) → **xét học bạ là phương thức có lợi nhất**  
+> - Tiếng Anh (9.3) và GDKTPL (8.8) là 2 môn mạnh nhất → cần ưu tiên tổ hợp có 2 môn này (D66, D84)  
+> - Lớp 12 Giỏi → đủ điều kiện HB A1 tại INU (100% HP, 20 suất)
 
 ---
 
 ## Phương án từng trường
 
-### 1. Đại học Intracom (INU) — Nguyện vọng 1 đề xuất
+### 1. Đại học Intracom (INU)
 
 > **Mã trường:** INU  
 > **Tên cũ:** Đại học Chu Văn An (đổi tên theo QĐ 2445/QĐ-TTg ngày 05/11/2025)  
@@ -120,19 +147,19 @@ Ngọc Hà thi 4 môn: **Toán + Văn + Anh + GDKTPL**, nên có thể xét tuy�
 > **Hotline:** 0968 395 392 / 096 216 30 03  
 > **Đăng ký xét tuyển:** [xettuyen.intracomuni.edu.vn](https://xettuyen.intracomuni.edu.vn)  
 
-#### Vì sao đề xuất INU là Nguyện vọng 1 cho Ngọc Hà?
+#### Điểm nổi bật của INU
 
-| Lý do | Chi tiết |
+| Tiêu chí | Chi tiết |
 |---|---|
 | **Học bổng dành riêng HS Nghệ An** | 20 suất A1 (100% HP toàn khóa) + 100 suất A2 (50% HP toàn khóa) — chương trình "Khát vọng Intracom" |
 | **Ưu đãi NV1** | Giảm 20% HP toàn khóa + Miễn HP học kỳ 1 (1.000 thí sinh đầu tiên đăng ký NV1) |
 | **Cam kết việc làm** | SV đạt chuẩn đầu ra được ưu tiên bố trí việc làm tại Tập đoàn Intracom hoặc đối tác |
-| **Có ngành Ngoại ngữ** | Ngôn ngữ Anh (3 chuyên ngành), Ngôn ngữ Trung (4 chuyên ngành) — phù hợp thế mạnh Tiếng Anh |
-| **Có ngành Kinh tế, Luật** | QTKD (7 chuyên ngành), TCNH, Kế toán, Luật kinh tế (5 chuyên ngành) — gần mong muốn KT Đối ngoại |
+| **Ngành Ngoại ngữ** | Ngôn ngữ Anh (3 CK), Ngôn ngữ Trung (4 CK) — phù hợp thế mạnh Tiếng Anh |
+| **Ngành Kinh tế, Luật** | QTKD (7 CK), TCNH, Kế toán, Luật kinh tế (5 CK) — gần mong muốn KT Đối ngoại |
 | **Mô hình thực tiễn** | ĐH Doanh nghiệp: học thật, làm thật, thực tập trong hệ sinh thái Intracom Group |
 | **Xét học bạ (PT3)** | Có xét học bạ lớp 10, 11, 12 — đúng nhu cầu Ngọc Hà |
-| **Nhiều tổ hợp GDKTPL** | Nhận C14, D66, D84 (có GDKTPL) — NH có thêm lựa chọn tổ hợp so với các trường khác |
-| **Kỷ niệm 20 năm** | Nhân dịp 20 năm thành lập → nhân đôi học bổng cho K21 (2026) |
+| **Nhiều tổ hợp GDKTPL** | Nhận C14, D66, D84 (có GDKTPL) — là trường duy nhất nhận D66 cho NN Anh |
+| **Kỷ niệm 20 năm** | Nhân đôi học bổng cho K21 (2026) |
 
 #### Phương thức xét tuyển
 
@@ -247,11 +274,11 @@ INU đào tạo 12 ngành (36 chương trình). Các ngành phù hợp NH:
 | **Kết Nối — Nhóm trường/nhóm bạn** | 30% HP HK1 | 200 suất | ✔️ Nếu đi cùng ≥3 bạn cùng trường THPT |
 | **Trách nhiệm XH — Vươn lên cùng Intracom** | 50% HP HK1 | 50 suất | Tùy hoàn cảnh |
 
-**Tổng hợp ưu đãi tài chính nếu đặt NV1 vào INU:**
+**Tổng hợp ưu đãi tài chính tại INU (nếu đăng ký NV1):**
 - Giảm 20% HP toàn khóa (ưu đãi NV1)
 - Miễn/giảm HP HK1 (HB "Khởi Đầu Vững Vàng" — 1.000 suất)
-- HB "Khát vọng Intracom" Nghệ An A2: 50% HP toàn khóa
-- → **Kết hợp lại: có thể được hỗ trợ 50-100% HP HK1 + giảm 50-70% HP các kỳ sau**
+- HB "Khát vọng Intracom" Nghệ An: A1 (100% HP, 20 suất) nếu lớp 12 Giỏi — **NH đủ điều kiện!**; A2 (50% HP, 100 suất)
+- → Kết hợp: có thể được hỗ trợ 50-100% HP HK1 + giảm 50-100% HP các kỳ sau
 
 #### Thông tin đăng ký xét tuyển
 
@@ -261,7 +288,7 @@ INU đào tạo 12 ngành (36 chương trình). Các ngành phù hợp NH:
 - **Nộp hồ sơ:** Trực tiếp hoặc chuyển phát nhanh về Tòa A - Intracom Riverside, Vĩnh Thanh, Đông Anh, Hà Nội
 - Miễn lệ phí xét tuyển (trừ phương thức qua Bộ GD&ĐT)
 
-> **Nhận xét:** INU là lựa chọn **chiến lược** cho Ngọc Hà — tận dụng lợi thế HS Nghệ An để nhận học bổng riêng (120 suất cho tỉnh nhà), kết hợp ưu đãi NV1 giảm gánh nặng tài chính. **Có xét học bạ (PT3)** đúng nhu cầu. Mô hình ĐH Doanh nghiệp gắn thực tiễn, cam kết việc làm — phù hợp với ADHD vì học qua trải nghiệm thực tế. 12 ngành (36 chương trình đào tạo), Ngôn ngữ Anh, Luật kinh tế, QTKD, Du lịch đều phù hợp sở thích. **Điểm đặc biệt:** INU nhận nhiều tổ hợp GDKTPL (C14, D66, D84) — NH có thêm lựa chọn, tổ hợp D66 (Văn+GDKTPL+Anh) có thể đạt ~21đ, cao hơn D01. Học phí **không tăng toàn khóa** và cam kết bố trí việc làm sau tốt nghiệp.
+> **Nhận xét:** INU có xét học bạ (PT3), nhận nhiều tổ hợp GDKTPL (C14, D66, D84) — D66 HB lớp 12 của NH = **26.7đ**, rất cạnh tranh. Mô hình ĐH Doanh nghiệp gắn thực tiễn, cam kết việc làm. HB "Khát vọng Intracom" dành riêng cho HS Nghệ An (120 suất). HP không tăng toàn khóa. **Hạn chế:** Trường mới đổi tên (từ ĐH Chu Văn An), chưa có nhiều khóa tốt nghiệp, uy tín chưa được kiểm chứng so với ĐH Vinh hay TNMT. 12 ngành (36 CK), ngôn ngữ Anh, Luật kinh tế, QTKD đều phù hợp sở thích.
 
 ---
 
@@ -503,7 +530,7 @@ INU đào tạo 12 ngành (36 chương trình). Các ngành phù hợp NH:
 
 ## Bảng so sánh nhanh
 
-| Tiêu chí | ⭐ **ĐH Intracom (INU)** | ĐH TNMT (DMT) | ĐH Vinh (TDV) | ĐH Nghệ An (NAU) | ĐH Mỏ (HUMG) | ĐH KHTN (QHT) |
+| Tiêu chí | **ĐH Intracom (INU)** | ĐH TNMT (DMT) | ĐH Vinh (TDV) | ĐH Nghệ An (NAU) | ĐH Mỏ (HUMG) | ĐH KHTN (QHT) |
 |---|---|---|---|---|---|---|
 | **Vị trí** | Hưng Yên (chính) / Hà Nội (VP) | Hà Nội | Vinh, Nghệ An | Vinh, Nghệ An | Hà Nội | Hà Nội |
 | **Mô hình** | ĐH Doanh nghiệp | Công lập | Công lập | Công lập | Công lập | Công lập (ĐHQG) |
@@ -525,80 +552,93 @@ INU đào tạo 12 ngành (36 chương trình). Các ngành phù hợp NH:
 
 ---
 
-## Chiến lược xét tuyển gợi ý
+## Phân tích & Đề xuất khách quan
 
-### ⭐ Kịch bản đề xuất: Chọn INU NV1 — Nắm chắc tương lai, mở rộng lộ trình nghề nghiệp
+### Đánh giá từng trường theo thế mạnh thực tế của Ngọc Hà
 
-| Ưu tiên | Trường | Ngành | Phương thức | Lý do |
+Dựa trên học bạ thực tế (D01 HB = 25.5, D66 HB = 26.7, lớp 12 Giỏi, Anh 9.3):
+
+| Trường | Điểm mạnh nhất cho NH | Điểm yếu / Rủi ro | Phù hợp? |
+|---|---|---|---|
+| **ĐH Vinh** | Miễn HP 100% (SP Anh), uy tín cao, gần nhà, Anh 9.3 rất phù hợp, D01 HB = 25.5 dư ngưỡng | Chỉ phù hợp nếu muốn theo nghề dạy học | Rất cao |
+| **ĐH TNMT** | Đúng sở thích MT, có NN Anh, ở Hà Nội, xét HB, D01 = 25.5 dư | HP cao hơn, xa nhà | Cao |
+| **ĐH Intracom** | HB Nghệ An (A1: 100% HP — NH đủ ĐK lớp 12 Giỏi!), D66 = 26.7 rất mạnh, cam kết việc làm, nhiều ngành | Trường mới, uy tín chưa kiểm chứng, ở Hưng Yên | Cao |
+| **ĐH KHTN** | Uy tín cao nhất (ĐHQGHN), ngành MT mạnh | KHÔNG xét HB, D01 thi ~19.5 rủi ro | Trung bình |
+| **ĐH Mỏ** | NN Anh, QL Tài nguyên, ở Hà Nội, xét HB | Không nổi bật về HB/ưu đãi | Trung bình |
+| **ĐH Nghệ An** | Gần nhà, HP thấp nhất (325k/TC), an toàn | Uy tín thấp, ít cơ hội phát triển | Lưới an toàn |
+
+### Đề xuất chiến lược nguyện vọng (khách quan, dựa trên dữ liệu)
+
+| NV | Trường | Ngành | Phương thức | Lý do |
 |---|---|---|---|---|
-| **NV1** | **⭐ ĐH Intracom (INU)** | Ngôn ngữ Anh / QTKD | TN THPT (D01/D66) + Học bạ | HB Nghệ An (50-100% HP), ưu đãi NV1, cam kết việc làm, D66 ~21đ |
-| NV2 | **ĐH Vinh** | SP Tiếng Anh | D01 + Học bạ | Miễn HP hoàn toàn, gần nhà, uy tín |
-| NV3 | **ĐH TNMT** | QL Tài nguyên & MT | D01 + Học bạ | Đúng sở thích MT, ở Hà Nội |
-| NV4 | **ĐH TNMT** | Ngôn ngữ Anh | D01 + Học bạ | Thế mạnh Anh, Hà Nội |
-| NV5 | **ĐH Nghệ An** | Ngôn ngữ Anh | D01 + Học bạ | Lưới an toàn, gần nhà |
+| **NV1** | **ĐH Vinh** | SP Tiếng Anh | Học bạ (D01 = 25.5) | **Miễn HP 100%**, Anh 9.3 xuất sắc, uy tín cao, gần nhà. Đây là lựa chọn tối ưu nhất về tài chính + thế mạnh |
+| **NV2** | **ĐH TNMT** | QL Tài nguyên & MT | Học bạ (D01 = 25.5) | Đúng sở thích MT, ở Hà Nội, xét HB dư ngưỡng |
+| **NV3** | **ĐH Intracom** | Ngôn ngữ Anh | Học bạ (D66 = 26.7) | HB A1 Nghệ An (100% HP, 20 suất — lớp 12 Giỏi ĐỦ ĐK), ưu đãi NV1, D66 cực mạnh |
+| **NV4** | **ĐH TNMT** | Ngôn ngữ Anh | Học bạ (D01 = 25.5) | Kết hợp Anh + MT, Hà Nội |
+| **NV5** | **ĐH KHTN** | Khoa học Môi trường | TN THPT (D01) | Uy tín cao nhất, nhưng rủi ro vì không xét HB |
+| **NV6** | **ĐH Mỏ** | Ngôn ngữ Anh | Học bạ (D01 = 25.5) | Hà Nội, trường lâu năm |
+| **NV7** | **ĐH Nghệ An** | Ngôn ngữ Anh | Học bạ (D01 = 25.5) | Lưới an toàn, gần nhà, HP thấp |
 
-**Lý do đặt INU NV1:**
-- Là HS Nghệ An → được xét 120 suất HB "Khát vọng Intracom" (riêng cho tỉnh nhà)
-- HB A2 (50% HP, 100 suất): lớp 12 Khá + TB Toán & Anh ≥ 8đ (Anh là thế mạnh NH, cần kiểm tra TB Toán)
-- HB A1 (100% HP, 20 suất): nếu lớp 12 Giỏi → miễn 100% HP toàn khóa
-- Ưu đãi NV1: giảm 20% HP toàn khóa + miễn HP HK1 (HB Khởi Đầu Vững Vàng, 1.000 suất)
-- INU nhận tổ hợp D66 (Văn+GDKTPL+Anh ~21đ) → có thể **cao hơn D01** (~19.5đ) cho ngành NN Anh
-- 12 ngành, 36 chương trình — nhiều lựa chọn phù hợp: NN Anh, QTKD, Luật KT, Du lịch
-- Mô hình ĐH Doanh nghiệp: học thông qua trải nghiệm thực tế — phù hợp ADHD hơn mô hình giảng đường truyền thống
-- Cam kết bố trí việc làm → giảm lo lắng về tương lai
-- Học phí **không tăng toàn khóa** — ổn định tài chính
+### Giải thích chiến lược
 
-### Kịch bản 1: Ưu tiên Ngôn ngữ Anh (phát huy thế mạnh)
+**Vì sao đề xuất ĐH Vinh SP Tiếng Anh là NV1?**
+- **Miễn 100% học phí** toàn khóa (ngành sư phạm) — lợi thế tài chính lớn nhất trong 6 trường
+- **Tiếng Anh 9.3** (lớp 12), TB 3 năm ~8.9 — thế mạnh lớn nhất của NH, hoàn toàn phù hợp
+- **D01 học bạ = 25.5** — rất dư ngưỡng xét tuyển
+- **Uy tín cao** — ĐH Vinh là trường hàng đầu khu vực, bằng SP được công nhận rộng rãi
+- **Gần nhà** (Nghệ An) — giảm chi phí sinh hoạt, gia đình hỗ trợ
+- Mẹ NH là giáo viên — có kinh nghiệm hiểu nghề, hỗ trợ định hướng
 
-| Ưu tiên | Trường | Ngành | Phương thức |
+**Vì sao ĐH TNMT là NV2?**
+- Đúng sở thích bảo vệ môi trường — giám sát, kiểm tra hoạt động MT
+- Trường chuyên về tài nguyên & MT → uy tín trong ngành
+- Ở Hà Nội → mở rộng trải nghiệm, cơ hội việc làm
+
+**Vì sao INU là NV3 (không phải NV1)?**
+- **Ưu điểm thực sự:** HB A1 Nghệ An (100% HP, 20 suất) — NH đủ ĐK vì lớp 12 Giỏi; D66 = 26.7 rất mạnh; mô hình ĐH Doanh nghiệp thực tiễn; cam kết việc làm
+- **Hạn chế cần cân nhắc:** Trường mới đổi tên (11/2025), chưa có nhiều khóa tốt nghiệp để đánh giá chất lượng đào tạo thực tế; uy tín chưa được kiểm chứng so với ĐH Vinh (50+ năm); ở Hưng Yên (xa nhà hơn ĐH Vinh)
+- **Kết luận:** INU có nhiều ưu đãi tài chính hấp dẫn và phù hợp thế mạnh, nhưng cần thời gian để khẳng định uy tín. Nếu NH ưu tiên tài chính + trải nghiệm thực tế hơn uy tín trường, INU có thể lên NV1-2
+
+### Các kịch bản thay thế
+
+**Kịch bản A: Ưu tiên tài chính (giảm gánh nặng kinh tế)**
+
+| NV | Trường | Ngành | Chi phí |
 |---|---|---|---|
-| NV1 | **⭐ ĐH Intracom** | Ngoại ngữ | TN THPT |
-| NV2 | **ĐH Vinh** | Sư phạm Tiếng Anh | TN THPT (D01) + Học bạ |
-| NV3 | **ĐH TNMT** | Ngôn ngữ Anh | TN THPT (D01) + Học bạ |
-| NV4 | **ĐH Mỏ** | Ngôn ngữ Anh | TN THPT (D01) + Học bạ |
-| NV5 | **ĐH Nghệ An** | Ngôn ngữ Anh | TN THPT + Học bạ |
+| NV1 | **ĐH Vinh** | SP Tiếng Anh | **Miễn 100% HP** |
+| NV2 | **ĐH Intracom** | NN Anh | HB A1: **miễn 100% HP** (lớp 12 Giỏi) |
+| NV3 | **ĐH Nghệ An** | NN Anh | HP thấp (325k/TC) |
 
-**Lý do:** INU NV1 nhận HB Nghệ An + ưu đãi NV1. SP Tiếng Anh ĐH Vinh miễn HP, uy tín cao. Ngôn ngữ Anh ở TNMT/Mỏ nếu muốn lên Hà Nội.
+**Kịch bản B: Ưu tiên sở thích Môi trường**
 
-### Kịch bản 2: Ưu tiên Môi trường (đúng đam mê)
+| NV | Trường | Ngành |
+|---|---|---|
+| NV1 | **ĐH TNMT** | QL Tài nguyên & MT |
+| NV2 | **ĐH KHTN** | KH Môi trường (nếu đủ điểm thi) |
+| NV3 | **ĐH Mỏ** | QL Tài nguyên & MT |
 
-| Ưu tiên | Trường | Ngành | Phương thức |
+**Kịch bản C: Ưu tiên INU (nếu ưa thích mô hình ĐH Doanh nghiệp)**
+
+| NV | Trường | Ngành | Lý do |
 |---|---|---|---|
-| NV1 | **⭐ ĐH Intracom** | Kinh tế / Ngoại ngữ | TN THPT |
-| NV2 | **ĐH KHTN** | Khoa học Môi trường | TN THPT (D01) hoặc IELTS+TN |
-| NV3 | **ĐH TNMT** | QL Tài nguyên & MT | TN THPT (D01) + Học bạ |
-| NV4 | **ĐH TNMT** | Biến đổi khí hậu & PTBV | TN THPT + Học bạ |
-| NV5 | **ĐH Mỏ** | QL Tài nguyên & MT | TN THPT (D01) + Học bạ |
-
-**Lý do:** INU NV1 nắm chắc HB + ưu đãi. KHTN uy tín cao nhất cho ngành MT, TNMT nhiều ngành MT nhất, Mỏ là phương án an toàn.
-
-### Kịch bản 3: Kết hợp tất cả (an toàn nhất)
-
-| Ưu tiên | Trường | Ngành | Phương thức |
-|---|---|---|---|
-| NV1 | **⭐ ĐH Intracom** | Ngoại ngữ / Kinh tế | TN THPT |
-| NV2 | **ĐH Vinh** | SP Tiếng Anh | D01 + Học bạ |
-| NV3 | **ĐH KHTN** | Khoa học Môi trường | D01 |
-| NV4 | **ĐH TNMT** | QL Tài nguyên & MT | D01 + Học bạ |
-| NV5 | **ĐH TNMT** | Ngôn ngữ Anh | D01 + Học bạ |
-| NV6 | **ĐH Nghệ An** | Ngôn ngữ Anh | D01 + Học bạ |
-
-**Lý do:** INU NV1 tận dụng tối đa lợi thế HS Nghệ An (HB + ưu đãi NV1 + cam kết việc làm). Các NV sau trải đều từ SP miễn HP → ngành MT uy tín → lưới an toàn.
+| NV1 | **ĐH Intracom** | NN Anh (D66 = 26.7) | HB A1 100% HP, ưu đãi NV1, cam kết việc làm |
+| NV2 | **ĐH Vinh** | SP Tiếng Anh | Miễn HP, lưới an toàn uy tín |
+| NV3 | **ĐH TNMT** | QL TN & MT | Đúng sở thích MT |
 
 ---
 
 ### Việc cần làm tiếp theo
 
-1. **Đăng ký NV1 vào ĐH Intracom** → Nắm chắc ưu đãi NV1 (miễn HP HK1 + giảm 20% HP toàn khóa) + HB "Khát vọng Intracom" Nghệ An
-2. **Chờ điểm thi TN THPT** → Khi có điểm thực tế, so sánh với điểm chuẩn các năm trước để chọn nguyện vọng chính xác hơn
-3. **Kiểm tra điểm học bạ** lớp 10, 11, 12 → Tính xem có đủ điều kiện xét học bạ ở các trường không (ĐH Vinh yêu cầu ≥20 cho lớp 12, ĐH Mỏ yêu cầu ≥18)
-4. **Kiểm tra chứng chỉ IELTS** (nếu có) → Có thể dùng cho KHTN (PT5), cộng điểm ở ĐH Vinh và ĐH Nghệ An
-5. **Đăng ký trên hệ thống Bộ GD&ĐT:** [thisinh.thitotnghiepthpt.edu.vn](https://thisinh.thitotnghiepthpt.edu.vn) (dự kiến 02/07 - 14/07/2026)
-6. **Liên hệ INU** để xác nhận ngành học cụ thể, mã ngành, và thủ tục nhận HB "Khát vọng Intracom"
-7. **Trao đổi với gia đình** về nguyện vọng và phương án tài chính
+1. **Chờ điểm thi TN THPT** → So sánh với điểm chuẩn các năm trước để điều chỉnh nguyện vọng
+2. **Kiểm tra chứng chỉ IELTS** (nếu có) → Dùng cho KHTN (PT5, ≥5.5), cộng điểm ở ĐH Vinh, ĐH Nghệ An
+3. **Đăng ký trên hệ thống Bộ GD&ĐT:** [thisinh.thitotnghiepthpt.edu.vn](https://thisinh.thitotnghiepthpt.edu.vn) (dự kiến 02/07 - 14/07/2026) — tối đa **15 nguyện vọng**
+4. **Liên hệ ĐH Vinh** để xác nhận điều kiện xét HB SP Tiếng Anh
+5. **Liên hệ INU** để xác nhận thủ tục HB "Khát vọng Intracom" A1 (lớp 12 Giỏi)
+6. **Nếu đăng ký INU NV1:** đăng ký sớm trên [xettuyen.intracomuni.edu.vn](https://xettuyen.intracomuni.edu.vn) để nhận ưu đãi (1.000 suất đầu tiên)
+7. **Trao đổi với gia đình** về nguyện vọng, ưu tiên tài chính hay uy tín trường
 
 ---
 
-> **Ghi chú:** Tài liệu này được soạn dựa trên thông tin tuyển sinh dự kiến năm 2026. Điểm chuẩn, chỉ tiêu có thể thay đổi. Cần cập nhật khi có thông tin chính thức từ các trường và Bộ GD&ĐT.
+> **Ghi chú:** Tài liệu này được soạn dựa trên thông tin tuyển sinh dự kiến năm 2026 và học bạ thực tế 3 năm THPT của Hoàng Ngọc Hà. Điểm chuẩn, chỉ tiêu có thể thay đổi. Cần cập nhật khi có điểm thi TN THPT thực tế.
 
-> **Cập nhật lần cuối:** Tháng 6/2026 — Bổ sung ĐH Intracom (INU) làm NV1 đề xuất + HB "Khát vọng Intracom" Nghệ An
+> **Cập nhật lần cuối:** Tháng 6/2026 — Phân tích khách quan 6 trường dựa trên học bạ thực tế (D01 HB = 25.5, D66 HB = 26.7, lớp 12 Giỏi)
