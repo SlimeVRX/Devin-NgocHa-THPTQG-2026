@@ -140,10 +140,12 @@ Ba mẹ nhỏ yêu nhỏ, nhưng họ cũng có giới hạn trong cách thể h
 
 | Trường | Ngành | Điểm chuẩn TN 2025 | Điểm chuẩn HB 2025 | Tổ hợp xét | Ghi chú |
 |---|---|---|---|---|---|
-| **ĐH Vinh** | SP Tiếng Anh | 23.73 (Anh ×2) | ~25–26 (ước tính) | D01, D14, D15 | Anh ≥ 6.5; công thức: (M1+M2+Anh×2)×3/4 |
-| **ĐH Vinh** | Ngôn ngữ Anh | 24.80 (Anh ×2) | 25.0 | D01, D14, D15 | Anh ×2 tương tự SP Anh |
-| **ĐH TNMT** | QL Tài nguyên & MT | 21.25 | 23.0 | D01, C14 | HB lấy TB 3 năm |
-| **ĐH TNMT** | Ngôn ngữ Anh | 26.40 | 27.12 | D01 | HB lấy TB 3 năm |
+| **ĐH Vinh** | SP Tiếng Anh | 23.73 (Anh ×2, D01) | ⚠️ Không rõ — có thể không xét HB cho SP | D01, D14, D15 | Anh ≥ 6.5; (M1+M2+Anh×2)×3/4. Một số nguồn ghi HB = 23.73 nhưng nguồn khác ghi SP không xét HB |
+| **ĐH Vinh** | Ngôn ngữ Anh | **23.6** (Anh ×2) | **26.6** (Anh ×2) | D01, D14, D15 | Anh ≥ 6.0; HB xét điểm lớp 12 |
+| **ĐH TNMT** | QL Tài nguyên & MT | 21.25 | **23.0** | D01, C14 | HB 2024 = 18 → tăng mạnh lên 23 năm 2025! |
+| **ĐH TNMT** | Biến đổi khí hậu & PTBV | 15.0 | **18.0** | D01, C00, D15 | Ổn định — ngành MT chuyên sâu, cutoff thấp |
+| **ĐH TNMT** | CN Kỹ thuật Môi trường | 15.5 | **18.4** | D01, D07 | Tương tự BĐKH — cutoff thấp |
+| **ĐH TNMT** | Ngôn ngữ Anh | 26.40 | **27.12** | D01 | ⚠️ XÁC NHẬN từ QĐ 3126/QĐ-TĐHHN — đúng là rất cao! |
 | **ĐH Intracom** | Ngôn ngữ Anh | 15.0 | 15.0 | D01, D66, D84, C14 | Năm đầu đổi tên, điểm sàn rất thấp |
 | **ĐH Intracom** | QTKD / Luật KT | 15.0 | 15.0 | D01, D66, C14 | Tương tự NN Anh |
 | **ĐH Mỏ** | Ngôn ngữ Anh | 22.0 | ~23–24 (ước tính) | D01, D66, D96 | 2024 TN = 23.6 → giảm nhẹ 2025 |
@@ -152,68 +154,94 @@ Ba mẹ nhỏ yêu nhỏ, nhưng họ cũng có giới hạn trong cách thể h
 | **ĐH KHTN** | KH Môi trường | 21.25 | ❌ Không xét HB | D01 | Chỉ xét thi TN, ĐGNL, SAT |
 | **ĐH KHTN** | QL Tài nguyên & MT | 22.20 | ❌ Không xét HB | D01 | Tương tự |
 
-> **Nguồn:** Tổng hợp từ website tuyển sinh chính thức các trường, VnExpress, tuyensinh247, trangedu (tháng 8/2025).
+> **Nguồn dữ liệu (đã xác minh):**
+> - **ĐH TNMT:** [QĐ 3126/QĐ-TĐHHN ngày 22/8/2025](https://hunre.edu.vn/download/news/2025/08/22/160817_3126-Q%C4%90-T%C4%90HHN.pdf) — văn bản chính thức từ website HUNRE
+> - **ĐH Vinh:** [trangedu.com](https://trangedu.com/diem-chuan/diem-chuan-dai-hoc-vinh/) — tổng hợp từ QĐ chính thức ĐH Vinh
+> - **Tổng hợp:** tuyensinh247.com, VnExpress, huongnghiepviet.com (tháng 8/2025)
 
 ### Xu hướng điểm chuẩn 2024 → 2025
 
+**A. Theo phương thức thi TN THPT (Anh ×2 tại ĐH Vinh):**
+
 | Trường | Ngành | 2024 (TN) | 2025 (TN) | Thay đổi | Xu hướng |
 |---|---|---|---|---|---|
-| **ĐH Vinh** | Ngôn ngữ Anh | ~26.6 (Anh ×2) | 24.80 | −1.8 | Giảm |
+| **ĐH Vinh** | SP Tiếng Anh | 26.46 (Anh ×2) | 23.73 | −2.73 | Giảm mạnh |
+| **ĐH Vinh** | Ngôn ngữ Anh | 24.80 (Anh ×2) | 23.60 | −1.20 | Giảm |
+| **ĐH TNMT** | QL TN & MT | 15.0 | 21.25 | +6.25 | Tăng rất mạnh! |
 | **ĐH Mỏ** | Ngôn ngữ Anh | 23.6 | 22.0 | −1.6 | Giảm |
 | **ĐH Mỏ** | QL TN & MT | 20.8 | 18.5 | −2.3 | Giảm mạnh |
 | **ĐH KHTN** | KH Môi trường | ~20.0 | 21.25 | +1.25 | Tăng nhẹ |
 | **ĐH Nghệ An** | NN Anh | ~20.0 | 19.0 | −1.0 | Giảm nhẹ |
 | **ĐH Intracom** | NN Anh | 15.0 (Chu Văn An) | 15.0 | 0 | Ổn định (sàn) |
 
+**B. Theo phương thức xét HB (quan trọng cho Ngọc Hà):**
+
+| Trường | Ngành | HB 2024 | HB 2025 | Thay đổi | Xu hướng |
+|---|---|---|---|---|---|
+| **ĐH Vinh** | Ngôn ngữ Anh | 25.0 | **26.6** (Anh ×2) | +1.6 | Tăng — HB cạnh tranh hơn! |
+| **ĐH TNMT** | QL TN & MT | **18.0** | **23.0** | **+5.0** | Tăng rất mạnh! |
+| **ĐH TNMT** | Ngôn ngữ Anh | 26.5 | 27.12 | +0.62 | Tăng nhẹ |
+| **ĐH TNMT** | BĐKH & PTBV | 18.0 | 18.0 | 0 | Ổn định |
+| **ĐH TNMT** | CN KT Môi trường | 18.0 | 18.4 | +0.4 | Ổn định |
+
 > **Nhận xét xu hướng:**
-> - Đa số trường **giảm nhẹ** điểm chuẩn 2025 so với 2024, có thể do đề thi khó hơn hoặc thay đổi phương thức
-> - ĐH KHTN là trường **duy nhất tăng** — phản ánh sức hút của ĐH Quốc gia
+> - Thi TN đa số giảm nhẹ (có thể do đề thi khó hơn)
+> - **Xét HB tăng mạnh** ở nhiều ngành — phản ánh xu hướng nhiều thí sinh chuyển sang xét HB
+> - ⚠️ **ĐH TNMT QL TN&MT HB tăng từ 18 → 23** (+5 điểm!) — Ngọc Hà đúng khi nói năm ngoái chỉ 18đ, nhưng năm 2025 đã tăng đáng kể
+> - Các ngành MT chuyên sâu (BĐKH, CN KT MT) vẫn ổn định ở mức 18
+> - ĐH KHTN là trường duy nhất tăng TN — phản ánh sức hút ĐH Quốc gia
 > - INU ổn định ở mức sàn (15) vì là năm đầu chuyển đổi từ ĐH Chu Văn An
 
 ### Dự đoán điểm chuẩn 2026
 
-| Trường | Ngành | PT xét | Dự đoán 2026 | Cơ sở dự đoán |
+| Trường | Ngành | PT xét | Dự đoán HB 2026 | Cơ sở dự đoán |
 |---|---|---|---|---|
-| **ĐH Vinh** | SP Tiếng Anh | HB lớp 12 | 25.0 – 26.5 | Ổn định, SP luôn cạnh tranh cao |
-| **ĐH Vinh** | Ngôn ngữ Anh | HB lớp 12 | 24.5 – 26.0 | Xu hướng giảm nhẹ từ 2024 |
-| **ĐH TNMT** | QL TN & MT | HB TB 3 năm | 22.5 – 24.0 | Ổn định, ngành trung bình |
+| **ĐH Vinh** | SP Tiếng Anh | Thi TN (Anh ×2) | TN: 23–25 | SP chỉ xét thi TN (HB không áp dụng cho SP — cần xác nhận) |
+| **ĐH Vinh** | Ngôn ngữ Anh | HB lớp 12 (Anh ×2) | HB: 26–28 | HB tăng từ 25→26.6, xu hướng tăng tiếp |
+| **ĐH TNMT** | QL TN & MT | HB TB 3 năm | 22–25 | HB tăng mạnh 18→23, có thể tiếp tục tăng |
+| **ĐH TNMT** | BĐKH & PTBV | HB TB 3 năm | 18–20 | Ổn định mức thấp, ít cạnh tranh |
+| **ĐH TNMT** | CN KT Môi trường | HB TB 3 năm | 18–20 | Tương tự BĐKH |
 | **ĐH TNMT** | Ngôn ngữ Anh | HB TB 3 năm | 27.0 – 28.0 | Cạnh tranh cao, NN Anh hot |
 | **ĐH Intracom** | NN Anh | HB TB 3 năm | 16.0 – 20.0 | Có thể tăng nhẹ do marketing mạnh, nhưng vẫn rất thấp |
 | **ĐH Mỏ** | NN Anh | HB TB 3 năm | 22.0 – 24.0 | Xu hướng ổn định |
 | **ĐH Mỏ** | QL TN & MT | HB TB 3 năm | 18.0 – 21.0 | Xu hướng giảm |
 | **ĐH Nghệ An** | NN Anh | HB TB 3 năm | 19.5 – 21.0 | Ổn định |
-| **ĐH KHTN** | KH Môi trường | Thi TN | 21.0 – 23.0 | Xu hướng tăng nhẹ |
+| **ĐH KHTN** | KH Môi trường | Thi TN | TN: 21.0 – 23.0 | Xu hướng tăng nhẹ |
 
-### Điểm của Ngọc Hà vs. Điểm chuẩn — Phân tích chi tiết
+### Điểm của Ngọc Hà vs. Điểm chuẩn — Phân tích chi tiết (ĐÃ SỬA)
 
 **Lưu ý quan trọng về cách tính:**
 - **ĐH Vinh** xét HB **lớp 12 chỉ** → dùng điểm lớp 12 (mạnh nhất)
-- **ĐH TNMT, Mỏ, Nghệ An, Intracom** xét HB **TB 3 năm** → dùng trung bình 3 năm
+- **ĐH Vinh** ngành SP Anh & NN Anh áp dụng **Anh hệ số 2**: (M1+M2+Anh×2)×3/4 → NH = **26.1** (thay vì 25.5 D01 thường)
+- **ĐH TNMT, Mỏ, Nghệ An, Intracom** xét HB **TB 3 năm** → dùng trung bình 3 năm (D01 = 24.2, D66 = 24.8)
 - **ĐH KHTN** không xét HB → chỉ dùng điểm thi TN dự kiến
-- ĐH Vinh ngành SP Anh & NN Anh áp dụng **Tiếng Anh hệ số 2**: (M1+M2+Anh×2)×3/4
+- ⚠️ **ĐH Vinh SP Anh:** có thể KHÔNG xét HB cho ngành SP (chỉ xét thi TN). Đang chờ xác nhận chính thức.
 
-| # | Trường — Ngành | PT xét | Tổ hợp | Điểm NH | Điểm chuẩn 2025 | Dự đoán 2026 | Chênh lệch | **% Đỗ** | Mức độ |
+| # | Trường — Ngành | PT xét | Tổ hợp | Điểm NH | Điểm chuẩn HB 2025 | Dự đoán 2026 | Chênh lệch | **% Đỗ** | Mức độ |
 |---|---|---|---|---|---|---|---|---|---|
 | 1 | **ĐH Intracom — NN Anh** | HB 3 năm | D66 | **24.8** | 15.0 | 16–20 | +4.8 → +8.8 | **99%** | 🟢 Rất an toàn |
 | 2 | **ĐH Intracom — QTKD** | HB 3 năm | D01 | **24.2** | 15.0 | 16–20 | +4.2 → +8.2 | **99%** | 🟢 Rất an toàn |
-| 3 | **ĐH Nghệ An — NN Anh** | HB 3 năm | D01 | **24.2** | 20.0 | 19.5–21 | +3.2 → +4.7 | **97%** | 🟢 Rất an toàn |
-| 4 | **ĐH Mỏ — QL TN & MT** | HB 3 năm | D01 | **24.2** | ~20–21 | 18–21 | +3.2 → +6.2 | **95%** | 🟢 An toàn |
-| 5 | **ĐH TNMT — QL TN & MT** | HB 3 năm | D01 | **24.2** | 23.0 | 22.5–24 | +0.2 → +1.7 | **80%** | 🟡 Khả thi, sát ngưỡng |
-| 6 | **ĐH Mỏ — NN Anh** | HB 3 năm | D01 | **24.2** | ~23–24 | 22–24 | +0.2 → +2.2 | **75%** | 🟡 Khả thi |
-| 7 | **ĐH Vinh — NN Anh** | HB lớp 12 | D01 | **25.5** | 25.0 | 24.5–26 | −0.5 → +1.0 | **65%** | 🟡 Khả thi nhưng cạnh tranh |
-| 8 | **ĐH Vinh — SP Tiếng Anh** | HB lớp 12 | D01 | **25.5** | ~25–26 | 25–26.5 | −1.0 → +0.5 | **55%** | 🟠 Sát ngưỡng, rủi ro |
-| 9 | **ĐH KHTN — KH Môi trường** | Thi TN | D01 | **~19.5** | 21.25 | 21–23 | −1.5 → −3.5 | **20%** | 🔴 Rất khó |
-| 10 | **ĐH TNMT — NN Anh** | HB 3 năm | D01 | **24.2** | 27.12 | 27–28 | −2.8 → −3.8 | **5%** | 🔴 Gần như không thể |
+| 3 | **ĐH TNMT — BĐKH & PTBV** | HB 3 năm | D01 | **24.2** | **18.0** | 18–20 | +4.2 → +6.2 | **99%** | 🟢 Rất an toàn — đúng ngành MT NH thích! |
+| 4 | **ĐH TNMT — CN KT MT** | HB 3 năm | D01 | **24.2** | **18.4** | 18–20 | +3.8 → +6.2 | **98%** | 🟢 Rất an toàn |
+| 5 | **ĐH Nghệ An — NN Anh** | HB 3 năm | D01 | **24.2** | 20.0 | 19.5–21 | +3.2 → +4.7 | **97%** | 🟢 Rất an toàn |
+| 6 | **ĐH Mỏ — QL TN & MT** | HB 3 năm | D01 | **24.2** | ~20–21 | 18–21 | +3.2 → +6.2 | **95%** | 🟢 An toàn |
+| 7 | **ĐH TNMT — QL TN & MT** | HB 3 năm | D01 | **24.2** | **23.0** | 22–25 | −0.8 → +2.2 | **70%** | 🟡 Khả thi nhưng HB tăng nhanh |
+| 8 | **ĐH Mỏ — NN Anh** | HB 3 năm | D01 | **24.2** | ~23–24 | 22–24 | +0.2 → +2.2 | **75%** | 🟡 Khả thi |
+| 9 | **ĐH Vinh — NN Anh** | HB L12 (Anh ×2) | D01 | **26.1** | **26.6** | 26–28 | −0.5 → +0.1 | **35–40%** | 🟠 Sát ngưỡng, rủi ro cao |
+| 10 | **ĐH Vinh — SP Tiếng Anh** | ⚠️ Thi TN (Anh ×2) | D01 | **19.9** (TN) | TN: 23.73 | TN: 23–25 | −3.1 → −5.1 | **10%** | 🔴 Rất khó qua thi TN |
+| 10b | *(Nếu SP Anh có xét HB)* | HB L12 (Anh ×2) | D01 | **26.1** | HB: 23.73 (?) | 23–25 | +1.1 → +3.1 | **90%** | 🟢 An toàn — nhưng cần xác nhận |
+| 11 | **ĐH KHTN — KH Môi trường** | Thi TN | D01 | **~19.5** | 21.25 | 21–23 | −1.5 → −3.5 | **20%** | 🔴 Rất khó |
+| 12 | **ĐH TNMT — NN Anh** | HB 3 năm | D01 | **24.2** | **27.12** | 27–28 | −2.8 → −3.8 | **5%** | 🔴 Gần như không thể |
 
 > **Giải thích cách tính % Đỗ:**
 > - Dựa trên **chênh lệch** giữa điểm NH và điểm chuẩn, kết hợp **biên độ dao động** qua các năm
 > - Chênh lệch > +2 điểm: 90–99% (rất an toàn)
 > - Chênh lệch +0.5 → +2: 65–85% (khả thi)
-> - Chênh lệch −0.5 → +0.5: 40–60% (sát ngưỡng)
+> - Chênh lệch −0.5 → +0.5: 35–55% (sát ngưỡng)
 > - Chênh lệch < −1: 5–25% (rất khó)
-> - % đã tính thêm yếu tố: xu hướng giảm/tăng điểm chuẩn 2024→2025, mức cạnh tranh ngành
+> - % đã tính thêm yếu tố: xu hướng tăng/giảm điểm chuẩn 2024→2025, mức cạnh tranh ngành
 
-### Phân tích bổ sung — ĐH Vinh SP Anh với Anh hệ số 2
+### Phân tích bổ sung — ĐH Vinh SP Anh & NN Anh với Anh hệ số 2
 
 ĐH Vinh áp dụng công thức đặc biệt cho SP Tiếng Anh và NN Anh:
 
@@ -224,31 +252,80 @@ Ba mẹ nhỏ yêu nhỏ, nhưng họ cũng có giới hạn trong cách thể h
 | Thi TN (dự kiến) | 5.0 | 7.5 | 7.0 | (5+7.5+7×2)×3/4 | **19.9** |
 | HB Lớp 12 | 7.6 | 8.6 | 9.3 | (7.6+8.6+9.3×2)×3/4 | **26.1** |
 
-- Với Anh ×2, điểm HB lớp 12 của NH tăng từ 25.5 → **26.1** (thêm +0.6)
-- Nếu ĐH Vinh áp dụng Anh ×2 cho cả HB, khả năng đỗ SP Anh tăng lên ~60–65%
-- Điều kiện phụ: Anh ≥ 6.5 → NH đạt 9.3 ✅
+**So sánh với điểm chuẩn 2025 (đã xác minh):**
 
-### Xếp hạng nguyện vọng — Theo % khả năng đỗ (Xét học bạ)
+| Ngành | PT | Điểm NH (Anh ×2) | Cutoff 2025 (Anh ×2) | Chênh lệch | Kết luận |
+|---|---|---|---|---|---|
+| NN Anh | HB L12 | 26.1 | **26.6** | **−0.5** | Sát ngưỡng, thiếu 0.5 điểm |
+| NN Anh | Thi TN | 19.9 | **23.6** | −3.7 | Rất khó qua thi TN |
+| SP Anh | Thi TN | 19.9 | **23.73** | −3.83 | Rất khó qua thi TN |
+| SP Anh | HB (nếu có) | 26.1 | **23.73** (?) | +2.37 | An toàn — nhưng cần xác nhận HB có xét SP không |
+
+- Với Anh ×2, điểm HB lớp 12 của NH tăng từ 25.5 → **26.1** (thêm +0.6)
+- **NN Anh HB:** NH = 26.1, cutoff = 26.6 → thiếu 0.5 điểm. Có thể bù 0.25–0.5 từ ưu tiên KV nhưng vẫn rủi ro (~35–40%)
+- **SP Anh:** Nếu HB có xét → 26.1 vs 23.73 = dư rất xa (90%). Nếu chỉ xét thi TN → 19.9 vs 23.73 = thiếu ~4 điểm (10%)
+- Điều kiện phụ: SP Anh yêu cầu Anh ≥ 6.5, NN Anh yêu cầu Anh ≥ 6.0 → NH đạt **9.3** ✅✅
+
+> ⚠️ **Điểm cần xác nhận:** Một số nguồn ghi "Phương thức xét học bạ không áp dụng cho các ngành sư phạm" tại ĐH Vinh. Nhưng trangedu.com lại liệt kê SP Anh trong bảng HB 2025 với cutoff 23.73. **Ngọc Hà nên liên hệ trực tiếp Phòng Tuyển sinh ĐH Vinh** (hotline: 0238 3855 452) để xác nhận SP Anh có xét HB năm 2026 không.
+
+### Xếp hạng nguyện vọng — Theo % khả năng đỗ (ĐÃ CẬP NHẬT)
 
 | Thứ tự NV đề xuất | Trường — Ngành | % Đỗ | Lý do xếp hạng |
 |---|---|---|---|
-| **NV1** | ĐH Vinh — SP Tiếng Anh | 55–65% | Miễn 100% HP, uy tín cao, gần nhà, Anh 9.3 phù hợp. Đặt NV1 vì **giá trị cao nhất nếu đỗ** |
-| **NV2** | ĐH Vinh — Ngôn ngữ Anh | 65% | Phương án dự phòng cùng trường, cùng thế mạnh ngôn ngữ |
-| **NV3** | ĐH TNMT — QL TN & MT | 80% | Đúng sở thích môi trường, HB dư ngưỡng, trường uy tín |
-| **NV4** | ĐH Mỏ — Ngôn ngữ Anh | 75% | Trường Hà Nội, ngành NN Anh, điểm khá an toàn |
-| **NV5** | ĐH Mỏ — QL TN & MT | 95% | Rất an toàn, kết hợp MT + gần HN |
-| **NV6** | ĐH Nghệ An — NN Anh | 97% | An toàn tuyệt đối, gần nhà, HP thấp |
-| **NV7** | ĐH Intracom — NN Anh (D66) | 99% | Lưới an toàn cuối cùng, D66 = 24.8 dư rất xa cutoff 15–20 |
-| **NV8** | ĐH KHTN — KH Môi trường | 20% | Chỉ xét thi TN, D01 ~19.5 thiếu ~2 điểm. Đặt cuối vì hy vọng nhỏ |
-| **NV9** | ĐH TNMT — NN Anh | 5% | HB TB 3 năm = 24.2, cutoff 27.12 — thiếu ~3 điểm. Đặt cuối nhưng vẫn nên đăng ký |
+| **NV1** | ĐH Vinh — SP Tiếng Anh | **10% (TN) / 90% (nếu HB)** | Miễn 100% HP, uy tín, gần nhà. NV1 vì **giá trị cao nhất nếu đỗ**. Cần xác nhận HB có xét SP không |
+| **NV2** | ĐH Vinh — Ngôn ngữ Anh | **35–40%** | Anh ×2 = 26.1 vs cutoff 26.6 → thiếu 0.5đ. Cạnh tranh nhưng đáng thử |
+| **NV3** | ĐH TNMT — BĐKH & PTBV | **99%** | Ngành MT chuyên sâu, cutoff chỉ 18đ, NH dư 6+ điểm. Đúng sở thích MT! |
+| **NV4** | ĐH TNMT — QL TN & MT | **70%** | Cutoff tăng 18→23, vẫn khả thi (NH = 24.2). Ngành MT uy tín |
+| **NV5** | ĐH Mỏ — NN Anh | **75%** | Trường Hà Nội, ngành NN Anh, điểm khá an toàn |
+| **NV6** | ĐH Mỏ — QL TN & MT | **95%** | Rất an toàn, kết hợp MT + gần HN |
+| **NV7** | ĐH Nghệ An — NN Anh | **97%** | An toàn tuyệt đối, gần nhà, HP thấp |
+| **NV8** | ĐH Intracom — NN Anh (D66) | **99%** | Lưới an toàn, D66 = 24.8 dư rất xa cutoff 15–20 |
+| **NV9** | ĐH KHTN — KH Môi trường | **20%** | Chỉ xét thi TN, thiếu ~2 điểm. Hy vọng nhỏ |
+| **NV10** | ĐH TNMT — NN Anh | **5%** | Cutoff 27.12 — thiếu ~3 điểm. Đăng ký thêm cho may |
 
 > **Chiến lược xếp NV:**
-> - **NV1–2:** Chọn nguyện vọng **giá trị cao nhất** (miễn HP, uy tín) dù % đỗ ~55–65%. Nếu không đỗ, hệ thống tự xét NV tiếp theo
-> - **NV3–5:** Nguyện vọng **cân bằng** giữa sở thích và khả năng đỗ (75–95%)
-> - **NV6–7:** **Lưới an toàn** — gần như chắc chắn đỗ (97–99%)
-> - **NV8–9:** **Đăng ký thêm** — xác suất thấp nhưng không mất gì, nếu đỗ là bất ngờ tích cực
+> - **NV1–2:** Chọn nguyện vọng **giá trị cao nhất** (miễn HP, uy tín) dù % đỗ thấp. Nếu không đỗ, hệ thống tự xét NV tiếp theo
+> - **NV3:** ĐH TNMT BĐKH — **ngành môi trường NH thích, cutoff thấp (18đ), gần như chắc chắn đỗ** (99%)
+> - **NV4–6:** Nguyện vọng **cân bằng** giữa sở thích và khả năng đỗ (70–95%)
+> - **NV7–8:** **Lưới an toàn** — gần như chắc chắn đỗ (97–99%)
+> - **NV9–10:** **Đăng ký thêm** — xác suất thấp nhưng không mất gì
 >
 > **Quan trọng:** Hệ thống xét tuyển Việt Nam xét từ NV1 trở xuống. Nếu đỗ NV1 thì các NV sau bị bỏ qua. Vì vậy, đặt NV cao nhất là nguyện vọng **mong muốn nhất**, không phải nguyện vọng **dễ đỗ nhất**.
+
+### Xác minh & Giải đáp thắc mắc của Ngọc Hà
+
+#### 1. "HUNRE xét học bạ năm ngoái ngành em thích chỉ 18đ?"
+
+**Ngọc Hà ĐÚNG!** Nhưng cần phân biệt rõ ngành nào:
+
+| Ngành tại ĐH TNMT | HB 2024 | HB 2025 | Thay đổi |
+|---|---|---|---|
+| QL Tài nguyên & MT | **18.0** | **23.0** | +5.0 (tăng rất mạnh!) |
+| Biến đổi KH & PTBV | **18.0** | **18.0** | 0 (ổn định) |
+| CN KT Môi trường | **18.0** | **18.4** | +0.4 (ổn định) |
+| **Ngôn ngữ Anh** | **26.5** | **27.12** | +0.62 (tăng) |
+
+- Các ngành **Môi trường chuyên sâu** (BĐKH, CN KT MT) vẫn chỉ **18đ** → Ngọc Hà đúng!
+- Ngành **QL TN&MT** tăng từ 18 → 23 (+5 điểm) — năm ngoái đúng là 18đ nhưng năm nay đã tăng
+- Ngành **NN Anh** luôn cao (26.5 → 27.12) — đây là ngành KHÁC, không phải ngành MT
+
+**Nguồn:** [QĐ 3126/QĐ-TĐHHN ngày 22/8/2025](https://hunre.edu.vn/download/news/2025/08/22/160817_3126-Q%C4%90-T%C4%90HHN.pdf) — văn bản chính thức từ HUNRE
+
+#### 2. Điểm chuẩn ĐH Vinh 2025 — SP Anh & NN Anh
+
+**Dữ liệu xác minh từ trangedu.com (cập nhật 05/04/2026, nguồn QĐ chính thức ĐH Vinh):**
+
+| Ngành | PT | Tổ hợp | Cutoff 2025 | Ghi chú |
+|---|---|---|---|---|
+| SP Tiếng Anh | **Thi TN** | D01 | **23.73** (Anh ×2) | Anh ≥ 6.5 |
+| SP Tiếng Anh | **Thi TN** | D14, D15 | **24.73** (Anh ×2) | Anh ≥ 6.5 |
+| SP Tiếng Anh (tài năng) | **Thi TN** | D01 | **25.0** (Anh ×2) | Anh ≥ 7.0 |
+| Ngôn ngữ Anh | **Thi TN** | D01, D14, D15 | **23.6** (Anh ×2) | Anh ≥ 6.0 |
+| Ngôn ngữ Anh | **HB L12** | D01, D14, D15 | **26.6** (Anh ×2) | Anh ≥ 6.0 |
+
+**Cách tính Anh ×2:** Điểm = (Môn1 + Môn2 + Anh×2) × 3/4. Thang 30.
+
+**Nguồn:** [trangedu.com/diem-chuan/diem-chuan-dai-hoc-vinh](https://trangedu.com/diem-chuan/diem-chuan-dai-hoc-vinh/) — tổng hợp QĐ chính thức ĐH Vinh 2025
 
 ---
 
